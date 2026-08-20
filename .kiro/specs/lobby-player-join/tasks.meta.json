@@ -2,7 +2,27 @@
   "pbtResults": {
     "3.2 Write property test for room code generation": {
       "status": "passed",
-      "lastRunTimestamp": 1787225858888
+      "lastRunTimestamp": 1787226823990
+    },
+    "3.4 Write property test for room creation": {
+      "status": "passed",
+      "lastRunTimestamp": 1787227196332
+    },
+    "4.2 Write property tests for room joining": {
+      "status": "passed",
+      "lastRunTimestamp": 1787227384061
+    },
+    "6.2 Write property tests for leaving and host transfer": {
+      "status": "passed",
+      "lastRunTimestamp": 1787227968995
+    },
+    "7.2 Write property test for ready toggle": {
+      "status": "passed",
+      "lastRunTimestamp": 1787228007194
+    },
+    "7.5 Write property tests for game start": {
+      "status": "passed",
+      "lastRunTimestamp": 1787228236190
     }
   },
   "executionHistory": {
@@ -106,6 +126,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226728808
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787226998824
       }
     ],
     "3.1 Implement room code generator in `lib/lobby/room-code.ts`": [
@@ -145,6 +170,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226737193
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787226999774
       }
     ],
     "3.3 Implement `createRoom` in `lib/lobby/create-room.ts`": [
@@ -167,6 +197,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226738006
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227000545
       }
     ],
     "3.4 Write property test for room creation": [
@@ -179,6 +214,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226711681
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227009709
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227215612
       }
     ],
     "3.5 Create API route `app/api/rooms/route.ts` (POST)": [
@@ -191,6 +236,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226711757
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227010413
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227214022
       }
     ],
     "3.6 Write unit test for POST /api/rooms route": [
@@ -203,6 +258,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226711839
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227220816
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227567243
       }
     ],
     "4.1 Implement `joinRoom` in `lib/lobby/join-room.ts`": [
@@ -215,6 +280,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226711907
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227011224
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227214820
       }
     ],
     "4.2 Write property tests for room joining": [
@@ -227,6 +302,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226711973
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227221476
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227569096
       }
     ],
     "4.3 Create API route `app/api/rooms/join/route.ts` (POST)": [
@@ -239,6 +324,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712048
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227222326
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227568194
       }
     ],
     "4.4 Write unit test for POST /api/rooms/join route": [
@@ -251,6 +346,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712124
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227576217
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227796679
       }
     ],
     "5. Checkpoint - Commit room creation and joining": [
@@ -263,6 +368,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712188
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228282719
       }
     ],
     "6.1 Implement `leaveRoom` in `lib/lobby/leave-room.ts`": [
@@ -275,6 +385,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712304
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227577230
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227797399
       }
     ],
     "6.2 Write property tests for leaving and host transfer": [
@@ -287,6 +407,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712369
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227804214
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228084963
       }
     ],
     "6.3 Create API route `app/api/rooms/leave/route.ts` (POST)": [
@@ -299,6 +429,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712442
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227804861
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228085881
       }
     ],
     "6.4 Write unit test for POST /api/rooms/leave route": [
@@ -311,6 +451,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712505
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228097160
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228261506
       }
     ],
     "7.1 Implement `toggleReady` in `lib/lobby/toggle-ready.ts`": [
@@ -323,6 +473,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712569
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227577804
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227798349
       }
     ],
     "7.2 Write property test for ready toggle": [
@@ -335,6 +495,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712638
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227805532
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228083984
       }
     ],
     "7.3 Create API route `app/api/rooms/ready/route.ts` (POST)": [
@@ -347,6 +517,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712733
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227806263
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228086754
       }
     ],
     "7.4 Implement `startGame` in `lib/lobby/start-game.ts`": [
@@ -359,6 +539,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712827
+      },
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227807092
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228087640
       }
     ],
     "7.5 Write property tests for game start": [
@@ -371,6 +561,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712888
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228097938
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228264363
       }
     ],
     "7.6 Create API route `app/api/rooms/start/route.ts` (POST)": [
@@ -383,6 +583,16 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226712965
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228098765
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228262463
       }
     ],
     "7.7 Write unit tests for POST /api/rooms/ready and POST /api/rooms/start routes": [
@@ -395,6 +605,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713036
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228283446
       }
     ],
     "8. Checkpoint - Commit leaving, readiness, and game start": [
@@ -419,6 +634,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713245
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228284326
       }
     ],
     "9.2 Write property test for poll state": [
@@ -443,6 +663,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713388
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228285116
       }
     ],
     "9.4 Write property test for public room listing": [
@@ -702,6 +927,27 @@
         "executionId": "789327c3-a420-43c3-a6ec-e6e839abf5e8",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787225668576
+      }
+    ],
+    "3. Implement room creation": [
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227567334
+      }
+    ],
+    "4. Implement room joining": [
+      {
+        "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787227796760
+      }
+    ],
+    "6. Implement player leaving and host transfer": [
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228261606
       }
     ]
   }

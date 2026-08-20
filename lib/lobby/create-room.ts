@@ -1,37 +1,32 @@
 import { prisma } from "@/lib/prisma";
 import { generateRoomCode } from "@/lib/lobby/room-code";
-import type {
-  CreateRoomResult,
-  LobbyError,
-  RoomVisibility,
-} from "@/lib/lobby/types";
+import { CreateRoomResult, LobbyError } from "@/lib/lobby/types";
 
 export async function createRoom(params: {
   playerId: string;
   displayName: string;
-  visibility: RoomVisibility;
+  visibility: "public" | "private";
 }): Promise<CreateRoomResult | LobbyError> {
-  const { playerId, visibility } = params;
-  const displayName = params.displayName.trim();
+  const { playerId, displayName, visibility } = params;
 
-  // Validate display name: 1-30 chars, not whitespace-only
-  if (displayName.length === 0 || displayName.length > 30) {
+  // Validate display name: trim and check length
+  const trimmedName = displayName.trim();
+  if (trimmedName.length === 0 || trimmedName.length > 30) {
     return {
       success: false,
-      error: "Display name must be between 1 and 30 characters.",
+      error: "Display name must be 1-30 characters",
       code: "INVALID_INPUT",
     };
   }
 
-  // Check single-room constraint
+  // Check single-room constraint: player must not already be in a room
   const existingMembership = await prisma.roomPlayer.findUnique({
     where: { playerId },
   });
-
   if (existingMembership) {
     return {
       success: false,
-      error: "You must leave your current room before creating a new one.",
+      error: "Must leave current room first",
       code: "MUST_LEAVE_CURRENT_ROOM",
     };
   }
@@ -40,8 +35,8 @@ export async function createRoom(params: {
   const code = await generateRoomCode();
 
   // Create room and player in a transaction
-  const room = await prisma.$transaction(async (tx) => {
-    const newRoom = await tx.room.create({
+  const { room, player } = await prisma.$transaction(async (tx: typeof prisma) => {
+    const room = await tx.room.create({
       data: {
         code,
         status: "waiting",
@@ -50,38 +45,38 @@ export async function createRoom(params: {
       },
     });
 
-    await tx.roomPlayer.create({
+    const player = await tx.roomPlayer.create({
       data: {
         playerId,
-        displayName,
-        roomId: newRoom.id,
+        displayName: trimmedName,
+        roomId: room.id,
         isHost: true,
         readyState: "not-ready",
         status: "connected",
       },
     });
 
-    return newRoom;
+    return { room, player };
   });
 
   return {
     success: true,
-    roomCode: room.code,
+    roomCode: code,
     state: {
-      roomCode: room.code,
+      roomCode: code,
       status: "waiting",
       visibility,
+      hostId: playerId,
       players: [
         {
-          id: playerId,
-          displayName,
+          id: player.id,
+          displayName: trimmedName,
           isHost: true,
           readyState: "not-ready",
           status: "connected",
           turnPosition: null,
         },
       ],
-      hostId: playerId,
     },
   };
 }
