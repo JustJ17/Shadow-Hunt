@@ -23,6 +23,14 @@
     "7.5 Write property tests for game start": {
       "status": "passed",
       "lastRunTimestamp": 1787228236190
+    },
+    "9.4 Write property test for public room listing": {
+      "status": "passed",
+      "lastRunTimestamp": 1787228874164
+    },
+    "9.2 Write property test for poll state": {
+      "status": "passed",
+      "lastRunTimestamp": 1787229255990
     }
   },
   "executionHistory": {
@@ -373,6 +381,11 @@
         "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787228282719
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228706270
       }
     ],
     "6.1 Implement `leaveRoom` in `lib/lobby/leave-room.ts`": [
@@ -610,6 +623,11 @@
         "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787228283446
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228707351
       }
     ],
     "8. Checkpoint - Commit leaving, readiness, and game start": [
@@ -622,6 +640,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713169
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228716131
       }
     ],
     "9.1 Implement `pollState` in `lib/lobby/poll-state.ts`": [
@@ -639,6 +662,11 @@
         "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787228284326
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228708180
       }
     ],
     "9.2 Write property test for poll state": [
@@ -651,6 +679,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713320
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228716744
       }
     ],
     "9.3 Implement `listPublicRooms` in `lib/lobby/list-public-rooms.ts`": [
@@ -668,6 +701,11 @@
         "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787228285116
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228709063
       }
     ],
     "9.4 Write property test for public room listing": [
@@ -680,6 +718,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713465
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228717535
       }
     ],
     "9.5 Create API route `app/api/rooms/poll/route.ts` (GET)": [
@@ -692,6 +735,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713552
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228718228
       }
     ],
     "9.6 Create API route `app/api/rooms/public/route.ts` (GET)": [
@@ -704,6 +752,11 @@
         "executionId": "f4c033f2-48e9-4f5f-9db0-adf0f0678992",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787226713619
+      },
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228719128
       }
     ],
     "9.7 Write unit tests for GET /api/rooms/poll and GET /api/rooms/public routes": [
@@ -948,6 +1001,13 @@
         "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
         "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
         "timestamp": 1787228261606
+      }
+    ],
+    "7. Implement readiness toggle and game start": [
+      {
+        "executionId": "c254c639-38f1-4e2d-8a0f-f4889898e19d",
+        "chatSessionId": "sess_22a89809-2f1e-445d-936b-e80f5998ed3e",
+        "timestamp": 1787228707454
       }
     ]
   }

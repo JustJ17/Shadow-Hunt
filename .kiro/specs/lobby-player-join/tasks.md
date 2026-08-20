@@ -98,7 +98,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Test happy path, room not found (404), room full (409), already in room (409), game started (409)
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6_
 
-- [-] 5. Checkpoint - Commit room creation and joining
+- [x] 5. Checkpoint - Commit room creation and joining
   - Ensure all tests pass, ask the user if questions arise.
   - `git add -A && git commit -m "feat(lobby): infrastructure, room creation, and room joining"`
 
@@ -129,7 +129,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Test host leaving with transfer, host leaving empty room (deletion), non-host leaving, cannot leave active game (409)
     - _Requirements: 6.1, 6.2, 7.1, 7.4_
 
-- [ ] 7. Implement readiness toggle and game start
+- [x] 7. Implement readiness toggle and game start
   - [x] 7.1 Implement `toggleReady` in `lib/lobby/toggle-ready.ts`
     - Accept `playerId`
     - Validate: player is in a room, room is in "waiting" status
@@ -163,7 +163,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Delegate to `startGame`, return JSON
     - _Requirements: 8.1_
 
-  - [-] 7.7 Write unit tests for POST /api/rooms/ready and POST /api/rooms/start routes
+  - [x] 7.7 Write unit tests for POST /api/rooms/ready and POST /api/rooms/start routes
     - Test toggle happy path, start precondition failures (403, 409)
     - _Requirements: 4.1, 4.2, 4.3, 5.2, 5.3_
 
@@ -172,7 +172,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
   - `git add -A && git commit -m "feat(lobby): leaving, host transfer, readiness, and game start"`
 
 - [ ] 9. Implement polling and public room listing
-  - [-] 9.1 Implement `pollState` in `lib/lobby/poll-state.ts`
+  - [x] 9.1 Implement `pollState` in `lib/lobby/poll-state.ts`
     - Accept `playerId`
     - Validate: player is in a room
     - Update player's `lastActivityAt` to current server time
@@ -185,7 +185,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - **Property 12: Poll response completeness**
     - **Validates: Requirements 9.1, 9.3**
 
-  - [-] 9.3 Implement `listPublicRooms` in `lib/lobby/list-public-rooms.ts`
+  - [x] 9.3 Implement `listPublicRooms` in `lib/lobby/list-public-rooms.ts`
     - Query rooms where visibility="public", status="waiting", playerCount < 4
     - Order by createdAt descending, limit to 50
     - Return roomCode, hostName, playerCount for each
