@@ -7,6 +7,10 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
+vi.mock("@/lib/lobby/disconnection", () => ({
+  processDisconnections: vi.fn().mockResolvedValue(undefined),
+}));
+
 import { pollState } from "../poll-state";
 import { prisma } from "@/lib/prisma";
 
@@ -176,6 +180,7 @@ describe("Poll state - Property tests", () => {
             data: {
               lastActivityAt: expect.any(Date),
               status: "connected",
+              disconnectedAt: null,
             },
           });
 

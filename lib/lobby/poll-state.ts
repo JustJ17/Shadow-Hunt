@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { PollStateResult, LobbyError, LobbyPlayer } from "@/lib/lobby/types";
+import { processDisconnections } from "@/lib/lobby/disconnection";
 
 export async function pollState(params: {
   playerId: string;
@@ -23,10 +24,27 @@ export async function pollState(params: {
   // Update lastActivityAt and set status to "connected" (handles reconnection)
   await prisma.roomPlayer.update({
     where: { playerId },
-    data: { lastActivityAt: new Date(), status: "connected" },
+    data: { lastActivityAt: new Date(), status: "connected", disconnectedAt: null },
   });
 
-  const room = membership.room;
+  // Detect and handle disconnected players in the room
+  await processDisconnections(membership.room.id);
+
+  // Re-fetch room state after disconnection processing for accurate response
+  const updatedMembership = await prisma.roomPlayer.findUnique({
+    where: { playerId },
+    include: { room: { include: { players: true } } },
+  });
+
+  if (!updatedMembership) {
+    return {
+      success: false,
+      error: "Player is not in any room",
+      code: "NOT_IN_ROOM",
+    };
+  }
+
+  const room = updatedMembership.room;
 
   // Find host
   const host = room.players.find((p) => p.isHost);

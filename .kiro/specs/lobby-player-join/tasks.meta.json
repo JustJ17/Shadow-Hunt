@@ -26,11 +26,15 @@
     },
     "9.4 Write property test for public room listing": {
       "status": "passed",
-      "lastRunTimestamp": 1787228874164
+      "lastRunTimestamp": 1787229671127
     },
     "9.2 Write property test for poll state": {
       "status": "passed",
-      "lastRunTimestamp": 1787229255990
+      "lastRunTimestamp": 1787229665369
+    },
+    "10.5 Write property tests for disconnection detection": {
+      "status": "passed",
+      "lastRunTimestamp": 1787230364046
     }
   },
   "executionHistory": {
