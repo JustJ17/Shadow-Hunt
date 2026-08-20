@@ -167,11 +167,11 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Test toggle happy path, start precondition failures (403, 409)
     - _Requirements: 4.1, 4.2, 4.3, 5.2, 5.3_
 
-- [ ] 8. Checkpoint - Commit leaving, readiness, and game start
+- [x] 8. Checkpoint - Commit leaving, readiness, and game start
   - Ensure all tests pass, ask the user if questions arise.
   - `git add -A && git commit -m "feat(lobby): leaving, host transfer, readiness, and game start"`
 
-- [ ] 9. Implement polling and public room listing
+- [x] 9. Implement polling and public room listing
   - [x] 9.1 Implement `pollState` in `lib/lobby/poll-state.ts`
     - Accept `playerId`
     - Validate: player is in a room
@@ -181,7 +181,7 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Return `PollStateResult` or `LobbyError`
     - _Requirements: 9.1, 9.3, 11.1_
 
-  - [ ] 9.2 Write property test for poll state
+  - [x] 9.2 Write property test for poll state
     - **Property 12: Poll response completeness**
     - **Validates: Requirements 9.1, 9.3**
 
@@ -191,25 +191,25 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Return roomCode, hostName, playerCount for each
     - _Requirements: 10.2, 10.3, 10.8_
 
-  - [ ] 9.4 Write property test for public room listing
+  - [x] 9.4 Write property test for public room listing
     - **Property 13: Public room listing correctness**
     - **Validates: Requirements 10.2, 10.3, 10.8**
 
-  - [ ] 9.5 Create API route `app/api/rooms/poll/route.ts` (GET)
+  - [x] 9.5 Create API route `app/api/rooms/poll/route.ts` (GET)
     - Extract playerId from session
     - Delegate to `pollState`, return JSON
     - _Requirements: 9.1, 9.3_
 
-  - [ ] 9.6 Create API route `app/api/rooms/public/route.ts` (GET)
+  - [x] 9.6 Create API route `app/api/rooms/public/route.ts` (GET)
     - Delegate to `listPublicRooms`, return JSON
     - _Requirements: 10.2, 10.8_
 
-  - [ ] 9.7 Write unit tests for GET /api/rooms/poll and GET /api/rooms/public routes
+  - [x] 9.7 Write unit tests for GET /api/rooms/poll and GET /api/rooms/public routes
     - Test poll updates lastActivityAt, poll when not in room (404), public listing returns correct rooms
     - _Requirements: 9.1, 9.3, 9.4, 10.2, 10.8_
 
-- [ ] 10. Implement disconnection detection
-  - [ ] 10.1 Implement `processDisconnections` in `lib/lobby/disconnection.ts`
+- [x] 10. Implement disconnection detection
+  - [x] 10.1 Implement `processDisconnections` in `lib/lobby/disconnection.ts`
     - Accept `roomId`
     - Query all players in room where `lastActivityAt` is older than 10s from now
     - Mark those players as "disconnected", set `disconnectedAt`
@@ -217,39 +217,39 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - For rooms in "in-progress" status: disconnected players' turns will be skipped (handled by game engine)
     - _Requirements: 11.1, 11.5, 11.6, 6.5_
 
-  - [ ] 10.2 Implement reconnection logic in `pollState`
+  - [x] 10.2 Implement reconnection logic in `pollState`
     - When a disconnected player polls, restore their status to "connected", clear `disconnectedAt`
     - _Requirements: 11.3_
 
-  - [ ] 10.3 Implement `checkAbandonedRooms` in `lib/lobby/disconnection.ts`
+  - [x] 10.3 Implement `checkAbandonedRooms` in `lib/lobby/disconnection.ts`
     - Query rooms in "in-progress" where ALL players are disconnected and the earliest `disconnectedAt` is older than 60s
     - Set room status to "abandoned"
     - _Requirements: 11.7_
 
-  - [ ] 10.4 Implement forfeit logic for extended disconnection
+  - [x] 10.4 Implement forfeit logic for extended disconnection
     - In `processDisconnections`, check for players disconnected for more than 5 minutes in "in-progress" rooms
     - Permanently remove them (delete RoomPlayer, decrement playerCount)
     - _Requirements: 11.8_
 
-  - [ ] 10.5 Write property tests for disconnection detection
+  - [x] 10.5 Write property tests for disconnection detection
     - **Property 14: Disconnection detection and reconnection**
     - **Property 16: Room abandonment on total disconnection**
     - **Property 17: Forfeit on extended disconnection**
     - **Validates: Requirements 11.1, 11.3, 11.7, 11.8**
 
-- [ ] 11. Checkpoint - Commit polling and disconnection
+- [x] 11. Checkpoint - Commit polling and disconnection
   - Ensure all tests pass, ask the user if questions arise.
   - `git add -A && git commit -m "feat(lobby): polling, public rooms, and disconnection detection"`
 
-- [ ] 12. Implement client-side polling hook and lobby UI
-  - [ ] 12.1 Create `lib/hooks/use-lobby-poll.ts` custom hook
+- [x] 12. Implement client-side polling hook and lobby UI
+  - [x] 12.1 Create `lib/hooks/use-lobby-poll.ts` custom hook
     - Implement polling at 3–5s interval using `setInterval` + `fetch`
     - Return `{ state, error, isLoading }`
     - Clean up interval on unmount
     - Handle errors gracefully (retry on transient failures)
     - _Requirements: 9.1, 9.2_
 
-  - [ ] 12.2 Create lobby UI page at `app/lobby/[code]/page.tsx`
+  - [x] 12.2 Create lobby UI page at `app/lobby/[code]/page.tsx`
     - Display player list with readiness indicators
     - Show host badge
     - Display room code for sharing
@@ -260,52 +260,52 @@ Implement the full lobby system for Shadow Hunt — room creation, joining via c
     - Use Tailwind CSS for styling
     - _Requirements: 9.1, 5.2, 7.3, 6.3_
 
-  - [ ] 12.3 Create room creation UI component
+  - [x] 12.3 Create room creation UI component
     - Form with display name input and visibility toggle (public/private)
     - On submit, POST to /api/rooms and redirect to lobby page
     - _Requirements: 1.1, 10.1_
 
-  - [ ] 12.4 Create join room UI component
+  - [x] 12.4 Create join room UI component
     - Form with display name input and room code input
     - On submit, POST to /api/rooms/join and redirect to lobby page
     - Display validation errors from the API
     - _Requirements: 2.1_
 
-  - [ ] 12.5 Create public room browser component
+  - [x] 12.5 Create public room browser component
     - Poll GET /api/rooms/public at 5s interval
     - Display list of available rooms with host name, player count, and join button
     - _Requirements: 10.2, 10.8_
 
-- [ ] 13. Wire everything together and final integration
-  - [ ] 13.1 Create main page layout with create/join/browse options
+- [x] 13. Wire everything together and final integration
+  - [x] 13.1 Create main page layout with create/join/browse options
     - Update `app/page.tsx` to include navigation to create room, join by code, or browse public rooms
     - _Requirements: 1.1, 2.1, 10.2_
 
-  - [ ] 13.2 Add error handling and loading states across all UI components
+  - [x] 13.2 Add error handling and loading states across all UI components
     - Show appropriate error messages for all `LobbyErrorCode` values
     - Add loading spinners during API calls
     - _Requirements: All error handling requirements_
 
-  - [ ] 13.3 Write integration tests for full lobby flow
+  - [x] 13.3 Write integration tests for full lobby flow
     - Test create → join → ready → start flow end-to-end
     - Test host transfer on leave
     - Test concurrent join race condition
     - _Requirements: 1.1, 2.1, 5.2, 8.1, 6.1, 10.5, 10.6_
 
-- [ ] 14. Final checkpoint - Commit client UI and integration
+- [x] 14. Final checkpoint - Commit client UI and integration
   - Ensure all tests pass, ask the user if questions arise.
   - `git add -A && git commit -m "feat(lobby): client UI and final integration"`
 
-- [ ] 15. Create user test scenarios document
-  - [ ] 15.1 Create `docs/lobby-test-scenarios.md`
+- [x] 15. Create user test scenarios document
+  - [x] 15.1 Create `docs/lobby-test-scenarios.md`
     - Write step-by-step manual test scenarios a user can follow in the browser to verify the lobby works
     - Include a "Prerequisites" section explaining how to run the project locally
     - Scenarios should cover: create room, share code, join room, see players appear, toggle ready, start game, leave room, host transfer
     - Each scenario should have numbered steps with expected results
     - _Requirements: All (manual verification)_
 
-- [ ] 16. Create local development setup guide
-  - [ ] 16.1 Create `docs/LOCAL-SETUP.md`
+- [x] 16. Create local development setup guide
+  - [x] 16.1 Create `docs/LOCAL-SETUP.md`
     - Document: clone, install deps, set up .env with DATABASE_URL, run prisma migrate, run dev server
     - Include a troubleshooting section for common issues (Neon SSL, prisma generate, etc.)
     - _Requirements: Tech stack convention (developer onboarding)_
