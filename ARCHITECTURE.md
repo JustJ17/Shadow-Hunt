@@ -54,6 +54,6 @@ Each game system (lobby, movement, clue engine, win condition) gets its own spec
 
 ## Open Decisions / TODO
 - [ ] Final game name (working title: Shadow Circuit)
-- [ ] Exact private-clue-delivery mechanic (must not resemble the original inspiration's audio-device concept — see `docs/COMPLIANCE.md`)
+- [ ] Exact private-clue-delivery mechanic (Notebook — see game-design.md)
 - [ ] Player count supported (2–4 assumed)
 - [ ] Map layout (original, TBD)

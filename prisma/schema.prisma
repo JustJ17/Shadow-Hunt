@@ -11,3 +11,37 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Room {
+  id          String       @id @default(cuid())
+  code        String       @unique @db.VarChar(6)
+  status      String       @default("waiting") // "waiting" | "in-progress" | "abandoned"
+  visibility  String       @default("private") // "public" | "private"
+  playerCount Int          @default(0)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  players     RoomPlayer[]
+
+  @@index([status, visibility, playerCount]) // For public room listing query
+  @@index([code])
+}
+
+model RoomPlayer {
+  id             String    @id @default(cuid())
+  playerId       String // External player identifier (from auth or session)
+  displayName    String    @db.VarChar(30)
+  roomId         String
+  room           Room      @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  isHost         Boolean   @default(false)
+  readyState     String    @default("not-ready") // "ready" | "not-ready"
+  status         String    @default("connected") // "connected" | "disconnected"
+  turnPosition   Int? // Assigned on game start (1-based)
+  joinedAt       DateTime  @default(now())
+  lastActivityAt DateTime  @default(now())
+  disconnectedAt DateTime? // Set when status transitions to "disconnected"
+
+  @@unique([playerId, roomId])
+  @@unique([playerId]) // Single-room constraint: a player can only be in one room
+  @@index([roomId, status])
+  @@index([lastActivityAt])
+}

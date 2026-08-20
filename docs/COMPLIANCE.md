@@ -21,7 +21,7 @@ Pre-existing code reused: None
 - [ ] No secrets/API keys committed
 
 ## Reinvented mechanic notes
-The original inspiration's signature feature was a private per-player audio-clue device. Our version delivers private clues via: [TBD — decide before starting the clue-engine spec].
+The original inspiration's signature feature was a private per-player audio-clue device. Our version delivers private clues via: Private per-player Notebook — accumulates location/clue entries as you investigate. No audio device, no shared reveal.
 
 ## Third-party code
 [List as added]
