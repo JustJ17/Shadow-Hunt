@@ -48,7 +48,7 @@ export default function HomePage() {
           </button>
         </div>
 
-        <div className="bg-gray-850 rounded-lg p-6">
+        <div className="rounded-lg p-6">
           {activeTab === "create" && <CreateRoomForm />}
           {activeTab === "join" && <JoinRoomForm />}
           {activeTab === "browse" && <PublicRoomBrowser />}
