@@ -24,6 +24,12 @@ model Room {
   gameThreat  GameThreat?
   gameSpies   GameSpy[]
 
+  gameTurn        GameTurn?
+  playerPositions PlayerPosition[]
+  notebookEntries NotebookEntry[]
+  gameEvents      GameEvent[]
+  actionCards     ActionCard[]
+
   @@index([status, visibility, playerCount]) // For public room listing query
   @@index([code])
 }
@@ -44,12 +50,13 @@ model Location {
   regionId String
   isHub    Boolean @default(false)
 
-  region      Region       @relation("RegionLocations", fields: [regionId], references: [id])
-  hubOfRegion Region?      @relation("RegionHub")
-  adjacencyA  Adjacency[]  @relation("AdjacencyLocationA")
-  adjacencyB  Adjacency[]  @relation("AdjacencyLocationB")
-  gameThreat  GameThreat[]
-  gameSpies   GameSpy[]
+  region          Region           @relation("RegionLocations", fields: [regionId], references: [id])
+  hubOfRegion     Region?          @relation("RegionHub")
+  adjacencyA      Adjacency[]      @relation("AdjacencyLocationA")
+  adjacencyB      Adjacency[]      @relation("AdjacencyLocationB")
+  gameThreat      GameThreat[]
+  gameSpies       GameSpy[]
+  playerPositions PlayerPosition[]
 
   @@index([regionId])
   @@map("locations")
@@ -125,4 +132,83 @@ model RoomPlayer {
   @@unique([playerId]) // Single-room constraint: a player can only be in one room
   @@index([roomId, status])
   @@index([lastActivityAt])
+}
+
+
+model GameTurn {
+  id                 String  @id @default(cuid())
+  roomId             String  @unique
+  currentPlayerId    String
+  currentRound       Int     @default(1)
+  currentSlot        Int     @default(1) // 1 or 2
+  captureAttemptFlag Boolean @default(false)
+  version            Int     @default(0) // optimistic locking
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@map("game_turns")
+}
+
+model PlayerPosition {
+  id                        String  @id @default(cuid())
+  roomId                    String
+  playerId                  String
+  locationId                String
+  skipNextTurn              Boolean @default(false)
+  pendingRewardRegionId     String? // Region where spy was captured
+  pendingRewardCaptureOrder Int? // 1-6, determines reward tier
+
+  room     Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@unique([roomId, playerId])
+  @@index([roomId])
+  @@map("player_positions")
+}
+
+model NotebookEntry {
+  id          String   @id @default(cuid())
+  roomId      String
+  playerId    String
+  entryType   String // "spy-proximity" | "locator"
+  regionId    String? // For spy-proximity entries
+  roundNumber Int
+  stepsAway   Int? // For spy-proximity entries
+  payload     Json? // For locator entries (defined by Action Cards spec)
+  createdAt   DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, playerId])
+  @@map("notebook_entries")
+}
+
+model GameEvent {
+  id             String   @id @default(cuid())
+  roomId         String
+  sequenceNumber Int // Monotonically increasing per room
+  roundNumber    Int
+  type           String // "game-won" | "capture-failed" | "spy-captured-reward-collected" | "player-moved" | "card-used" | "player-skipped" | "turn-skipped"
+  payload        Json // Event-specific data
+  createdAt      DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@unique([roomId, sequenceNumber])
+  @@index([roomId, sequenceNumber])
+  @@map("game_events")
+}
+
+model ActionCard {
+  id        String   @id @default(cuid())
+  roomId    String
+  playerId  String
+  type      String // "locator" | "extra-move" | "reveal-region" | "peek-clue"
+  consumed  Boolean  @default(false)
+  grantedAt DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, playerId])
+  @@map("action_cards")
 }

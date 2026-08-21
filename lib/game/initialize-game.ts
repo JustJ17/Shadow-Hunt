@@ -5,6 +5,7 @@ import {
 } from "@/lib/game/types";
 import { placeMainThreat } from "@/lib/game/place-threat";
 import { placeSpyNpcs } from "@/lib/game/place-spies";
+import { assignStartingPositions } from "@/lib/turn-engine/player-positions";
 
 /**
  * Orchestrates game initialization: loads all locations grouped by region,
@@ -47,6 +48,28 @@ export async function initializeGame(
 
     // 4. Place one Spy NPC per region
     const spyPlacements = await placeSpyNpcs(roomId, regionLocations, tx);
+
+    // 5. Assign starting positions to players
+    const roomPlayers = await tx.roomPlayer.findMany({
+      where: { roomId, turnPosition: { not: null } },
+      orderBy: { turnPosition: "asc" },
+      select: { playerId: true },
+    });
+    const playerIds = roomPlayers.map((p) => p.playerId);
+
+    await assignStartingPositions(roomId, playerIds, tx);
+
+    // 6. Create initial turn state (first player in turn order starts)
+    await tx.gameTurn.create({
+      data: {
+        roomId,
+        currentPlayerId: playerIds[0],
+        currentRound: 1,
+        currentSlot: 1,
+        captureAttemptFlag: false,
+        version: 0,
+      },
+    });
 
     return {
       success: true,

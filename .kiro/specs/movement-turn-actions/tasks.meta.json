@@ -1,0 +1,724 @@
+{
+  "pbtResults": {
+    "3.2 Write property test for spy distance at `lib/turn-engine/__tests__/spy-distance.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787339364193
+    },
+    "2.4 Write property test for starting positions at `lib/turn-engine/__tests__/starting-positions.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787340512959
+    },
+    "4.6 Write property tests for move validation at `lib/turn-engine/__tests__/move-validation.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787346434512
+    },
+    "7.3 Write property tests for turn advancement at `lib/turn-engine/__tests__/turn-advance.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787347799709
+    },
+    "7.4 Write property tests for event feed at `lib/turn-engine/__tests__/event-feed.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787348172329
+    },
+    "6.4 Write property tests for capture resolution at `lib/turn-engine/__tests__/capture-resolution.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787348677669
+    },
+    "6.5 Write property tests for spy resolution at `lib/turn-engine/__tests__/spy-resolution.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787349327505
+    },
+    "8.3 Write property tests for state preservation and rejection at `lib/turn-engine/__tests__/state-preservation.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787354645035
+    },
+    "10.2 Write property test for information hiding at `lib/turn-engine/__tests__/information-hiding.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787355521676
+    }
+  },
+  "executionHistory": {
+    "1.1 Add GameTurn, PlayerPosition, NotebookEntry, GameEvent, and ActionCard models to `prisma/schema.prisma`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996235
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332009414
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332151809
+      }
+    ],
+    "1.2 Generate Prisma migration and regenerate client": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996339
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332155916
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332525430
+      }
+    ],
+    "2.1 Create turn engine types at `lib/turn-engine/types.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996537
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332530215
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787334692811
+      }
+    ],
+    "2.2 Create player position module at `lib/turn-engine/player-positions.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996621
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787334699521
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339383942
+      }
+    ],
+    "2.3 Extend `lib/game/initialize-game.ts` to call `assignStartingPositions` and `createInitialTurnState`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996706
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787334700373
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339479840
+      }
+    ],
+    "2.4 Write property test for starting positions at `lib/turn-engine/__tests__/starting-positions.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996804
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339485191
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340550341
+      }
+    ],
+    "3.1 Implement spy distance BFS at `lib/turn-engine/spy-distance.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331996891
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332531041
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787334693781
+      }
+    ],
+    "3.2 Write property test for spy distance at `lib/turn-engine/__tests__/spy-distance.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997031
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787334701294
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339384816
+      }
+    ],
+    "4.1 Implement action validation at `lib/turn-engine/validate-action.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997186
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339485926
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340548045
+      }
+    ],
+    "4.2 Implement MOVE executor at `lib/turn-engine/actions/execute-move.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997290
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339486787
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340553224
+      }
+    ],
+    "4.3 Implement SKIP executor at `lib/turn-engine/actions/execute-skip.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997381
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339487671
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340549599
+      }
+    ],
+    "4.4 Implement CAPTURE_ATTEMPT executor at `lib/turn-engine/actions/execute-capture-attempt.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997469
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339488384
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340548800
+      }
+    ],
+    "4.5 Implement USE_CARD executor at `lib/turn-engine/actions/execute-use-card.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997585
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340558457
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340669684
+      }
+    ],
+    "4.6 Write property tests for move validation at `lib/turn-engine/__tests__/move-validation.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997688
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340675004
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346475826
+      }
+    ],
+    "5. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331997804
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349373969
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787350696979
+      }
+    ],
+    "6.1 Implement capture resolution at `lib/turn-engine/resolution/resolve-capture.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998002
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340675699
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346475396
+      }
+    ],
+    "6.2 Implement spy/reward resolution at `lib/turn-engine/resolution/resolve-spy-reward.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998099
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340676537
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346476671
+      }
+    ],
+    "6.3 Implement end-of-turn orchestrator at `lib/turn-engine/resolution/resolve-end-of-turn.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998214
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346488438
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346686161
+      }
+    ],
+    "6.4 Write property tests for capture resolution at `lib/turn-engine/__tests__/capture-resolution.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998330
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346692155
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349364945
+      }
+    ],
+    "6.5 Write property tests for spy resolution at `lib/turn-engine/__tests__/spy-resolution.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998420
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346692952
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349365701
+      }
+    ],
+    "7.1 Implement turn advancement at `lib/turn-engine/advance-turn.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998534
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346489460
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346686768
+      }
+    ],
+    "7.2 Implement event feed helper at `lib/turn-engine/event-feed.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998660
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340679280
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346474351
+      }
+    ],
+    "7.3 Write property tests for turn advancement at `lib/turn-engine/__tests__/turn-advance.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998762
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346693764
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349366521
+      }
+    ],
+    "7.4 Write property tests for event feed at `lib/turn-engine/__tests__/event-feed.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998864
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346694831
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349367409
+      }
+    ],
+    "8.1 Implement main orchestrator at `lib/turn-engine/submit-action.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331998963
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349374620
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787350697816
+      }
+    ],
+    "8.2 Create `lib/turn-engine/index.ts` re-exporting public API": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999057
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349375400
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787350698675
+      }
+    ],
+    "8.3 Write property tests for state preservation and rejection at `lib/turn-engine/__tests__/state-preservation.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999166
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787350704973
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354673690
+      }
+    ],
+    "9. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999250
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354681110
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355804260
+      }
+    ],
+    "10.1 Implement polling query at `lib/turn-engine/query-turn-state.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999339
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787350705778
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354674578
+      }
+    ],
+    "10.2 Write property test for information hiding at `lib/turn-engine/__tests__/information-hiding.property.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999423
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354681791
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355803207
+      }
+    ],
+    "11.1 Implement action submission API at `app/api/game/[roomId]/action/route.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999489
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354682696
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355804950
+      }
+    ],
+    "11.2 Implement game state polling API at `app/api/game/[roomId]/state/route.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999604
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354683424
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355802522
+      }
+    ],
+    "11.3 Write integration tests for action API at `app/api/game/[roomId]/action/__tests__/action.route.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999697
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355810574
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787356032055
+      }
+    ],
+    "11.4 Write integration tests for polling API at `app/api/game/[roomId]/state/__tests__/state.route.test.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999788
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355811350
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787356032810
+      }
+    ],
+    "12.1 Implement notebook operations at `lib/turn-engine/notebook.ts`": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787331999914
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340679881
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346474065
+      }
+    ],
+    "13. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332000050
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787356038909
+      },
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787356187850
+      }
+    ],
+    "1. Prisma schema additions and migration": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787332525525
+      }
+    ],
+    "3. Spy distance module": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787339384887
+      }
+    ],
+    "2. Turn engine types and core infrastructure": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787340550405
+      }
+    ],
+    "12. Notebook module": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346474644
+      }
+    ],
+    "4. Action validation and execution": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787346476025
+      }
+    ],
+    "6. End-of-turn resolution": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349366004
+      }
+    ],
+    "7. Turn advancement and event feed": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787349367749
+      }
+    ],
+    "8. Submit action orchestrator": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787354673760
+      }
+    ],
+    "10. Game state polling": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787355803261
+      }
+    ],
+    "11. API route handlers": [
+      {
+        "executionId": "9f5dfc6c-dfcd-4ead-a0d5-76d7cf99fa8c",
+        "chatSessionId": "sess_db804ef0-6a86-4989-aa4f-717899ac93ec",
+        "timestamp": 1787356032922
+      }
+    ]
+  }
+}
