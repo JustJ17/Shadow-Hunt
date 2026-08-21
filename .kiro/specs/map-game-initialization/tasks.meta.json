@@ -1,0 +1,461 @@
+{
+  "pbtResults": {
+    "2.3 Write property tests for seed idempotency and graph invariants at `lib/map/__tests__/graph-invariants.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787259414054
+    },
+    "6.6 Write property tests for game initialization at `lib/game/__tests__/initialize-game.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787262471165
+    },
+    "6.7 Write property test for spy capture at `lib/game/__tests__/spy-capture.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787266926254
+    }
+  },
+  "executionHistory": {
+    "1.1 Add Region, Location, Adjacency, GameThreat, and GameSpy models to `prisma/schema.prisma`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243239776
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243250011
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243458439
+      }
+    ],
+    "1.2 Generate Prisma migration and regenerate client": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243239853
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243466798
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253700373
+      }
+    ],
+    "2.1 Create shared map types at `lib/map/types.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243239926
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253704865
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253820930
+      }
+    ],
+    "2.2 Create the Prisma seed script at `prisma/seed.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243239995
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253830828
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787258845642
+      }
+    ],
+    "2.3 Write property tests for seed idempotency and graph invariants at `lib/map/__tests__/graph-invariants.property.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240065
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787258850324
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259435913
+      }
+    ],
+    "3.1 Implement adjacency query module at `lib/map/adjacency.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240193
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787258851065
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259436710
+      }
+    ],
+    "3.2 Implement region query module at `lib/map/regions.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240274
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787258851900
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259437477
+      }
+    ],
+    "3.3 Implement distance matrix module at `lib/map/distance.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240341
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259448130
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259601735
+      }
+    ],
+    "3.4 Write property tests for adjacency and distance at `lib/map/__tests__/adjacency.property.test.ts` and `lib/map/__tests__/distance.property.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240407
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259606557
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261119763
+      }
+    ],
+    "4. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240485
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267276697
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267590442
+      }
+    ],
+    "5.1 Implement `lib/map/get-map-data.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240588
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259607336
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261120367
+      }
+    ],
+    "5.2 Implement map API route at `app/api/map/route.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240652
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261128830
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261249016
+      }
+    ],
+    "5.3 Write integration test for map API at `app/api/map/__tests__/map.route.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240713
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261259235
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262096592
+      }
+    ],
+    "6.1 Create game types at `lib/game/types.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240780
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253705988
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253821676
+      }
+    ],
+    "6.2 Implement `lib/game/place-threat.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240843
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261129427
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261249772
+      }
+    ],
+    "6.3 Implement `lib/game/place-spies.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243240906
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261130229
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261250346
+      }
+    ],
+    "6.4 Implement `lib/game/initialize-game.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241021
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261260014
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262097225
+      }
+    ],
+    "6.5 Implement `lib/game/query-game-state.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241091
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262106153
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262494265
+      }
+    ],
+    "6.6 Write property tests for game initialization at `lib/game/__tests__/initialize-game.property.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241174
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262106914
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262495047
+      }
+    ],
+    "6.7 Write property test for spy capture at `lib/game/__tests__/spy-capture.property.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241247
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262504299
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787266702524
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787266992231
+      }
+    ],
+    "7.1 Integrate `initializeGame` into `lib/lobby/start-game.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241321
+      },
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262505002
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787266703480
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787266993138
+      }
+    ],
+    "7.2 Write integration test for startGame with game initialization at `lib/lobby/__tests__/start-game-init.test.ts`": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241378
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267003935
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267268234
+      }
+    ],
+    "8. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787243241437
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267594567
+      },
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787269361769
+      }
+    ],
+    "1. Prisma schema additions and migration": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787253700454
+      }
+    ],
+    "2. Map engine types and seed script": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787259436083
+      }
+    ],
+    "3. Map query modules": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787261119857
+      }
+    ],
+    "5. Map API and full map data": [
+      {
+        "executionId": "63fafdf6-e4f8-4262-8efc-f947d9776edc",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787262096689
+      }
+    ],
+    "6. Game initialization logic": [
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787266994126
+      }
+    ],
+    "7. Integration with lobby startGame": [
+      {
+        "executionId": "5cae2da7-71ad-4fdc-9eea-92dc775b4485",
+        "chatSessionId": "sess_96d0a92e-23c0-49c5-8f9a-162ddfa8ff17",
+        "timestamp": 1787267268432
+      }
+    ]
+  }
+}

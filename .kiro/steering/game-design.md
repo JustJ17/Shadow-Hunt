@@ -7,8 +7,18 @@ A turn-based, hidden-information deduction game for 2–4 players. A Main Threat
 
 ## Map
 - The world is divided into Regions (working default: 6), each containing several Locations (working default: 6–10 each, ~40 total for MVP).
-- Fictional place names — not real-world cities — to keep the map fully original.
-- [TBD: finalize exact region/location list and names before the Movement spec]
+
+Europe (8): London (Hub), Paris, Berlin, Rome, Madrid, Vienna, Warsaw, Athens
+
+Asia (8): Tokyo (Hub), Beijing, Seoul, Bangkok, New Delhi, Jakarta, Manila, Hanoi
+
+Africa (9): Cairo (Hub), Nairobi, Lagos, Pretoria, Accra, Addis Ababa, Casablanca, Dar es Salaam, Cape Town
+
+North America (6): Washington D.C. (Hub), Ottawa, Mexico City, Havana, Panama City, Toronto
+
+South America (5): Brasília (Hub), Buenos Aires, Lima, Bogotá, Santiago
+
+Oceania (4): Canberra (Hub), Wellington, Suva, Auckland
 
 ## Players & Roles
 - 2–4 human players, all racing individually to be first to capture the Main Threat (not team vs. team in the base mode).
@@ -27,12 +37,12 @@ A turn-based, hidden-information deduction game for 2–4 players. A Main Threat
 ## The Notebook (private clue delivery)
 - Each player has a private, persistent Notebook — an ordered list of entries, one per Investigate action.
 - Each entry records: the location investigated, the round number, and the clue received.
-- Clue content (MVP default): a "proximity tier" relative to the Main Threat's true location — Very Close / Close / Far / Very Far, based on distance between the investigated location and the true one. (Alternative on the table: elimination-style "not in Region X" clues — easy to swap if proximity tiers feel too strong or too weak once playtested.)
+- Clue content (MVP default): the exact number of steps (shortest-path distance) between the investigated location and the true location of the Main Threat. One step is one Move along a single map connection. The map diameter is 6, so the clue is always an integer from 0 to 6. (Alternative on the table: elimination-style region clues, easy to swap if exact step counts feel too strong or too weak once playtested.)
 - The Notebook is never shared with other players. It is each player's own hidden-information tool, and the sole channel through which they learn anything about the target's location.
 
 ## Action Cards
 - Earned only by confronting a Spy NPC.
-- One-time-use special abilities. MVP starter set (expand later if time allows): Reveal Region (narrows the Main Threat to one region), Extra Move (take two actions this turn), Peek Clue (see another location's proximity tier without spending a turn there).
+- One-time-use special abilities. MVP starter set (expand later if time allows): Reveal Region (narrows the Main Threat to one region), Extra Move (take two actions this turn), Peek Clue (see another location's step count without spending a turn there).
 - [TBD: finalize exact card list and effects before implementing this subsystem]
 
 ## Stretch Mode — Mode B: Moving Target

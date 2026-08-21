@@ -24,6 +24,14 @@ vi.mock("@/lib/lobby/room-code", () => ({
   generateRoomCode: vi.fn().mockResolvedValue("ABC123"),
 }));
 
+vi.mock("@/lib/game/initialize-game", () => ({
+  initializeGame: vi.fn().mockResolvedValue({
+    success: true,
+    threatLocationId: "mock-location-id",
+    spyPlacements: [],
+  }),
+}));
+
 import { createRoom } from "../create-room";
 import { joinRoom } from "../join-room";
 import { toggleReady } from "../toggle-ready";

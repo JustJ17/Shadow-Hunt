@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { StartGameResult, LobbyError } from "@/lib/lobby/types";
+import { initializeGame } from "@/lib/game/initialize-game";
 
 /**
  * Fisher-Yates shuffle algorithm.
@@ -99,6 +100,12 @@ export async function startGame(params: {
         },
         data: { turnPosition: assignment.position },
       });
+    }
+
+    // Initialize game state (place Main Threat + Spy NPCs)
+    const gameResult = await initializeGame(membership.room.id, tx);
+    if (!gameResult.success) {
+      throw new Error(gameResult.error);
     }
   });
 

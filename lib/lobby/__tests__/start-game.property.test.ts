@@ -9,6 +9,14 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
+vi.mock("@/lib/game/initialize-game", () => ({
+  initializeGame: vi.fn().mockResolvedValue({
+    success: true,
+    threatLocationId: "mock-location-id",
+    spyPlacements: [],
+  }),
+}));
+
 import { startGame } from "../start-game";
 import { prisma } from "@/lib/prisma";
 

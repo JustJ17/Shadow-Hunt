@@ -21,9 +21,83 @@ model Room {
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
   players     RoomPlayer[]
+  gameThreat  GameThreat?
+  gameSpies   GameSpy[]
 
   @@index([status, visibility, playerCount]) // For public room listing query
   @@index([code])
+}
+
+model Region {
+  id            String     @id @default(cuid())
+  name          String     @unique
+  hubLocationId String?    @unique // Set after Location is created
+  hubLocation   Location?  @relation("RegionHub", fields: [hubLocationId], references: [id])
+  locations     Location[] @relation("RegionLocations")
+
+  @@map("regions")
+}
+
+model Location {
+  id       String  @id @default(cuid())
+  name     String  @unique
+  regionId String
+  isHub    Boolean @default(false)
+
+  region      Region      @relation("RegionLocations", fields: [regionId], references: [id])
+  hubOfRegion Region?     @relation("RegionHub")
+  adjacencyA  Adjacency[] @relation("AdjacencyLocationA")
+  adjacencyB  Adjacency[] @relation("AdjacencyLocationB")
+  gameThreat  GameThreat[]
+  gameSpies   GameSpy[]
+
+  @@index([regionId])
+  @@map("locations")
+}
+
+model Adjacency {
+  id           String  @id @default(cuid())
+  locationAId  String
+  locationBId  String
+  isSameRegion Boolean
+
+  locationA Location @relation("AdjacencyLocationA", fields: [locationAId], references: [id], onDelete: Cascade)
+  locationB Location @relation("AdjacencyLocationB", fields: [locationBId], references: [id], onDelete: Cascade)
+
+  // Canonical ordering: locationAId < locationBId (enforced in application + check constraint)
+  @@unique([locationAId, locationBId])
+  @@index([locationAId])
+  @@index([locationBId])
+  @@map("adjacencies")
+}
+
+model GameThreat {
+  id         String   @id @default(cuid())
+  roomId     String   @unique // One threat per game session
+  locationId String
+  createdAt  DateTime @default(now())
+
+  room     Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@map("game_threats")
+}
+
+model GameSpy {
+  id                 String   @id @default(cuid())
+  roomId             String
+  regionId           String
+  locationId         String
+  captured           Boolean  @default(false)
+  capturedByPlayerId String?
+  createdAt          DateTime @default(now())
+
+  room     Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@unique([roomId, regionId]) // One spy per region per game
+  @@index([roomId])
+  @@map("game_spies")
 }
 
 model RoomPlayer {

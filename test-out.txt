@@ -1,0 +1,230 @@
+EXIT:1
+STDOUT:
+
+ RUN  v4.1.11 d:/Projects/Shadow-Hunt
+
+ ❯ lib/auth/__tests__/player-session.test.ts (0 test)
+ ❯ lib/lobby/__tests__/create-room.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/error-messages.test.ts (0 test)
+ ❯ lib/lobby/__tests__/list-public-rooms.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/integration.test.ts (0 test)
+ ❯ lib/lobby/__tests__/join-room.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/poll-state.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/leave-room.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/disconnection.property.test.ts (0 test)
+ ❯ lib/game/__tests__/initialize-game.property.test.ts (0 test)
+ ❯ lib/game/__tests__/spy-capture.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/room-code.test.ts (0 test)
+ ❯ lib/lobby/__tests__/start-game-init.test.ts (0 test)
+ ❯ lib/lobby/__tests__/toggle-ready.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/start-game.property.test.ts (0 test)
+ ❯ lib/lobby/__tests__/room-code.property.test.ts (0 test)
+ ❯ lib/map/__tests__/distance.property.test.ts (0 test)
+ ❯ lib/map/__tests__/graph-invariants.property.test.ts (0 test)
+ ❯ lib/map/__tests__/adjacency.property.test.ts (0 test)
+ ❯ app/api/rooms/join/__tests__/route.test.ts (0 test)
+ ❯ app/api/rooms/__tests__/route.test.ts (0 test)
+ ❯ app/api/rooms/poll/__tests__/route.test.ts (0 test)
+ ❯ app/api/rooms/leave/__tests__/route.test.ts (0 test)
+ ❯ app/api/rooms/ready/__tests__/route.test.ts (0 test)
+ ❯ app/api/map/__tests__/map.route.test.ts (0 test)
+ ❯ app/api/rooms/start/__tests__/route.test.ts (0 test)
+ ❯ app/api/rooms/public/__tests__/route.test.ts (0 test)
+
+ Test Files  27 failed (27)
+      Tests  no tests
+   Start at  02:11:40
+   Duration  4.58s (transform 8.87s, setup 0ms, import 0ms, tests 0ms, environment 8ms)
+
+
+STDERR:
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 27 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  lib/auth/__tests__/player-session.test.ts [ lib/auth/__tests__/player-session.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/auth/__tests__/player-session.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/27]⎯
+
+ FAIL  lib/game/__tests__/initialize-game.property.test.ts [ lib/game/__tests__/initialize-game.property.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ lib/game/__tests__/initialize-game.property.test.ts:29:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/27]⎯
+
+ FAIL  lib/game/__tests__/spy-capture.property.test.ts [ lib/game/__tests__/spy-capture.property.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ lib/game/__tests__/spy-capture.property.test.ts:13:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/27]⎯
+
+ FAIL  lib/lobby/__tests__/create-room.property.test.ts [ lib/lobby/__tests__/create-room.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/create-room.property.test.ts:31:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/27]⎯
+
+ FAIL  lib/lobby/__tests__/disconnection.property.test.ts [ lib/lobby/__tests__/disconnection.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/disconnection.property.test.ts:83:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/27]⎯
+
+ FAIL  lib/lobby/__tests__/error-messages.test.ts [ lib/lobby/__tests__/error-messages.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/error-messages.test.ts:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/27]⎯
+
+ FAIL  lib/lobby/__tests__/integration.test.ts [ lib/lobby/__tests__/integration.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/integration.test.ts:52:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/27]⎯
+
+ FAIL  lib/lobby/__tests__/join-room.property.test.ts [ lib/lobby/__tests__/join-room.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/join-room.property.test.ts:45:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/27]⎯
+
+ FAIL  lib/lobby/__tests__/leave-room.property.test.ts [ lib/lobby/__tests__/leave-room.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/leave-room.property.test.ts:56:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/27]⎯
+
+ FAIL  lib/lobby/__tests__/list-public-rooms.property.test.ts [ lib/lobby/__tests__/list-public-rooms.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/list-public-rooms.property.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/27]⎯
+
+ FAIL  lib/lobby/__tests__/poll-state.property.test.ts [ lib/lobby/__tests__/poll-state.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/poll-state.property.test.ts:65:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/27]⎯
+
+ FAIL  lib/lobby/__tests__/room-code.property.test.ts [ lib/lobby/__tests__/room-code.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/room-code.property.test.ts:18:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/27]⎯
+
+ FAIL  lib/lobby/__tests__/room-code.test.ts [ lib/lobby/__tests__/room-code.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/room-code.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/27]⎯
+
+ FAIL  lib/lobby/__tests__/start-game-init.test.ts [ lib/lobby/__tests__/start-game-init.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/start-game-init.test.ts:19:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/27]⎯
+
+ FAIL  lib/lobby/__tests__/start-game.property.test.ts [ lib/lobby/__tests__/start-game.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/start-game.property.test.ts:52:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/27]⎯
+
+ FAIL  lib/lobby/__tests__/toggle-ready.property.test.ts [ lib/lobby/__tests__/toggle-ready.property.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/lobby/__tests__/toggle-ready.property.test.ts:25:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/27]⎯
+
+ FAIL  lib/map/__tests__/adjacency.property.test.ts [ lib/map/__tests__/adjacency.property.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ lib/map/__tests__/adjacency.property.test.ts:31:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/27]⎯
+
+ FAIL  lib/map/__tests__/distance.property.test.ts [ lib/map/__tests__/distance.property.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ lib/map/__tests__/distance.property.test.ts:62:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/27]⎯
+
+ FAIL  lib/map/__tests__/graph-invariants.property.test.ts [ lib/map/__tests__/graph-invariants.property.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ lib/map/__tests__/graph-invariants.property.test.ts:31:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/27]⎯
+
+ FAIL  app/api/map/__tests__/map.route.test.ts [ app/api/map/__tests__/map.route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/map/__tests__/map.route.test.ts:8:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/27]⎯
+
+ FAIL  app/api/rooms/__tests__/route.test.ts [ app/api/rooms/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/__tests__/route.test.ts:19:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/27]⎯
+
+ FAIL  app/api/rooms/join/__tests__/route.test.ts [ app/api/rooms/join/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/join/__tests__/route.test.ts:19:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/27]⎯
+
+ FAIL  app/api/rooms/poll/__tests__/route.test.ts [ app/api/rooms/poll/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/poll/__tests__/route.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/27]⎯
+
+ FAIL  app/api/rooms/leave/__tests__/route.test.ts [ app/api/rooms/leave/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/leave/__tests__/route.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/27]⎯
+
+ FAIL  app/api/rooms/ready/__tests__/route.test.ts [ app/api/rooms/ready/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/ready/__tests__/route.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/27]⎯
+
+ FAIL  app/api/rooms/start/__tests__/route.test.ts [ app/api/rooms/start/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/start/__tests__/route.test.ts:16:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/27]⎯
+
+ FAIL  app/api/rooms/public/__tests__/route.test.ts [ app/api/rooms/public/__tests__/route.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ app/api/rooms/public/__tests__/route.test.ts:12:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/27]⎯
+

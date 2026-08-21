@@ -56,4 +56,4 @@ Each game system (lobby, movement, clue engine, win condition) gets its own spec
 - [ ] Final game name (working title: Shadow Circuit)
 - [ ] Exact private-clue-delivery mechanic (Notebook — see game-design.md)
 - [ ] Player count supported (2–4 assumed)
-- [ ] Map layout (original, TBD)
+- [done] Map layout (original, TBD)
