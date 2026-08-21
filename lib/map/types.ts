@@ -1,3 +1,5 @@
+export type TransportType = "plane" | "car" | "boat";
+
 export interface Region {
   id: string;
   name: string;
@@ -16,6 +18,7 @@ export interface AdjacencyEdge {
   locationAId: string;
   locationBId: string;
   isSameRegion: boolean;
+  transport: TransportType;
 }
 
 export interface RegionWithLocations extends Region {
@@ -30,5 +33,5 @@ export interface MapData {
 export interface AdjacencyListEntry {
   locationId: string;
   adjacentLocationIds: string[];
-  edges: { targetLocationId: string; isSameRegion: boolean }[];
+  edges: { targetLocationId: string; isSameRegion: boolean; transport: TransportType }[];
 }

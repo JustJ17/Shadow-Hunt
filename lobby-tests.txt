@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 d:/Projects/Shadow-Hunt
+
+
+ Test Files  3 passed (3)
+      Tests  17 passed (17)
+   Start at  15:51:42
+   Duration  808ms (transform 198ms, setup 174ms, import 220ms, tests 44ms, environment 1ms)
+

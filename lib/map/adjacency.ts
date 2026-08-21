@@ -1,14 +1,22 @@
 import { prisma } from "@/lib/prisma";
-import type { AdjacencyEdge, Location } from "@/lib/map/types";
+import type { AdjacencyEdge, TransportType } from "@/lib/map/types";
+
+export interface AdjacentLocationWithTransport {
+  id: string;
+  name: string;
+  regionId: string;
+  isHub: boolean;
+  transport: TransportType;
+  isSameRegion: boolean;
+}
 
 /**
- * Returns all locations adjacent to the given location.
- * Queries both directions of the canonical edge ordering
- * (locationAId < locationBId) to find all neighbors.
+ * Returns all locations adjacent to the given location, including
+ * transport type and isSameRegion for each connecting edge.
  */
 export async function getAdjacentLocations(
   locationId: string
-): Promise<Location[]> {
+): Promise<AdjacentLocationWithTransport[]> {
   const edges = await prisma.adjacency.findMany({
     where: {
       OR: [{ locationAId: locationId }, { locationBId: locationId }],
@@ -27,12 +35,14 @@ export async function getAdjacentLocations(
       name: neighbor.name,
       regionId: neighbor.regionId,
       isHub: neighbor.isHub,
+      transport: edge.transport as TransportType,
+      isSameRegion: edge.isSameRegion,
     };
   });
 }
 
 /**
- * Returns all 72 adjacency edges in the map.
+ * Returns all 72 adjacency edges in the map, including transport type.
  */
 export async function getAllAdjacencyEdges(): Promise<AdjacencyEdge[]> {
   const edges = await prisma.adjacency.findMany();
@@ -42,5 +52,6 @@ export async function getAllAdjacencyEdges(): Promise<AdjacencyEdge[]> {
     locationAId: edge.locationAId,
     locationBId: edge.locationBId,
     isSameRegion: edge.isSameRegion,
+    transport: edge.transport as TransportType,
   }));
 }

@@ -4,8 +4,6 @@
 // Feature: map-game-initialization, Property 3: Minimum adjacency degree
 // Feature: map-game-initialization, Property 6: Full graph connectivity
 
-import "dotenv/config";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import fc from "fast-check";
 import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -15,6 +13,7 @@ interface Edge {
   locationAId: string;
   locationBId: string;
   isSameRegion: boolean;
+  transport: string;
 }
 
 interface LocationRecord {
@@ -28,23 +27,22 @@ let allEdges: Edge[] = [];
 let allLocations: LocationRecord[] = [];
 let prisma: PrismaClient;
 
-beforeAll(async () => {
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not set");
-  }
-  const adapter = new PrismaPg({ connectionString });
-  prisma = new PrismaClient({ adapter });
-
-  allEdges = await prisma.adjacency.findMany();
-  allLocations = await prisma.location.findMany();
-}, 30000);
-
-afterAll(async () => {
-  await prisma.$disconnect();
-});
-
 describe("Graph Invariants Property Tests", () => {
+  beforeAll(async () => {
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+      throw new Error("DATABASE_URL environment variable is not set");
+    }
+    const adapter = new PrismaPg({ connectionString });
+    prisma = new PrismaClient({ adapter });
+
+    allEdges = await prisma.adjacency.findMany();
+    allLocations = await prisma.location.findMany();
+  }, 30000);
+
+  afterAll(async () => {
+    await prisma.$disconnect();
+  });
   // **Validates: Requirements 1.3, 1.6, 1.7, 4.1, 4.3, 11.4, 11.5, 11.6**
 
   describe("Property 12: Seed idempotency", () => {

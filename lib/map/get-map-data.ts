@@ -3,6 +3,7 @@ import type {
   MapData,
   RegionWithLocations,
   AdjacencyListEntry,
+  TransportType,
 } from "@/lib/map/types";
 
 /**
@@ -45,7 +46,11 @@ export async function getFullMapData(): Promise<MapData> {
     const edges = relevantEdges.map((edge) => {
       const targetLocationId =
         edge.locationAId === locationId ? edge.locationBId : edge.locationAId;
-      return { targetLocationId, isSameRegion: edge.isSameRegion };
+      return {
+        targetLocationId,
+        isSameRegion: edge.isSameRegion,
+        transport: edge.transport as TransportType,
+      };
     });
 
     const adjacentLocationIds = edges.map((e) => e.targetLocationId);

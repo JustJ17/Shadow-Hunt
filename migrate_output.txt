@@ -1,7 +1,0 @@
-Loaded Prisma config from prisma.config.ts.
-
-Prisma schema loaded from prisma\schema.prisma.
-Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-fragrant-sound-zaukk8ui-pooler.c-2.eu-west-2.aws.neon.tech"
-
-Already in sync, no schema change or pending migration was found.
-

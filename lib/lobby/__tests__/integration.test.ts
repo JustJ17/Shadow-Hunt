@@ -1,4 +1,3 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
 
 // Mock prisma for the entire integration
 vi.mock("@/lib/prisma", () => ({

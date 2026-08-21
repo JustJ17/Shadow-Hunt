@@ -5,8 +5,6 @@
  * Tests the full flow of startGame creating GameThreat and GameSpy records,
  * and that calling startGame twice returns an error without duplicate state.
  */
-import "dotenv/config";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { startGame } from "@/lib/lobby/start-game";

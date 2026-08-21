@@ -2,8 +2,6 @@
 // Feature: map-game-initialization, Property 8: Distance range bounded by diameter
 // Feature: map-game-initialization, Property 9: Unique distance vectors
 
-import "dotenv/config";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import fc from "fast-check";
 import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -59,24 +57,24 @@ function independentBfs(
   return distances;
 }
 
-beforeAll(async () => {
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not set");
-  }
-  const adapter = new PrismaPg({ connectionString });
-  prisma = new PrismaClient({ adapter });
-
-  allEdges = await prisma.adjacency.findMany();
-  allLocations = await prisma.location.findMany();
-}, 30000);
-
-afterAll(async () => {
-  await prisma.$disconnect();
-});
-
 describe("Distance Property Tests", () => {
   // **Validates: Requirements 5.3, 5.4, 5.6, 5.7, 11.8**
+
+  beforeAll(async () => {
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+      throw new Error("DATABASE_URL environment variable is not set");
+    }
+    const adapter = new PrismaPg({ connectionString });
+    prisma = new PrismaClient({ adapter });
+
+    allEdges = await prisma.adjacency.findMany();
+    allLocations = await prisma.location.findMany();
+  }, 30000);
+
+  afterAll(async () => {
+    await prisma.$disconnect();
+  });
 
   describe("Property 7: Shortest-path distance correctness", () => {
     // Feature: map-game-initialization, Property 7: Shortest-path distance correctness

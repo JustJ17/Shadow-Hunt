@@ -3,8 +3,6 @@
 // Feature: map-game-initialization, Property 5: Region subgraph connectivity
 // Feature: map-game-initialization, Property 11: isSameRegion flag correctness
 
-import "dotenv/config";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import fc from "fast-check";
 import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -15,6 +13,7 @@ interface Edge {
   locationAId: string;
   locationBId: string;
   isSameRegion: boolean;
+  transport: string;
 }
 
 interface LocationRecord {
@@ -28,24 +27,24 @@ let allEdges: Edge[] = [];
 let allLocations: LocationRecord[] = [];
 let prisma: PrismaClient;
 
-beforeAll(async () => {
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not set");
-  }
-  const adapter = new PrismaPg({ connectionString });
-  prisma = new PrismaClient({ adapter });
-
-  allEdges = await prisma.adjacency.findMany();
-  allLocations = await prisma.location.findMany();
-}, 30000);
-
-afterAll(async () => {
-  await prisma.$disconnect();
-});
-
 describe("Adjacency Property Tests", () => {
   // **Validates: Requirements 1.4, 2.8, 2.9, 2.10, 3.19, 5.1, 10.3**
+
+  beforeAll(async () => {
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+      throw new Error("DATABASE_URL environment variable is not set");
+    }
+    const adapter = new PrismaPg({ connectionString });
+    prisma = new PrismaClient({ adapter });
+
+    allEdges = await prisma.adjacency.findMany();
+    allLocations = await prisma.location.findMany();
+  }, 30000);
+
+  afterAll(async () => {
+    await prisma.$disconnect();
+  });
 
   describe("Property 1: Adjacency bidirectionality", () => {
     // Feature: map-game-initialization, Property 1: Adjacency bidirectionality

@@ -1,4 +1,3 @@
-import { describe, it, expect } from "vitest";
 import { getOrCreatePlayerId, playerIdCookieHeader } from "../player-session";
 
 describe("getOrCreatePlayerId", () => {

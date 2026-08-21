@@ -1,7 +1,5 @@
 // Feature: map-game-initialization, Property 15: Spy capture records the captor
 
-import "dotenv/config";
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import fc from "fast-check";
 import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";

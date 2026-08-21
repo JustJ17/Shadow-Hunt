@@ -44,10 +44,10 @@ model Location {
   regionId String
   isHub    Boolean @default(false)
 
-  region      Region      @relation("RegionLocations", fields: [regionId], references: [id])
-  hubOfRegion Region?     @relation("RegionHub")
-  adjacencyA  Adjacency[] @relation("AdjacencyLocationA")
-  adjacencyB  Adjacency[] @relation("AdjacencyLocationB")
+  region      Region       @relation("RegionLocations", fields: [regionId], references: [id])
+  hubOfRegion Region?      @relation("RegionHub")
+  adjacencyA  Adjacency[]  @relation("AdjacencyLocationA")
+  adjacencyB  Adjacency[]  @relation("AdjacencyLocationB")
   gameThreat  GameThreat[]
   gameSpies   GameSpy[]
 
@@ -55,11 +55,18 @@ model Location {
   @@map("locations")
 }
 
+enum TransportType {
+  plane
+  car
+  boat
+}
+
 model Adjacency {
-  id           String  @id @default(cuid())
+  id           String        @id @default(cuid())
   locationAId  String
   locationBId  String
   isSameRegion Boolean
+  transport    TransportType
 
   locationA Location @relation("AdjacencyLocationA", fields: [locationAId], references: [id], onDelete: Cascade)
   locationB Location @relation("AdjacencyLocationB", fields: [locationBId], references: [id], onDelete: Cascade)

@@ -1,5 +1,3 @@
-import "dotenv/config";
-import { describe, it, expect } from "vitest";
 import { GET } from "../route";
 import type { MapData } from "@/lib/map/types";
 
@@ -99,6 +97,45 @@ describe("GET /api/map", () => {
     for (const field of forbiddenFields) {
       expect(responseStr).not.toContain(field);
     }
+  });
+
+  it("adjacency entries include transport field with valid values", async () => {
+    const response = await GET();
+    const data: MapData = await response.json();
+
+    const validTransports = ["plane", "car", "boat"];
+
+    for (const entry of data.adjacency) {
+      for (const edge of entry.edges) {
+        expect(edge).toHaveProperty("transport");
+        expect(validTransports).toContain(edge.transport);
+      }
+    }
+  });
+
+  it("transport distribution matches expected counts", async () => {
+    const response = await GET();
+    const data: MapData = await response.json();
+
+    // Collect all edges (each appears twice — once per endpoint)
+    // To count unique edges, use a Set of sorted endpoint pairs
+    const uniqueEdges = new Map<string, string>();
+    for (const entry of data.adjacency) {
+      for (const edge of entry.edges) {
+        const key = [entry.locationId, edge.targetLocationId].sort().join("-");
+        uniqueEdges.set(key, edge.transport);
+      }
+    }
+
+    const counts = { plane: 0, car: 0, boat: 0 };
+    for (const transport of uniqueEdges.values()) {
+      counts[transport as keyof typeof counts]++;
+    }
+
+    expect(uniqueEdges.size).toBe(72);
+    expect(counts.plane).toBe(17);
+    expect(counts.car).toBe(34);
+    expect(counts.boat).toBe(21);
   });
 
   it("response includes Cache-Control header", async () => {

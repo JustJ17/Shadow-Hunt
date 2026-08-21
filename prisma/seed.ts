@@ -12,30 +12,30 @@ const MAP_DATA = {
   ],
   intraRegionEdges: [
     // Europe (14)
-    ["London", "Paris"], ["London", "Madrid"], ["London", "Berlin"], ["Paris", "Madrid"],
-    ["Paris", "Berlin"], ["Paris", "Rome"], ["Paris", "Vienna"], ["Berlin", "Warsaw"],
-    ["Berlin", "Vienna"], ["Warsaw", "Vienna"], ["Vienna", "Rome"], ["Vienna", "Athens"],
-    ["Rome", "Athens"], ["Rome", "Madrid"],
+    ["London", "Paris", "boat"], ["London", "Madrid", "boat"], ["London", "Berlin", "boat"], ["Paris", "Madrid", "car"],
+    ["Paris", "Berlin", "car"], ["Paris", "Rome", "car"], ["Paris", "Vienna", "car"], ["Berlin", "Warsaw", "car"],
+    ["Berlin", "Vienna", "car"], ["Warsaw", "Vienna", "car"], ["Vienna", "Rome", "car"], ["Vienna", "Athens", "car"],
+    ["Rome", "Athens", "boat"], ["Rome", "Madrid", "car"],
     // Asia (11)
-    ["Tokyo", "Seoul"], ["Tokyo", "Beijing"], ["Tokyo", "Manila"], ["Seoul", "Beijing"],
-    ["Beijing", "Hanoi"], ["Beijing", "New Delhi"], ["Hanoi", "Bangkok"], ["Hanoi", "Manila"],
-    ["Bangkok", "New Delhi"], ["Bangkok", "Jakarta"], ["Jakarta", "Manila"],
+    ["Tokyo", "Seoul", "boat"], ["Tokyo", "Beijing", "boat"], ["Tokyo", "Manila", "boat"], ["Seoul", "Beijing", "boat"],
+    ["Beijing", "Hanoi", "car"], ["Beijing", "New Delhi", "car"], ["Hanoi", "Bangkok", "car"], ["Hanoi", "Manila", "boat"],
+    ["Bangkok", "New Delhi", "car"], ["Bangkok", "Jakarta", "boat"], ["Jakarta", "Manila", "boat"],
     // Africa (11)
-    ["Cairo", "Addis Ababa"], ["Cairo", "Casablanca"], ["Cairo", "Nairobi"],
-    ["Casablanca", "Accra"], ["Accra", "Lagos"], ["Lagos", "Nairobi"],
-    ["Lagos", "Cape Town"], ["Addis Ababa", "Nairobi"], ["Nairobi", "Dar es Salaam"],
-    ["Dar es Salaam", "Pretoria"], ["Pretoria", "Cape Town"],
+    ["Cairo", "Addis Ababa", "car"], ["Cairo", "Casablanca", "car"], ["Cairo", "Nairobi", "car"],
+    ["Casablanca", "Accra", "boat"], ["Accra", "Lagos", "car"], ["Lagos", "Nairobi", "car"],
+    ["Lagos", "Cape Town", "boat"], ["Addis Ababa", "Nairobi", "car"], ["Nairobi", "Dar es Salaam", "car"],
+    ["Dar es Salaam", "Pretoria", "car"], ["Pretoria", "Cape Town", "car"],
     // North America (8)
-    ["Washington D.C.", "Toronto"], ["Washington D.C.", "Ottawa"], ["Washington D.C.", "Havana"],
-    ["Washington D.C.", "Mexico City"], ["Ottawa", "Toronto"], ["Havana", "Mexico City"],
-    ["Havana", "Panama City"], ["Mexico City", "Panama City"],
+    ["Washington D.C.", "Toronto", "car"], ["Washington D.C.", "Ottawa", "car"], ["Washington D.C.", "Havana", "boat"],
+    ["Washington D.C.", "Mexico City", "car"], ["Ottawa", "Toronto", "car"], ["Havana", "Mexico City", "boat"],
+    ["Havana", "Panama City", "boat"], ["Mexico City", "Panama City", "car"],
     // South America (6)
-    ["Brasília", "Bogotá"], ["Brasília", "Buenos Aires"], ["Brasília", "Lima"],
-    ["Bogotá", "Lima"], ["Lima", "Santiago"], ["Buenos Aires", "Santiago"],
+    ["Brasília", "Bogotá", "boat"], ["Brasília", "Buenos Aires", "car"], ["Brasília", "Lima", "car"],
+    ["Bogotá", "Lima", "car"], ["Lima", "Santiago", "car"], ["Buenos Aires", "Santiago", "car"],
     // Oceania (5)
-    ["Canberra", "Auckland"], ["Canberra", "Wellington"], ["Canberra", "Suva"],
-    ["Auckland", "Wellington"], ["Auckland", "Suva"],
-  ] as [string, string][],
+    ["Canberra", "Auckland", "boat"], ["Canberra", "Wellington", "boat"], ["Canberra", "Suva", "boat"],
+    ["Auckland", "Wellington", "car"], ["Auckland", "Suva", "boat"],
+  ] as [string, string, "car" | "boat"][],
   interRegionEdges: [
     // Hub-to-Hub (7)
     ["London", "Tokyo"], ["London", "Cairo"], ["London", "Washington D.C."],
@@ -99,7 +99,7 @@ async function main() {
       }
 
       // Step 4: Upsert intra-region adjacency edges (isSameRegion = true)
-      for (const [nameA, nameB] of MAP_DATA.intraRegionEdges) {
+      for (const [nameA, nameB, transportType] of MAP_DATA.intraRegionEdges) {
         const idA = locationRecords[nameA];
         const idB = locationRecords[nameB];
 
@@ -110,11 +110,12 @@ async function main() {
           where: {
             locationAId_locationBId: { locationAId, locationBId },
           },
-          update: { isSameRegion: true },
+          update: { isSameRegion: true, transport: transportType },
           create: {
             locationAId,
             locationBId,
             isSameRegion: true,
+            transport: transportType,
           },
         });
       }
@@ -131,11 +132,12 @@ async function main() {
           where: {
             locationAId_locationBId: { locationAId, locationBId },
           },
-          update: { isSameRegion: false },
+          update: { isSameRegion: false, transport: "plane" },
           create: {
             locationAId,
             locationBId,
             isSameRegion: false,
+            transport: "plane",
           },
         });
       }
