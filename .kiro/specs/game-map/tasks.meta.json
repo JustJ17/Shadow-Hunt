@@ -1,0 +1,323 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Add `latitude Float` and `longitude Float` fields to the `Location` model in `prisma/schema.prisma`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074263
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520082867
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520170694
+      }
+    ],
+    "1.2 Generate Prisma migration": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074340
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520174626
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520288405
+      }
+    ],
+    "1.3 Update seed script with coordinates for all 40 cities": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074403
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520292014
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520415040
+      }
+    ],
+    "1.4 Update `MapData` type and `getFullMapData` to include coordinates": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074483
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520419180
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520528265
+      }
+    ],
+    "2.1 Implement projection function at `lib/map/projection.ts`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074581
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520539373
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520577742
+      }
+    ],
+    "2.2 Write unit tests at `lib/map/__tests__/projection.test.ts`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074630
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520585475
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520710064
+      }
+    ],
+    "3.1 Implement `lib/hooks/use-map-data.ts`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074682
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520718808
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520842509
+      }
+    ],
+    "3.2 Write unit tests at `lib/hooks/__tests__/use-map-data.test.ts`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074731
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520850120
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521166232
+      }
+    ],
+    "4.1 Create `app/game/[roomId]/components/world-map.tsx`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074784
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521175179
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521276639
+      }
+    ],
+    "5.1 Create `app/game/[roomId]/components/route-layer.tsx`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074836
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521284760
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521560059
+      }
+    ],
+    "6.1 Create `app/game/[roomId]/components/city-markers.tsx`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074915
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521569021
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521852523
+      }
+    ],
+    "7.1 Create `app/game/[roomId]/components/player-tokens.tsx`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520074983
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521857633
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522199695
+      }
+    ],
+    "8.1 Create `app/game/[roomId]/components/map-viewport.tsx`": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520075033
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522208198
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522443289
+      }
+    ],
+    "8.2 Create on-screen zoom control buttons": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520075081
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522447776
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522666585
+      }
+    ],
+    "9.1 Update ARCHITECTURE.md": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520075134
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522671031
+      },
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522712473
+      }
+    ],
+    "1. Schema + Seed: Add coordinates to Location model": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520528327
+      }
+    ],
+    "2. Map Projection": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787520710165
+      }
+    ],
+    "3. Map Data Hook": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521166331
+      }
+    ],
+    "4. SVG World Map Component": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521276704
+      }
+    ],
+    "5. Route Rendering": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521560117
+      }
+    ],
+    "6. City Markers": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787521852634
+      }
+    ],
+    "7. Player Tokens": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522199747
+      }
+    ],
+    "8. Zoom/Pan (MapViewport)": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522666664
+      }
+    ],
+    "9. Documentation": [
+      {
+        "executionId": "2ae2a61b-6f2b-4063-9676-999766def2d3",
+        "chatSessionId": "sess_ee3d019b-e773-4d0f-a71d-eabe37114145",
+        "timestamp": 1787522712525
+      }
+    ]
+  }
+}

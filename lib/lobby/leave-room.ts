@@ -52,11 +52,11 @@ export async function leaveRoom(params: {
     }
 
     // Other players remain — transfer host to the earliest joiner
-    const earliestJoiner = otherPlayers.reduce((earliest: { joinedAt: Date; id: string }, player: { joinedAt: Date; id: string }) =>
+    const earliestJoiner = otherPlayers.reduce((earliest, player) =>
       player.joinedAt < earliest.joinedAt ? player : earliest
     );
 
-    await prisma.$transaction(async (tx: typeof prisma) => {
+    await prisma.$transaction(async (tx) => {
       // Remove the leaving host
       await tx.roomPlayer.delete({
         where: { id: membership.id },
@@ -94,7 +94,7 @@ export async function leaveRoom(params: {
   }
 
   // Case: Non-host leaving
-  await prisma.$transaction(async (tx: typeof prisma) => {
+  await prisma.$transaction(async (tx) => {
     // Remove the player
     await tx.roomPlayer.delete({
       where: { id: membership.id },

@@ -82,7 +82,7 @@ export async function startGame(params: {
   }));
 
   // In a transaction: update room status and assign turn positions
-  await prisma.$transaction(async (tx: typeof prisma) => {
+  await prisma.$transaction(async (tx) => {
     // Update room status to "in-progress"
     await tx.room.update({
       where: { id: membership.room.id },

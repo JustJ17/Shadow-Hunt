@@ -11,6 +11,8 @@ export interface Location {
   name: string;
   regionId: string;
   isHub: boolean;
+  latitude: number;
+  longitude: number;
 }
 
 export interface AdjacencyEdge {

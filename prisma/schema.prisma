@@ -49,10 +49,12 @@ model Region {
 }
 
 model Location {
-  id       String  @id @default(cuid())
-  name     String  @unique
-  regionId String
-  isHub    Boolean @default(false)
+  id        String  @id @default(cuid())
+  name      String  @unique
+  regionId  String
+  isHub     Boolean @default(false)
+  latitude  Float
+  longitude Float
 
   region          Region           @relation("RegionLocations", fields: [regionId], references: [id])
   hubOfRegion     Region?          @relation("RegionHub")

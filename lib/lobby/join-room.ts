@@ -72,7 +72,7 @@ export async function joinRoom(params: {
   }
 
   // In a transaction: add player, increment playerCount, reset existing players' readiness
-  const updatedRoom = await prisma.$transaction(async (tx: typeof prisma) => {
+  const updatedRoom = await prisma.$transaction(async (tx) => {
     // Create new player
     await tx.roomPlayer.create({
       data: {
@@ -131,6 +131,7 @@ export async function joinRoom(params: {
     success: true,
     state: {
       roomCode: updatedRoom.code,
+      roomId: updatedRoom.id,
       status: updatedRoom.status as "waiting" | "in-progress" | "abandoned",
       visibility: updatedRoom.visibility as "public" | "private",
       players,

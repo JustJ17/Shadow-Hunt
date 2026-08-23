@@ -22,6 +22,7 @@ describe("GET /api/rooms/poll", () => {
       success: true,
       state: {
         roomCode: "ABC123",
+        roomId: "room-uuid-123",
         status: "waiting",
         visibility: "public",
         hostId: "host-player-id",
@@ -57,6 +58,7 @@ describe("GET /api/rooms/poll", () => {
     expect(response.status).toBe(200);
     expect(body.success).toBe(true);
     expect(body.state.roomCode).toBe("ABC123");
+    expect(body.state.roomId).toBe("room-uuid-123");
     expect(body.state.players).toHaveLength(2);
   });
 

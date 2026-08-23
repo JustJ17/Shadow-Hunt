@@ -14,6 +14,7 @@ export interface LobbyPlayer {
 
 export interface LobbyState {
   roomCode: string;
+  roomId: string;
   status: RoomStatus;
   visibility: RoomVisibility;
   players: LobbyPlayer[];

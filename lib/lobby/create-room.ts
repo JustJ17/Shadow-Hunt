@@ -35,7 +35,7 @@ export async function createRoom(params: {
   const code = await generateRoomCode();
 
   // Create room and player in a transaction
-  const { room, player } = await prisma.$transaction(async (tx: typeof prisma) => {
+  const { room, player } = await prisma.$transaction(async (tx) => {
     const room = await tx.room.create({
       data: {
         code,
@@ -64,6 +64,7 @@ export async function createRoom(params: {
     roomCode: code,
     state: {
       roomCode: code,
+      roomId: room.id,
       status: "waiting",
       visibility,
       hostId: playerId,

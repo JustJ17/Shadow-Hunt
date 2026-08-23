@@ -1,0 +1,433 @@
+{
+  "pbtResults": {
+    "10.1 Integrate all hooks and components into `app/game/[roomId]/page.tsx`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787526700215
+    }
+  },
+  "executionHistory": {
+    "1.1 Create `lib/game-ui/error-messages.ts` with the `errorMessageFor` function": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220121
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523229105
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523446454
+      }
+    ],
+    "1.2 Write unit test for `errorMessageFor`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220185
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523462761
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523865597
+      }
+    ],
+    "2.1 Add `refetch` function to `lib/hooks/use-game-poll.ts`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220221
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523463533
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523866326
+      }
+    ],
+    "2.2 Write unit test for `refetch` behavior": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220255
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523872537
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525056663
+      }
+    ],
+    "3.1 Create `lib/hooks/use-submit-action.ts` implementing `useSubmitAction`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220291
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523873299
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525058922
+      }
+    ],
+    "3.2 Write unit tests for `useSubmitAction`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220331
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525217766
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525890613
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526165031
+      }
+    ],
+    "4. Checkpoint — Verify hooks compile and tests pass": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220406
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526753061
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787527284728
+      }
+    ],
+    "5.1 Create `lib/game-ui/legal-moves.ts` with `computeLegalMoves`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220447
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523229844
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523447001
+      }
+    ],
+    "5.2 Write unit tests for `computeLegalMoves`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220480
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523464238
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523867238
+      }
+    ],
+    "6.1 Update `app/game/[roomId]/components/city-markers.tsx` with move selection": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220512
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523874193
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525059219
+      }
+    ],
+    "6.2 Create `MoveFallbackList` component for compact viewports": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220547
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523874779
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525059632
+      }
+    ],
+    "7.1 Create `app/game/[roomId]/components/action-bar.tsx`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220599
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523875540
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525060486
+      }
+    ],
+    "7.2 Write unit tests for ActionBar": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220654
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525218010
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525891288
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526165838
+      }
+    ],
+    "8.1 Wire `onCardSelect` handler in game page": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220685
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525218207
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525891926
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526166356
+      }
+    ],
+    "9.1 Add `roomId` field to `LobbyState` interface in `lib/lobby/types.ts`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220731
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523230675
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523448012
+      }
+    ],
+    "9.2 Update lobby poll API to include `roomId` in response": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220811
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523465000
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523868044
+      }
+    ],
+    "9.3 Add redirect logic to `app/lobby/[code]/page.tsx`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220850
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525065760
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525211849
+      }
+    ],
+    "9.4 Write unit test for lobby navigation logic": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220885
+      },
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525218797
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525892657
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526167509
+      }
+    ],
+    "10.1 Integrate all hooks and components into `app/game/[roomId]/page.tsx`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220927
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526177350
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526743733
+      }
+    ],
+    "11. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523220964
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787527289555
+      },
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787527492261
+      }
+    ],
+    "1. Error message mapping module": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523865650
+      }
+    ],
+    "5. Legal-move computation utility": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787523867294
+      }
+    ],
+    "2. Extend `useGamePoll` with `refetch()`": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525058577
+      }
+    ],
+    "6. CityMarkers enhancement": [
+      {
+        "executionId": "86097971-ff95-492c-9413-e1c83926ca9c",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787525060230
+      }
+    ],
+    "3. Action submission hook": [
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526165115
+      }
+    ],
+    "7. ActionBar component": [
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526165972
+      }
+    ],
+    "8. Card play wiring": [
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526166437
+      }
+    ],
+    "9. Lobby-to-game navigation": [
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526167617
+      }
+    ],
+    "10. Page integration — wire hooks to game screen": [
+      {
+        "executionId": "0b05705c-3bf8-4255-a941-d22e8828eda8",
+        "chatSessionId": "sess_98b9c83b-c1c6-48bf-b3ed-742dd91c828b",
+        "timestamp": 1787526743822
+      }
+    ]
+  }
+}

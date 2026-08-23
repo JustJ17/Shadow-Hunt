@@ -24,7 +24,7 @@ let prisma: PrismaClient;
 let roomCounter = 0;
 
 function uniqueRoomCode(): string {
-  return `OLS${(++roomCounter).toString().padStart(5, "0")}`;
+  return `OLS${(++roomCounter).toString().padStart(3, "0")}`;
 }
 
 function uniquePlayerId(prefix: string, idx: number): string {

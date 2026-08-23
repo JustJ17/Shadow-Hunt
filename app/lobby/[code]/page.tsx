@@ -1,9 +1,25 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useLobbyPoll } from "@/lib/hooks/use-lobby-poll";
 
 export default function LobbyPage() {
+  const router = useRouter();
   const { state, error, isLoading } = useLobbyPoll();
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  useEffect(() => {
+    if (
+      state?.status === "in-progress" &&
+      state.roomId &&
+      state.roomId.length > 0 &&
+      !isNavigating
+    ) {
+      setIsNavigating(true);
+      router.push(`/game/${state.roomId}`);
+    }
+  }, [state, router, isNavigating]);
 
   const handleToggleReady = async () => {
     await fetch("/api/rooms/ready", { method: "POST" });
@@ -50,6 +66,15 @@ export default function LobbyPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
+      {isNavigating && (
+        <div className="fixed inset-0 bg-gray-900/80 flex items-center justify-center z-50">
+          <div className="flex flex-col items-center gap-3">
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-400 border-t-white" />
+            <p className="text-white text-lg">Entering game...</p>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-md mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Lobby</h1>
@@ -59,7 +84,7 @@ export default function LobbyPage() {
           </div>
         </div>
 
-        {state.status === "in-progress" && (
+        {state.status === "in-progress" && !isNavigating && (
           <div className="bg-green-900/50 border border-green-700 rounded-lg p-3 mb-4 text-center">
             <p className="text-green-300 font-semibold">Game in progress!</p>
           </div>
@@ -109,13 +134,15 @@ export default function LobbyPage() {
           <div className="flex gap-3">
             <button
               onClick={handleToggleReady}
-              className="flex-1 py-3 rounded-lg font-semibold bg-blue-600 hover:bg-blue-700 transition"
+              disabled={isNavigating}
+              className="flex-1 py-3 rounded-lg font-semibold bg-blue-600 hover:bg-blue-700 transition disabled:opacity-50 disabled:pointer-events-none"
             >
               Toggle Ready
             </button>
             <button
               onClick={handleLeave}
-              className="px-4 py-3 rounded-lg font-semibold bg-gray-700 hover:bg-gray-600 transition"
+              disabled={isNavigating}
+              className="px-4 py-3 rounded-lg font-semibold bg-gray-700 hover:bg-gray-600 transition disabled:opacity-50 disabled:pointer-events-none"
             >
               Leave
             </button>
@@ -125,7 +152,8 @@ export default function LobbyPage() {
         {canStart && (
           <button
             onClick={handleStartGame}
-            className="w-full mt-3 py-3 rounded-lg font-semibold bg-green-600 hover:bg-green-700 transition"
+            disabled={isNavigating}
+            className="w-full mt-3 py-3 rounded-lg font-semibold bg-green-600 hover:bg-green-700 transition disabled:opacity-50 disabled:pointer-events-none"
           >
             Start Game
           </button>

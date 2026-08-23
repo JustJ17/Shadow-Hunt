@@ -1,8 +1,16 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useCallback, useMemo } from "react";
 import { useGamePoll } from "@/lib/hooks/use-game-poll";
+import { useSubmitAction } from "@/lib/hooks/use-submit-action";
+import { useMapData } from "@/lib/hooks/use-map-data";
+import { computeLegalMoves } from "@/lib/game-ui/legal-moves";
 import { EndScreen } from "./components/EndScreen";
+import { ActionBar } from "./components/action-bar";
+import { MoveFallbackList } from "./components/move-fallback-list";
+import type { ActionCardPollData, UseCardPayload } from "@/lib/turn-engine/types";
+import type { TransportType } from "@/lib/map/types";
 
 /**
  * Main game page. Polls /api/game/[roomId]/state for current game state.
@@ -10,12 +18,103 @@ import { EndScreen } from "./components/EndScreen";
  * On direct navigation to a finished game, renders EndScreen on initial load
  * (no flash of active game view).
  *
- * Requirements: 8.1, 8.4, 8.6
+ * Requirements: 1.2, 3.1, 4.1, 4.2, 5.1, 5.5, 8.1, 8.4, 8.6
  */
 export default function GamePage() {
   const params = useParams<{ roomId: string }>();
   const roomId = params.roomId;
-  const { state, error, isLoading } = useGamePoll(roomId);
+  const { state, error, isLoading, refetch } = useGamePoll(roomId);
+  const { submit, isSubmitting, error: submitError } = useSubmitAction(roomId, refetch);
+  const { data: mapData, idToName } = useMapData();
+
+  /**
+   * Handles card selection from CardHand component.
+   * Constructs UseCardPayload — includes targetPlayerId only when the card
+   * requires a player target (targetRequirement !== "none").
+   * Requirements: 5.1, 5.5
+   */
+  const handleCardSelect = useCallback(
+    (card: ActionCardPollData, targetPlayerId?: string) => {
+      const payload: UseCardPayload = {
+        actionType: "USE_CARD",
+        cardId: card.id,
+        ...(card.targetRequirement !== "none" && targetPlayerId
+          ? { targetPlayerId }
+          : {}),
+      };
+      submit(payload);
+    },
+    [submit]
+  );
+
+  /** Handles move selection from CityMarkers or MoveFallbackList. Requirement 3.1 */
+  const handleMoveSelect = useCallback(
+    (targetLocationId: string) => {
+      submit({ actionType: "MOVE", targetLocationId });
+    },
+    [submit]
+  );
+
+  /** Handles skip turn action. Requirement 4.1 */
+  const handleSkip = useCallback(() => {
+    submit({ actionType: "SKIP" });
+  }, [submit]);
+
+  /** Handles capture attempt action. Requirement 4.2 */
+  const handleCaptureAttempt = useCallback(() => {
+    submit({ actionType: "CAPTURE_ATTEMPT" });
+  }, [submit]);
+
+  /**
+   * Compute legal move destinations from adjacency data and active blockades.
+   * Uses the viewer's current location and the full adjacency list from map data.
+   * Requirements: 3.3, 3.4, 3.6
+   */
+  const { legalMoveIds, legalMovesWithNames } = useMemo(() => {
+    if (!state || !mapData) {
+      return { legalMoveIds: new Set<string>(), legalMovesWithNames: [] };
+    }
+
+    const viewerPlayer = state.players.find(
+      (p) => p.playerId === state.viewerPlayerId
+    );
+    if (!viewerPlayer) {
+      return { legalMoveIds: new Set<string>(), legalMovesWithNames: [] };
+    }
+
+    const viewerLocationId = viewerPlayer.locationId;
+
+    // Build blocked transports set from active blockades
+    const blockedTransports = new Set<TransportType>(
+      state.activeBlockades.map((b) => b.transportType)
+    );
+
+    // Build hub location IDs set from map data
+    const hubLocationIds = new Set<string>();
+    for (const region of mapData.regions) {
+      for (const location of region.locations) {
+        if (location.isHub) {
+          hubLocationIds.add(location.id);
+        }
+      }
+    }
+
+    const moves = computeLegalMoves(
+      viewerLocationId,
+      mapData.adjacency,
+      blockedTransports,
+      hubLocationIds
+    );
+
+    const ids = new Set(moves.map((m) => m.locationId));
+    const withNames = moves.map((m) => ({
+      locationId: m.locationId,
+      locationName: idToName(m.locationId),
+      transport: m.transport,
+    }));
+
+    return { legalMoveIds: ids, legalMovesWithNames: withNames };
+  }, [state, mapData, idToName]);
 
   // Loading state — neutral screen that works for both active and finished games
   if (isLoading) {
@@ -54,25 +153,72 @@ export default function GamePage() {
     );
   }
 
-  // Active game view (placeholder — will be implemented in future tasks)
+  // Derived state for turn ownership
+  const isViewerTurn = state.viewerPlayerId === state.currentPlayerId;
+
+  // captureAttemptFlag is not exposed in GamePollState — detect from events
+  // if a capture-failed event exists for the viewer in the current round
+  const captureAttemptFlag = state.events.some(
+    (e) =>
+      e.type === "capture-failed" &&
+      e.roundNumber === state.currentRound &&
+      (e.payload as Record<string, unknown>).playerId === state.viewerPlayerId
+  );
+
+  // Active game view
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Shadow Hunt</h1>
-          <div className="bg-gray-800 px-3 py-1 rounded text-sm text-gray-400">
-            Round {state.currentRound}
+          <div className="flex items-center gap-3">
+            {isSubmitting && (
+              <span className="text-xs text-yellow-400 animate-pulse">
+                Submitting...
+              </span>
+            )}
+            <div className="bg-gray-800 px-3 py-1 rounded text-sm text-gray-400">
+              Round {state.currentRound}
+            </div>
           </div>
         </div>
 
         <div className="bg-gray-800 rounded-lg p-6 text-center">
-          <p className="text-gray-400">
-            Game in progress — active game view coming soon.
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Current turn: {state.players.find(p => p.playerId === state.currentPlayerId)?.displayName ?? "Unknown"}
+          <p className="text-sm text-gray-500">
+            {isViewerTurn
+              ? "It\u2019s your turn!"
+              : `Waiting for ${state.players.find(p => p.playerId === state.currentPlayerId)?.displayName ?? "Unknown"}...`}
           </p>
         </div>
+
+        {/* ActionBar: skip and capture buttons + error display. Requirements 4.1–4.10 */}
+        <div className="mt-4">
+          <ActionBar
+            isViewerTurn={isViewerTurn}
+            isSubmitting={isSubmitting}
+            actionsRemaining={state.actionsRemaining}
+            captureAttemptFlag={captureAttemptFlag}
+            error={submitError}
+            onSkip={handleSkip}
+            onCaptureAttempt={handleCaptureAttempt}
+          />
+        </div>
+
+        {/* MoveFallbackList: compact-viewport move selection. Requirement 3.8 */}
+        <MoveFallbackList
+          legalMoves={legalMovesWithNames}
+          isViewerTurn={isViewerTurn}
+          isSubmitting={isSubmitting}
+          onMoveSelect={handleMoveSelect}
+        />
+
+        {/* CityMarkers integration — rendered inside the map component (game-map spec).
+            Props ready: legalMoveIds, isViewerTurn, isSubmitting, onMoveSelect={handleMoveSelect} */}
+
+        {/* CardHand integration (game-panels spec):
+          <CardHand cards={state.privateData.actionCards} isSubmitting={isSubmitting}
+            isViewerTurn={isViewerTurn} onCardSelect={handleCardSelect} />
+        */}
       </div>
     </div>
   );

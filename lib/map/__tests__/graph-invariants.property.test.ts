@@ -21,6 +21,8 @@ interface LocationRecord {
   name: string;
   regionId: string;
   isHub: boolean;
+  latitude: number;
+  longitude: number;
 }
 
 let allEdges: Edge[] = [];
@@ -75,11 +77,13 @@ describe("Graph Invariants Property Tests", () => {
       for (const loc of sampleLocations) {
         await prisma.location.upsert({
           where: { name: loc.name },
-          update: { isHub: loc.isHub, regionId: loc.regionId },
+          update: { isHub: loc.isHub, regionId: loc.regionId, latitude: loc.latitude, longitude: loc.longitude },
           create: {
             name: loc.name,
             regionId: loc.regionId,
             isHub: loc.isHub,
+            latitude: loc.latitude,
+            longitude: loc.longitude,
           },
         });
       }

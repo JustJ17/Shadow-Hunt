@@ -16,6 +16,8 @@ export async function getLocationsByRegion(
     name: loc.name,
     regionId: loc.regionId,
     isHub: loc.isHub,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
   }));
 }
 
@@ -36,6 +38,8 @@ export async function getAllRegions(): Promise<RegionWithLocations[]> {
       name: loc.name,
       regionId: loc.regionId,
       isHub: loc.isHub,
+      latitude: loc.latitude,
+      longitude: loc.longitude,
     })),
   }));
 }

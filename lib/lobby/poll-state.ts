@@ -62,6 +62,7 @@ export async function pollState(params: {
     success: true,
     state: {
       roomCode: room.code,
+      roomId: room.id,
       status: room.status as "waiting" | "in-progress" | "abandoned",
       visibility: room.visibility as "public" | "private",
       players,

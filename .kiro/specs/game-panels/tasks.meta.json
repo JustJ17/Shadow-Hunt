@@ -1,0 +1,345 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `lib/game-ui/event-messages.ts` — event message formatter and relative timestamp": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864470
+      },
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522874184
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525800615
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525811500
+      }
+    ],
+    "1.2 Write unit tests for `event-messages.ts`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864599
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525800714
+      }
+    ],
+    "1.3 Create `lib/game-ui/card-metadata.ts` — card display metadata lookup": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864641
+      },
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522874879
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525800783
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525812774
+      }
+    ],
+    "1.4 Write unit tests for `card-metadata.ts`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864690
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525800858
+      }
+    ],
+    "2.1 Create `app/game/[roomId]/components/event-icon.tsx` — EventIcon component": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864733
+      },
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522875738
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525800966
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525812969
+      }
+    ],
+    "2.2 Create `app/game/[roomId]/components/card-icon.tsx` — CardIcon component": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864795
+      },
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522876558
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801085
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525813795
+      }
+    ],
+    "2.3 Write unit tests for EventIcon and CardIcon": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864870
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801160
+      }
+    ],
+    "3. Checkpoint — Utilities and icons": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864917
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801235
+      }
+    ],
+    "4.1 Create `app/game/[roomId]/components/panel-error-boundary.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522864956
+      },
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522877131
+      }
+    ],
+    "4.2 Create `app/game/[roomId]/components/turn-hud.tsx` — TurnHud component": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865018
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801320
+      }
+    ],
+    "4.3 Write unit tests for TurnHud": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865072
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801398
+      }
+    ],
+    "5.1 Create `app/game/[roomId]/components/notebook-panel.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865126
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801468
+      }
+    ],
+    "5.2 Write unit tests for NotebookPanel": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865193
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801546
+      }
+    ],
+    "6.1 Create `app/game/[roomId]/components/event-feed-panel.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865291
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801617
+      }
+    ],
+    "6.2 Write unit tests for EventFeedPanel": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865351
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801697
+      }
+    ],
+    "7. Checkpoint — Panels sans CardHand": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865425
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801782
+      }
+    ],
+    "8.1 Create `app/game/[roomId]/components/card-tile.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865490
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801874
+      }
+    ],
+    "8.2 Create `app/game/[roomId]/components/target-picker.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865551
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525801942
+      }
+    ],
+    "8.3 Create `app/game/[roomId]/components/card-hand.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865591
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802082
+      }
+    ],
+    "8.4 Write unit tests for CardTile, TargetPicker, and CardHand": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865634
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802148
+      }
+    ],
+    "9. Checkpoint — All panels complete": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865718
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802218
+      }
+    ],
+    "10.1 Create `app/game/[roomId]/components/game-screen-shell.tsx`": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865755
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802292
+      }
+    ],
+    "10.2 Rewrite `app/game/[roomId]/page.tsx` to compose GameScreenShell": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865793
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802357
+      }
+    ],
+    "10.3 Write unit tests for GameScreenShell": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865841
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802427
+      }
+    ],
+    "11. Final checkpoint": [
+      {
+        "executionId": "92075931-5395-43d7-a11c-b8dd3221fc53",
+        "chatSessionId": "sess_cb12f928-d80f-4281-91f2-68b1641bd878",
+        "timestamp": 1787522865893
+      },
+      {
+        "executionId": "ce43b0ff-d4ff-478e-b5a0-f089fd115f04",
+        "chatSessionId": "sess_8b86c13c-bd12-4820-90fb-7b911ee1d196",
+        "timestamp": 1787525802500
+      }
+    ]
+  }
+}

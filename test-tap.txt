@@ -1,0 +1,25 @@
+TAP version 13
+1..1
+ok 1 - lib/hooks/__tests__/use-game-poll-refetch.test.ts # time=588.83ms {
+    1..1
+    ok 1 - useGamePoll — refetch behavior # time=586.08ms {
+        1..3
+        ok 1 - Property 12: refetch resets interval and triggers immediate poll # time=269.02ms {
+            1..4
+            ok 1 - refetch() triggers an immediate fetch call # time=102.44ms
+            ok 2 - refetch() calls clearInterval to clear the existing interval # time=81.57ms
+            ok 3 - refetch() restarts setInterval after clearing # time=69.07ms
+            ok 4 - refetch does not initiate a duplicate fetch if a poll is already in-flight # time=15.09ms
+        }
+        ok 2 - Property 13: successful refetch updates state and clears error # time=237.55ms {
+            1..3
+            ok 1 - refetch updates state with new data from the server # time=86.35ms
+            ok 2 - refetch clears a previously set error on success # time=80.05ms
+            ok 3 - state is updated and error stays null after successful refetch with no prior error # time=71.05ms
+        }
+        ok 3 - refetch interaction with game-finished state # time=79.29ms {
+            1..1
+            ok 1 - refetch still fetches when game transitions to finished status # time=79.22ms
+        }
+    }
+}

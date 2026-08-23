@@ -1,0 +1,27 @@
+SUBMIT_ACTION_TEST_1787525798524
+STATUS: FAIL:1
+STDOUT:
+
+ RUN  v4.1.11 d:/Projects/Shadow-Hunt
+
+stdout | lib/hooks/__tests__/use-submit-action.test.ts
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:56:41
+   Duration  2.62s (transform 83ms, setup 414ms, import 0ms, tests 0ms, environment 1.57s)
+
+
+STDERR:
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  lib/hooks/__tests__/use-submit-action.test.ts [ lib/hooks/__tests__/use-submit-action.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ lib/hooks/__tests__/use-submit-action.test.ts:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+

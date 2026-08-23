@@ -30,6 +30,8 @@ export async function getFullMapData(): Promise<MapData> {
       name: loc.name,
       regionId: loc.regionId,
       isHub: loc.isHub,
+      latitude: loc.latitude,
+      longitude: loc.longitude,
     })),
   }));
 

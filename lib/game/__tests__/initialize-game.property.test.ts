@@ -67,7 +67,7 @@ describe("Game Initialization Property Tests", () => {
           fc.integer({ min: 1, max: 100 }),
           async (seed) => {
             // Create a unique room for this iteration
-            const roomCode = `T${seed.toString().padStart(5, "0")}`;
+            const roomCode = `T${seed.toString().padStart(3, "0")}`;
             const room = await prisma.room.create({
               data: {
                 code: roomCode,

@@ -7,6 +7,7 @@ interface UseGamePollResult {
   state: GamePollState | null;
   error: string | null;
   isLoading: boolean;
+  refetch: () => void;
 }
 
 const POLL_INTERVAL_MS = 3000; // 3 seconds
@@ -15,6 +16,7 @@ const POLL_INTERVAL_MS = 3000; // 3 seconds
  * Polls the game state endpoint for the given room.
  * Returns the current game state including status, events, and player data.
  * Stops polling once the game reaches "finished" status.
+ * Exposes a `refetch()` method that triggers an immediate poll and resets the interval.
  */
 export function useGamePoll(roomId: string): UseGamePollResult {
   const [state, setState] = useState<GamePollState | null>(null);
@@ -22,8 +24,12 @@ export function useGamePoll(roomId: string): UseGamePollResult {
   const [isLoading, setIsLoading] = useState(true);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const stateRef = useRef<GamePollState | null>(null);
+  const isPollingRef = useRef(false);
 
   const poll = useCallback(async () => {
+    if (isPollingRef.current) return;
+    isPollingRef.current = true;
+
     try {
       const afterSequence =
         stateRef.current && stateRef.current.events.length > 0
@@ -64,9 +70,27 @@ export function useGamePoll(roomId: string): UseGamePollResult {
     } catch {
       setError("Network error — retrying...");
     } finally {
+      isPollingRef.current = false;
       setIsLoading(false);
     }
   }, [roomId]);
+
+  const refetch = useCallback(() => {
+    // Clear the current interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
+    // If a poll is already in-flight, skip the immediate fetch
+    // but still restart the timer
+    if (!isPollingRef.current) {
+      poll();
+    }
+
+    // Restart the interval from zero
+    intervalRef.current = setInterval(poll, POLL_INTERVAL_MS);
+  }, [poll]);
 
   useEffect(() => {
     poll(); // Initial poll
@@ -80,5 +104,5 @@ export function useGamePoll(roomId: string): UseGamePollResult {
     };
   }, [poll]);
 
-  return { state, error, isLoading };
+  return { state, error, isLoading, refetch };
 }

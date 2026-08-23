@@ -1,0 +1,28 @@
+node : file:///D:/Projects/Shadow-Hunt/node_modules/vitest/dist/chunks/cac.uFyd
+S1Z4.js:406
+At line:1 char:1
++ node node_modules/vitest/vitest.mjs run --include="**/move-fallback-l ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (file:///D:/Proj...uFydS1Z4.js:406 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+          throw new CACError(`Unknown option \`${name.length > 1 ? `--${name}` 
+: `-${name}`}\``);
+                ^
+
+CACError: Unknown option `--include`
+    at Command.checkUnknownOptions (file:///D:/Projects/Shadow-Hunt/node_module
+s/vitest/dist/chunks/cac.uFydS1Z4.js:406:17)
+    at CAC.runMatchedCommand (file:///D:/Projects/Shadow-Hunt/node_modules/vite
+st/dist/chunks/cac.uFydS1Z4.js:606:13)
+    at CAC.parse (file:///D:/Projects/Shadow-Hunt/node_modules/vitest/dist/chun
+ks/cac.uFydS1Z4.js:547:12)
+    at file:///D:/Projects/Shadow-Hunt/node_modules/vitest/dist/cli.js:11:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:377:25)
+    at async onImport.tracePromise.__proto__ 
+(node:internal/modules/esm/loader:671:26)
+    at async asyncRunEntryPointWithESMLoader 
+(node:internal/modules/run_main:101:5)
+
+Node.js v24.11.1
