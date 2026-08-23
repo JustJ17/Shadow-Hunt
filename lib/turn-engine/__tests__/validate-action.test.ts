@@ -4,6 +4,7 @@ import type {
   TurnState,
   ActionCardData,
   ActionPayload,
+  BlockadeState,
 } from "@/lib/turn-engine/types";
 import type { AdjacentLocationWithTransport } from "@/lib/map/adjacency";
 
@@ -13,8 +14,10 @@ function makeTurnState(overrides: Partial<TurnState> = {}): TurnState {
     roomId: "room-1",
     currentPlayerId: "player-1",
     currentRound: 1,
-    currentSlot: 1,
+    actionsRemaining: 2,
+    actionBudget: 2,
     captureAttemptFlag: false,
+    isExtraTurn: false,
     version: 0,
     ...overrides,
   };
@@ -68,6 +71,8 @@ describe("validateAction", () => {
   const playerPosition = "loc-A";
   const adjacentLocations = makeAdjacentLocations();
   const playerCards = makeCards();
+  const noBlockades: BlockadeState = { blockedTransports: new Set() };
+  const defaultActionsRemaining = 2;
 
   describe("turn ownership", () => {
     it("returns NOT_YOUR_TURN if player is not the current player", () => {
@@ -80,7 +85,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
@@ -98,7 +105,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -117,7 +126,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -132,7 +143,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -147,13 +160,15 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
     });
 
-    it("returns SAME_LOCATION_MOVE when target equals current position", () => {
+    it("returns INVALID_MOVE when target equals current position (not in adjacency list)", () => {
       const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-A" };
 
       const result = validateAction(
@@ -162,11 +177,14 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
+      // loc-A (player's position) is not in the adjacency list, so adjacency check fires first
       expect(result).not.toBeNull();
-      expect(result!.code).toBe("SAME_LOCATION_MOVE");
+      expect(result!.code).toBe("INVALID_MOVE");
     });
 
     it("returns INVALID_MOVE when target is not adjacent", () => {
@@ -178,7 +196,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
@@ -194,7 +214,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
@@ -213,7 +235,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -231,7 +255,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -247,7 +273,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
@@ -266,7 +294,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).toBeNull();
@@ -282,7 +312,9 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
@@ -299,11 +331,207 @@ describe("validateAction", () => {
         "player-1",
         playerPosition,
         adjacentLocations,
-        playerCards
+        playerCards,
+        noBlockades,
+        defaultActionsRemaining
       );
 
       expect(result).not.toBeNull();
       expect(result!.code).toBe("INVALID_CARD");
+    });
+  });
+
+  describe("NO_ACTIONS_REMAINING", () => {
+    it("returns NO_ACTIONS_REMAINING when actionsRemaining is 0", () => {
+      const turnState = makeTurnState();
+      const action: ActionPayload = { actionType: "SKIP" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        noBlockades,
+        0 // no actions remaining
+      );
+
+      expect(result).not.toBeNull();
+      expect(result!.code).toBe("NO_ACTIONS_REMAINING");
+    });
+
+    it("returns NO_ACTIONS_REMAINING for MOVE when actionsRemaining is 0", () => {
+      const turnState = makeTurnState();
+      const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-B" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        noBlockades,
+        0
+      );
+
+      expect(result).not.toBeNull();
+      expect(result!.code).toBe("NO_ACTIONS_REMAINING");
+    });
+
+    it("allows action when actionsRemaining is 1", () => {
+      const turnState = makeTurnState();
+      const action: ActionPayload = { actionType: "SKIP" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        noBlockades,
+        1
+      );
+
+      expect(result).toBeNull();
+    });
+  });
+
+  describe("blockade checks", () => {
+    const turnState = makeTurnState();
+
+    it("returns ROADS_BLOCKED when car transport is blocked", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["car"]) };
+      const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-B" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).not.toBeNull();
+      expect(result!.code).toBe("ROADS_BLOCKED");
+      expect(result!.error).toBe("Roads are currently blocked");
+    });
+
+    it("returns AIRWAYS_BLOCKED when plane transport is blocked", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["plane"]) };
+      const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-C" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).not.toBeNull();
+      expect(result!.code).toBe("AIRWAYS_BLOCKED");
+      expect(result!.error).toBe("Airways are currently blocked");
+    });
+
+    it("returns SEA_ROUTES_BLOCKED when boat transport is blocked", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["boat"]) };
+      const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-D" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).not.toBeNull();
+      expect(result!.code).toBe("SEA_ROUTES_BLOCKED");
+      expect(result!.error).toBe("Sea routes are currently blocked");
+    });
+
+    it("allows MOVE on unblocked transport when other transports are blocked", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["plane", "boat"]) };
+      const action: ActionPayload = { actionType: "MOVE", targetLocationId: "loc-B" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).toBeNull();
+    });
+
+    it("blockade does not affect SKIP actions", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["car", "plane", "boat"]) };
+      const action: ActionPayload = { actionType: "SKIP" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).toBeNull();
+    });
+
+    it("blockade does not affect USE_CARD actions", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["car", "plane", "boat"]) };
+      const action: ActionPayload = { actionType: "USE_CARD", cardId: "card-1" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).toBeNull();
+    });
+
+    it("blockade does not affect CAPTURE_ATTEMPT actions", () => {
+      const blockedState: BlockadeState = { blockedTransports: new Set(["car", "plane", "boat"]) };
+      const action: ActionPayload = { actionType: "CAPTURE_ATTEMPT" };
+
+      const result = validateAction(
+        action,
+        turnState,
+        "player-1",
+        playerPosition,
+        adjacentLocations,
+        playerCards,
+        blockedState,
+        defaultActionsRemaining
+      );
+
+      expect(result).toBeNull();
     });
   });
 });

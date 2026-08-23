@@ -2,8 +2,11 @@ import type {
   ActionPayload,
   TurnState,
   TurnActionError,
+  TurnActionErrorCode,
+  BlockadeState,
   ActionCardData,
 } from "@/lib/turn-engine/types";
+import type { TransportType } from "@/lib/map/types";
 import type { AdjacentLocationWithTransport } from "@/lib/map/adjacency";
 
 /**
@@ -18,7 +21,9 @@ export function validateAction(
   playerId: string,
   playerPosition: string,
   adjacentLocations: AdjacentLocationWithTransport[],
-  playerCards: ActionCardData[]
+  playerCards: ActionCardData[],
+  blockadeState: BlockadeState,
+  actionsRemaining: number
 ): TurnActionError | null {
   // Check it's the player's turn
   if (turnState.currentPlayerId !== playerId) {
@@ -29,9 +34,18 @@ export function validateAction(
     };
   }
 
+  // Check actions remaining
+  if (actionsRemaining <= 0) {
+    return {
+      success: false,
+      error: "No actions remaining",
+      code: "NO_ACTIONS_REMAINING",
+    };
+  }
+
   switch (action.actionType) {
     case "MOVE":
-      return validateMove(action.targetLocationId, playerPosition, adjacentLocations);
+      return validateMove(action.targetLocationId, playerPosition, adjacentLocations, blockadeState);
 
     case "SKIP":
       return null;
@@ -54,18 +68,10 @@ export function validateAction(
 function validateMove(
   targetLocationId: string,
   playerPosition: string,
-  adjacentLocations: AdjacentLocationWithTransport[]
+  adjacentLocations: AdjacentLocationWithTransport[],
+  blockadeState: BlockadeState
 ): TurnActionError | null {
-  // Cannot move to the same location
-  if (targetLocationId === playerPosition) {
-    return {
-      success: false,
-      error: "Cannot move to the same location you are already at",
-      code: "SAME_LOCATION_MOVE",
-    };
-  }
-
-  // Find the edge connecting current position to target
+  // 1. Adjacency check
   const edge = adjacentLocations.find((loc) => loc.id === targetLocationId);
 
   if (!edge) {
@@ -76,21 +82,27 @@ function validateMove(
     };
   }
 
-  // Plane transport requires both endpoints to be hubs.
-  // The player's current location must also be a hub for plane travel.
-  // We check `edge.isHub` for the target (since adjacentLocations describes the target),
-  // and we need to check the source location is a hub as well.
-  // Since adjacentLocations are fetched from the player's current position,
-  // we need a way to know if the source is a hub. The design states:
-  // "plane requires both endpoints are hubs" — the source location's hub status
-  // must be checked by the caller or inferred from the adjacency data.
-  // However, per the task description and design, the adjacentLocations already
-  // encode the target's isHub status. For the source, if a plane edge exists
-  // in the adjacency list, the source must be a hub (since the map data only
-  // creates plane edges between hubs). But to be defensive per the design spec:
-  // "If edge transport is 'plane' and either endpoint is not a hub → error INVALID_TRANSPORT"
-  // We check the target's isHub. The source hub check is implicitly guaranteed
-  // by the map structure (plane edges only connect hubs), but we validate the target.
+  // 2. Blockade check — AFTER adjacency, BEFORE same-location/hub rules
+  if (blockadeState.blockedTransports.has(edge.transport)) {
+    const errorMap: Record<TransportType, { code: TurnActionErrorCode; msg: string }> = {
+      car: { code: "ROADS_BLOCKED", msg: "Roads are currently blocked" },
+      plane: { code: "AIRWAYS_BLOCKED", msg: "Airways are currently blocked" },
+      boat: { code: "SEA_ROUTES_BLOCKED", msg: "Sea routes are currently blocked" },
+    };
+    const err = errorMap[edge.transport];
+    return { success: false, error: err.msg, code: err.code };
+  }
+
+  // 3. Same-location rejection
+  if (targetLocationId === playerPosition) {
+    return {
+      success: false,
+      error: "Cannot move to the same location you are already at",
+      code: "SAME_LOCATION_MOVE",
+    };
+  }
+
+  // 4. Plane hub rule
   if (edge.transport === "plane" && !edge.isHub) {
     return {
       success: false,

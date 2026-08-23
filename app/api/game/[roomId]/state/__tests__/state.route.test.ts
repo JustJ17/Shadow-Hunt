@@ -52,7 +52,8 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 3,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       players: [
         {
           playerId: "player-1",
@@ -71,11 +72,11 @@ describe("GET /api/game/[roomId]/state", () => {
       ],
       privateData: {
         notebook: [
-          { regionId: "region-1", roundNumber: 2, stepsAway: 3 },
+          { entryType: "spy-proximity", regionId: "region-1", roundNumber: 2, stepsAway: 3 },
         ],
         actionCards: [
-          { id: "card-1", type: "locator", consumed: false },
-          { id: "card-2", type: "extra-move", consumed: true },
+          { id: "card-1", cardIdentifier: "locate-the-mastermind", category: "clue", targetRequirement: "none" },
+          { id: "card-2", cardIdentifier: "extra-turn", category: "booster", targetRequirement: "none" },
         ],
         pendingReward: {
           regionId: "region-2",
@@ -83,6 +84,9 @@ describe("GET /api/game/[roomId]/state", () => {
           rewardTier: 4,
         },
         skipNextTurn: false,
+        actionPenaltyFlag: false,
+        pendingExtraTurns: 0,
+        pendingClues: [],
       },
       events: [
         {
@@ -102,6 +106,7 @@ describe("GET /api/game/[roomId]/state", () => {
           createdAt: "2024-01-01T01:00:00.000Z",
         },
       ],
+      activeBlockades: [],
     };
     mockGetGamePollState.mockResolvedValue(mockState);
 
@@ -114,7 +119,7 @@ describe("GET /api/game/[roomId]/state", () => {
     expect(body.status).toBe("in-progress");
     expect(body.currentPlayerId).toBe("player-1");
     expect(body.currentRound).toBe(3);
-    expect(body.currentSlot).toBe(1);
+    expect(body.actionsRemaining).toBe(2);
     expect(body.players).toHaveLength(2);
     expect(body.players[0]).toEqual({
       playerId: "player-1",
@@ -134,10 +139,12 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       players: [],
-      privateData: { notebook: [], actionCards: [], pendingReward: null, skipNextTurn: false },
+      privateData: { notebook: [], actionCards: [], pendingReward: null, skipNextTurn: false, actionPenaltyFlag: false, pendingExtraTurns: 0, pendingClues: [] },
       events: [],
+      activeBlockades: [],
     });
 
     const req = createRequest("test-room-id", {
@@ -183,7 +190,8 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
-      currentSlot: 2,
+      actionsRemaining: 1,
+      actionBudget: 2,
       players: [
         {
           playerId: "player-1",
@@ -212,8 +220,12 @@ describe("GET /api/game/[roomId]/state", () => {
         actionCards: [],
         pendingReward: null,
         skipNextTurn: false,
+        actionPenaltyFlag: false,
+        pendingExtraTurns: 0,
+        pendingClues: [],
       },
       events: [],
+      activeBlockades: [],
     };
     mockGetGamePollState.mockResolvedValue(mockState);
 
@@ -236,7 +248,8 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 4,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       players: [
         {
           playerId: "player-1",
@@ -248,13 +261,13 @@ describe("GET /api/game/[roomId]/state", () => {
       ],
       privateData: {
         notebook: [
-          { regionId: "region-1", roundNumber: 1, stepsAway: 2 },
-          { regionId: "region-3", roundNumber: 3, stepsAway: 1 },
+          { entryType: "spy-proximity", regionId: "region-1", roundNumber: 1, stepsAway: 2 },
+          { entryType: "spy-proximity", regionId: "region-3", roundNumber: 3, stepsAway: 1 },
         ],
         actionCards: [
-          { id: "card-1", type: "locator", consumed: false },
-          { id: "card-2", type: "extra-move", consumed: false },
-          { id: "card-3", type: "reveal-region", consumed: true },
+          { id: "card-1", cardIdentifier: "locate-the-mastermind", category: "clue", targetRequirement: "none" },
+          { id: "card-2", cardIdentifier: "extra-turn", category: "booster", targetRequirement: "none" },
+          { id: "card-3", cardIdentifier: "drop-ship", category: "booster", targetRequirement: "none" },
         ],
         pendingReward: {
           regionId: "region-2",
@@ -262,8 +275,12 @@ describe("GET /api/game/[roomId]/state", () => {
           rewardTier: 3,
         },
         skipNextTurn: true,
+        actionPenaltyFlag: false,
+        pendingExtraTurns: 0,
+        pendingClues: [],
       },
       events: [],
+      activeBlockades: [],
     };
     mockGetGamePollState.mockResolvedValue(mockState);
 
@@ -275,14 +292,15 @@ describe("GET /api/game/[roomId]/state", () => {
     // Verify notebook entries
     expect(body.privateData.notebook).toHaveLength(2);
     expect(body.privateData.notebook[0]).toEqual({
+      entryType: "spy-proximity",
       regionId: "region-1",
       roundNumber: 1,
       stepsAway: 2,
     });
     // Verify action cards
     expect(body.privateData.actionCards).toHaveLength(3);
-    expect(body.privateData.actionCards[0].type).toBe("locator");
-    expect(body.privateData.actionCards[2].consumed).toBe(true);
+    expect(body.privateData.actionCards[0].cardIdentifier).toBe("locate-the-mastermind");
+    expect(body.privateData.actionCards[2].cardIdentifier).toBe("drop-ship");
     // Verify pending reward
     expect(body.privateData.pendingReward).toEqual({
       regionId: "region-2",
@@ -300,7 +318,8 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       players: [
         {
           playerId: "player-1",
@@ -315,8 +334,12 @@ describe("GET /api/game/[roomId]/state", () => {
         actionCards: [],
         pendingReward: null,
         skipNextTurn: false,
+        actionPenaltyFlag: false,
+        pendingExtraTurns: 0,
+        pendingClues: [],
       },
       events: [],
+      activeBlockades: [],
     };
     mockGetGamePollState.mockResolvedValue(mockState);
 
@@ -334,9 +357,11 @@ describe("GET /api/game/[roomId]/state", () => {
     // Verify top-level keys are limited to expected fields
     const topLevelKeys = Object.keys(body).sort();
     expect(topLevelKeys).toEqual([
+      "actionBudget",
+      "actionsRemaining",
+      "activeBlockades",
       "currentPlayerId",
       "currentRound",
-      "currentSlot",
       "events",
       "players",
       "privateData",
@@ -353,10 +378,12 @@ describe("GET /api/game/[roomId]/state", () => {
       viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       players: [],
-      privateData: { notebook: [], actionCards: [], pendingReward: null, skipNextTurn: false },
+      privateData: { notebook: [], actionCards: [], pendingReward: null, skipNextTurn: false, actionPenaltyFlag: false, pendingExtraTurns: 0, pendingClues: [] },
       events: [],
+      activeBlockades: [],
     });
 
     const req = createRequest("room-1", { cookie: "player-id=player-1" });

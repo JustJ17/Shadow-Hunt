@@ -9,7 +9,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { emitEvent, getEventsFeed } from "@/lib/turn-engine/event-feed";
 import { validateAction } from "@/lib/turn-engine/validate-action";
 import { resolveSpyAndReward } from "@/lib/turn-engine/resolution/resolve-spy-reward";
-import type { TurnState, ActionCardData } from "@/lib/turn-engine/types";
+import type { TurnState, ActionCardData, BlockadeState } from "@/lib/turn-engine/types";
 import type { AdjacentLocationWithTransport } from "@/lib/map/adjacency";
 
 let prisma: PrismaClient;
@@ -35,8 +35,10 @@ function makeTurnState(
     roomId: "test-room-id",
     currentPlayerId: playerId,
     currentRound: 1,
-    currentSlot: 1,
+    actionsRemaining: 2,
+    actionBudget: 2,
     captureAttemptFlag: false,
+    isExtraTurn: false,
     version: 0,
     ...overrides,
   };
@@ -44,6 +46,8 @@ function makeTurnState(
 
 const TEST_PLAYER_ID = "test-player-event-feed";
 const EMPTY_ADJACENT: AdjacentLocationWithTransport[] = [];
+const NO_BLOCKADES: BlockadeState = { blockedTransports: new Set() };
+const DEFAULT_ACTIONS_REMAINING = 2;
 
 describe("Event Feed Property Tests", () => {
   // **Validates: Requirements 12.1, 12.5, 12.6, 12.7, 12.8, 6.1, 6.3, 6.6**
@@ -303,7 +307,9 @@ describe("Event Feed Property Tests", () => {
               TEST_PLAYER_ID,
               "some-location",
               EMPTY_ADJACENT,
-              playerCards
+              playerCards,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             if (!card.consumed) {
@@ -347,7 +353,9 @@ describe("Event Feed Property Tests", () => {
               TEST_PLAYER_ID,
               "some-location",
               EMPTY_ADJACENT,
-              playerCards
+              playerCards,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             expect(result).not.toBeNull();
@@ -358,10 +366,9 @@ describe("Event Feed Property Tests", () => {
       );
     }, 60000);
 
-    it("hand never exceeds 5 cards after grantRewardCards", async () => {
-      // Test that when a player already has cards, reward granting respects max hand size of 5
-      // We test this by setting up various starting hand sizes and triggering reward collection
-      const startingHandSizeArb = fc.integer({ min: 0, max: 5 });
+    it("reward always grants full tier regardless of existing hand size", async () => {
+      // Test that grantRewardCards grants all cards from reward tier with no hand cap
+      const startingHandSizeArb = fc.integer({ min: 0, max: 10 });
       const captureOrderArb = fc.integer({ min: 1, max: 6 });
 
       await fc.assert(
@@ -424,7 +431,7 @@ describe("Event Feed Property Tests", () => {
                     data: {
                       roomId: room.id,
                       playerId: TEST_PLAYER_ID,
-                      type: i === 0 ? "locator" : "extra-move",
+                      type: "locate-the-mastermind",
                       consumed: false,
                     },
                   });
@@ -448,9 +455,6 @@ describe("Event Feed Property Tests", () => {
                   },
                 });
 
-                // Hand should never exceed 5 cards
-                expect(finalCardCount).toBeLessThanOrEqual(5);
-
                 // Compute expected reward tier
                 let expectedTier: number;
                 if (captureOrder === 1) expectedTier = 4;
@@ -458,12 +462,8 @@ describe("Event Feed Property Tests", () => {
                 else if (captureOrder === 3) expectedTier = 2;
                 else expectedTier = 1;
 
-                // The granted cards should be min(expectedTier, 5 - startingHandSize)
-                const expectedGranted = Math.max(
-                  0,
-                  Math.min(expectedTier, 5 - startingHandSize)
-                );
-                expect(finalCardCount).toBe(startingHandSize + expectedGranted);
+                // No hand cap — full reward tier is always granted
+                expect(finalCardCount).toBe(startingHandSize + expectedTier);
 
                 throw new Error("ROLLBACK");
               })

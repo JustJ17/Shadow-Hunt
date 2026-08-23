@@ -105,13 +105,12 @@ describe("POST /api/game/[roomId]/action", () => {
     });
   });
 
-  describe("full turn cycle (slot 1 + slot 2 + resolution)", () => {
-    it("returns 200 with slot 1 result on successful action", async () => {
+  describe("full turn cycle (action budget system)", () => {
+    it("returns 200 with actionsRemaining on successful action", async () => {
       const successResult: TurnActionSuccess = {
         success: true,
         actionType: "MOVE",
-        slotNumber: 1,
-        remainingSlots: 1,
+        actionsRemaining: 1,
         updatedLocationId: "location-b",
       };
       mockSubmitAction.mockResolvedValue(successResult);
@@ -126,8 +125,7 @@ describe("POST /api/game/[roomId]/action", () => {
       expect(response.status).toBe(200);
       expect(body.success).toBe(true);
       expect(body.actionType).toBe("MOVE");
-      expect(body.slotNumber).toBe(1);
-      expect(body.remainingSlots).toBe(1);
+      expect(body.actionsRemaining).toBe(1);
       expect(body.updatedLocationId).toBe("location-b");
       expect(mockSubmitAction).toHaveBeenCalledWith(
         "test-room-id",
@@ -136,12 +134,11 @@ describe("POST /api/game/[roomId]/action", () => {
       );
     });
 
-    it("returns 200 with resolution data when slot 2 completes the turn", async () => {
+    it("returns 200 with resolution data when actionsRemaining reaches 0", async () => {
       const successResult: TurnActionSuccess = {
         success: true,
         actionType: "SKIP",
-        slotNumber: 2,
-        remainingSlots: 0,
+        actionsRemaining: 0,
         resolution: {
           spyResult: {
             type: "clue",
@@ -164,8 +161,7 @@ describe("POST /api/game/[roomId]/action", () => {
 
       expect(response.status).toBe(200);
       expect(body.success).toBe(true);
-      expect(body.slotNumber).toBe(2);
-      expect(body.remainingSlots).toBe(0);
+      expect(body.actionsRemaining).toBe(0);
       expect(body.resolution).toBeDefined();
       expect(body.resolution.spyResult.type).toBe("clue");
       expect(body.resolution.spyResult.notebookEntry.stepsAway).toBe(3);
@@ -175,8 +171,7 @@ describe("POST /api/game/[roomId]/action", () => {
       mockSubmitAction.mockResolvedValue({
         success: true,
         actionType: "SKIP",
-        slotNumber: 1,
-        remainingSlots: 1,
+        actionsRemaining: 1,
       });
 
       const req = createRequest(
@@ -306,8 +301,7 @@ describe("POST /api/game/[roomId]/action", () => {
       const successResult: TurnActionSuccess = {
         success: true,
         actionType: "CAPTURE_ATTEMPT",
-        slotNumber: 2,
-        remainingSlots: 0,
+        actionsRemaining: 0,
         resolution: {
           captureAttempt: {
             result: "success",
@@ -383,8 +377,7 @@ describe("POST /api/game/[roomId]/action", () => {
         .mockResolvedValueOnce({
           success: true,
           actionType: "MOVE",
-          slotNumber: 1,
-          remainingSlots: 1,
+          actionsRemaining: 1,
           updatedLocationId: "loc-1",
         } as TurnActionSuccess)
         .mockResolvedValueOnce({
@@ -461,11 +454,11 @@ describe("POST /api/game/[roomId]/action", () => {
       expect(body.code).toBe("INVALID_CARD");
     });
 
-    it("returns 422 when INVALID_SLOT_ORDER error", async () => {
+    it("returns 422 when NO_ACTIONS_REMAINING error", async () => {
       const errorResult: TurnActionError = {
         success: false,
-        error: "Must submit slot 1 before slot 2",
-        code: "INVALID_SLOT_ORDER",
+        error: "No actions remaining",
+        code: "NO_ACTIONS_REMAINING",
       };
       mockSubmitAction.mockResolvedValue(errorResult);
 
@@ -478,7 +471,7 @@ describe("POST /api/game/[roomId]/action", () => {
 
       expect(response.status).toBe(422);
       expect(body.success).toBe(false);
-      expect(body.code).toBe("INVALID_SLOT_ORDER");
+      expect(body.code).toBe("NO_ACTIONS_REMAINING");
     });
   });
 });

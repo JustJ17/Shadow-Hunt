@@ -129,7 +129,8 @@ describe("Draw Detection Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: currentRound,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -139,8 +140,10 @@ describe("Draw Detection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: currentRound,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -280,7 +283,8 @@ describe("Draw Detection Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: currentRound,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -290,8 +294,10 @@ describe("Draw Detection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: currentRound,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -429,7 +435,8 @@ describe("Draw Detection Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: currentRound,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -439,8 +446,10 @@ describe("Draw Detection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: currentRound,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -577,7 +586,8 @@ describe("Draw Detection Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: currentRound,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -587,8 +597,10 @@ describe("Draw Detection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: currentRound,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 

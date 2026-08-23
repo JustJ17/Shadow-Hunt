@@ -1,4 +1,8 @@
-import { TransactionClient, NotebookEntryData } from "@/lib/turn-engine/types";
+import {
+  TransactionClient,
+  NotebookEntryData,
+  DiscriminatedNotebookEntry,
+} from "@/lib/turn-engine/types";
 import { prisma } from "@/lib/prisma";
 
 /**
@@ -24,8 +28,14 @@ export async function appendNotebookEntry(
 }
 
 /**
- * Returns a player's notebook entries, ordered by creation time ascending.
- * Max 200 entries per response.
+ * Returns a player's notebook entries of all four types, ordered by creation
+ * time ascending. Max 200 entries per response.
+ *
+ * Entry types:
+ * - spy-proximity: uses regionId and stepsAway columns directly
+ * - mastermind_distance: parsed from payload JSON (locationId, stepsAway)
+ * - mastermind_direction: parsed from payload JSON (locationId)
+ * - phone_bug: parsed from payload JSON (targetPlayerId, targetLocationId, etc.)
  *
  * Rejects cross-player access: requestingPlayerId must match playerId.
  *
@@ -39,8 +49,8 @@ export async function getPlayerNotebook(
   playerId: string,
   requestingPlayerId: string,
   limit: number = 200
-): Promise<NotebookEntryData[]> {
-  // Reject cross-player access (Requirements 11.5, 11.6)
+): Promise<DiscriminatedNotebookEntry[]> {
+  // Reject cross-player access (Requirements 15.9)
   if (playerId !== requestingPlayerId) {
     throw new Error("Access denied: cannot view another player's notebook");
   }
@@ -54,20 +64,59 @@ export async function getPlayerNotebook(
       roundNumber: true,
       stepsAway: true,
       entryType: true,
+      payload: true,
     },
   });
 
-  // Filter to spy-proximity entries and map to NotebookEntryData
+  // Map each entry to its discriminated type based on entryType
   return entries
-    .filter(
-      (e) =>
+    .map((e): DiscriminatedNotebookEntry | null => {
+      if (
         e.entryType === "spy-proximity" &&
         e.regionId !== null &&
         e.stepsAway !== null
-    )
-    .map((e) => ({
-      regionId: e.regionId!,
-      roundNumber: e.roundNumber,
-      stepsAway: e.stepsAway!,
-    }));
+      ) {
+        return {
+          entryType: "spy-proximity",
+          regionId: e.regionId,
+          roundNumber: e.roundNumber,
+          stepsAway: e.stepsAway,
+        };
+      }
+
+      if (e.entryType === "mastermind_distance" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "mastermind_distance",
+          locationId: p.locationId as string,
+          roundNumber: e.roundNumber,
+          stepsAway: p.stepsAway as number,
+        };
+      }
+
+      if (e.entryType === "mastermind_direction" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "mastermind_direction",
+          locationId: p.locationId as string,
+          roundNumber: e.roundNumber,
+        };
+      }
+
+      if (e.entryType === "phone_bug" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "phone_bug",
+          roundNumber: e.roundNumber,
+          targetPlayerId: p.targetPlayerId as string,
+          targetLocationId: p.targetLocationId as string,
+          mastermindStepsAway: p.mastermindStepsAway as number,
+          spyRegionId: (p.spyRegionId as string) || null,
+          spyCaptured: p.spyCaptured as boolean,
+        };
+      }
+
+      return null;
+    })
+    .filter((e): e is DiscriminatedNotebookEntry => e !== null);
 }

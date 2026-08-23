@@ -246,7 +246,8 @@ describe("Event Mutual Exclusivity Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: maxRoundLimit,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -256,8 +257,10 @@ describe("Event Mutual Exclusivity Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: maxRoundLimit,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -374,7 +377,8 @@ describe("Event Mutual Exclusivity Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: maxRoundLimit,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -384,8 +388,10 @@ describe("Event Mutual Exclusivity Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: maxRoundLimit,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 

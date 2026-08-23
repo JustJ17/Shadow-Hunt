@@ -30,3 +30,23 @@ export type {
   CaptureAttemptPayload,
   UseCardPayload,
 } from "./types";
+
+// Card system
+export {
+  CARD_POOL,
+  LEGACY_CARD_TYPES,
+} from "./cards/types";
+export type {
+  CardIdentifier,
+  CardCategory,
+  TargetRequirement,
+  ResolutionTiming,
+  CardDefinition,
+  CardEffectContext,
+} from "./cards/types";
+export { CARD_REGISTRY } from "./cards/registry";
+export { dispatchCard } from "./cards/dispatcher";
+export type { DispatchResult, DispatchError } from "./cards/dispatcher";
+
+// Resolution
+export { resolveRoundEnd } from "./resolution/resolve-round-end";

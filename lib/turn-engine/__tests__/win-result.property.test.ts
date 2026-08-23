@@ -385,7 +385,8 @@ describe("Win Result Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: playerIds[playerIds.length - 1], // last player
                     currentRound: maxRoundLimit, // at the limit
-                    currentSlot: 2,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                     version: 0,
                   },
@@ -396,8 +397,10 @@ describe("Win Result Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: playerIds[playerIds.length - 1],
                   currentRound: maxRoundLimit,
-                  currentSlot: 2,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 

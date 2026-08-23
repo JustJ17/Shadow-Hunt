@@ -4,18 +4,23 @@ import {
   TurnState,
   TurnActionResult,
   TurnActionError,
+  BlockadeState,
   EndOfTurnResolution,
 } from "@/lib/turn-engine/types";
 import { validateAction } from "@/lib/turn-engine/validate-action";
 import { executeMove } from "@/lib/turn-engine/actions/execute-move";
 import { executeSkip } from "@/lib/turn-engine/actions/execute-skip";
 import { executeCaptureAttempt } from "@/lib/turn-engine/actions/execute-capture-attempt";
-import { executeUseCard } from "@/lib/turn-engine/actions/execute-use-card";
+import { dispatchCard } from "@/lib/turn-engine/cards/dispatcher";
 import { resolveEndOfTurn } from "@/lib/turn-engine/resolution/resolve-end-of-turn";
 import { advanceTurn } from "@/lib/turn-engine/advance-turn";
 import { emitEvent } from "@/lib/turn-engine/event-feed";
 import { getPlayerPosition } from "@/lib/turn-engine/player-positions";
 import { getAdjacentLocations } from "@/lib/map/adjacency";
+import {
+  getActiveBlockades,
+  computeBlockedTransports,
+} from "@/lib/turn-engine/cards/effects/blockade-utils";
 
 /**
  * Main orchestrator for submitting a turn action.
@@ -26,10 +31,10 @@ import { getAdjacentLocations } from "@/lib/map/adjacency";
  * Flow:
  * 1. Acquire row lock (SELECT FOR UPDATE on game_turns)
  * 2. Validate room status, player turn, and action validity
- * 3. Execute the action
+ * 3. Execute the action (for USE_CARD: dispatch via Card Engine, then consume)
  * 4. Emit public event to Event Feed
- * 5. If slot 2: run end-of-turn resolution, then advance turn
- * 6. If slot 1: advance to slot 2, persist capture flag if applicable
+ * 5. If actionsRemaining reaches 0: run end-of-turn resolution, then advance turn
+ * 6. If actionsRemaining > 0: persist updated state and return intermediate success
  * 7. Return TurnActionResult with resolution data
  */
 export async function submitAction(
@@ -59,8 +64,10 @@ export async function submitAction(
           roomId: row.roomId,
           currentPlayerId: row.currentPlayerId,
           currentRound: row.currentRound,
-          currentSlot: row.currentSlot as 1 | 2,
+          actionsRemaining: row.actionsRemaining,
+          actionBudget: row.actionBudget,
           captureAttemptFlag: row.captureAttemptFlag,
+          isExtraTurn: row.isExtraTurn,
           version: row.version,
         };
 
@@ -99,6 +106,17 @@ export async function submitAction(
           select: { id: true, type: true, consumed: true },
         });
 
+        // 5b. Compute blockade state for this player
+        const currentTurnPosition = membership.turnPosition ?? 0;
+        const activeBlockades = await getActiveBlockades(
+          roomId,
+          turnState.currentRound,
+          currentTurnPosition,
+          tx
+        );
+        const blockedTransports = computeBlockedTransports(activeBlockades, playerId);
+        const blockadeState: BlockadeState = { blockedTransports };
+
         // 6. Validate the action
         const validationError = validateAction(
           action,
@@ -106,7 +124,9 @@ export async function submitAction(
           playerId,
           position,
           adjacentLocations,
-          playerCards
+          playerCards,
+          blockadeState,
+          turnState.actionsRemaining
         );
         if (validationError) return validationError;
 
@@ -123,9 +143,41 @@ export async function submitAction(
           case "CAPTURE_ATTEMPT":
             await executeCaptureAttempt(turnState.id, tx);
             break;
-          case "USE_CARD":
-            await executeUseCard(playerId, roomId, action.cardId, tx);
+          case "USE_CARD": {
+            // Look up card type from the validated card
+            const card = playerCards.find((c) => c.id === action.cardId);
+            const cardType = card?.type ?? "unknown";
+
+            // Dispatch to Card Engine — validate target and execute effect
+            // Card is NOT yet consumed; dispatch must succeed first
+            const dispatchResult = await dispatchCard(
+              cardType,
+              playerId,
+              roomId,
+              action.targetPlayerId,
+              position,
+              turnState.currentRound,
+              currentTurnPosition,
+              tx
+            );
+
+            // If dispatch fails (UNKNOWN_CARD_TYPE or INVALID_CARD_TARGET),
+            // return error without consuming card or decrementing actionsRemaining
+            if (!dispatchResult.success) {
+              return {
+                success: false,
+                error: dispatchResult.message,
+                code: dispatchResult.code,
+              } as TurnActionError;
+            }
+
+            // Dispatch succeeded — now mark card consumed
+            await tx.actionCard.update({
+              where: { id: action.cardId },
+              data: { consumed: true },
+            });
             break;
+          }
         }
 
         // 8. Emit public action event
@@ -162,7 +214,11 @@ export async function submitAction(
             await emitEvent(
               roomId,
               "card-used",
-              { playerId, cardType: card?.type ?? "unknown" },
+              {
+                playerId,
+                cardIdentifier: card?.type ?? "unknown",
+                targetPlayerId: action.targetPlayerId,
+              },
               turnState.currentRound,
               tx
             );
@@ -173,12 +229,12 @@ export async function submitAction(
             break;
         }
 
-        // 9. Handle slot progression and resolution
-        const slotNumber = turnState.currentSlot;
+        // 9. Handle action budget and resolution
+        const newActionsRemaining = turnState.actionsRemaining - 1;
         let resolution: EndOfTurnResolution | undefined;
 
-        if (slotNumber === 2) {
-          // Slot 2 complete → trigger end-of-turn resolution
+        if (newActionsRemaining === 0) {
+          // All actions used → trigger end-of-turn resolution
           resolution = await resolveEndOfTurn(roomId, playerId, turnState, tx);
 
           // Advance to next player (unless game ended via successful capture)
@@ -202,11 +258,11 @@ export async function submitAction(
             }
           }
         } else {
-          // Slot 1 → advance to slot 2
+          // Actions still remaining → update turn state
           await tx.gameTurn.update({
             where: { id: turnState.id },
             data: {
-              currentSlot: 2,
+              actionsRemaining: newActionsRemaining,
               captureAttemptFlag:
                 action.actionType === "CAPTURE_ATTEMPT"
                   ? true
@@ -218,8 +274,7 @@ export async function submitAction(
         return {
           success: true,
           actionType: action.actionType,
-          slotNumber: slotNumber as 1 | 2,
-          remainingSlots: slotNumber === 1 ? 1 : 0,
+          actionsRemaining: newActionsRemaining,
           updatedLocationId,
           resolution,
         };

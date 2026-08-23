@@ -1,6 +1,13 @@
 // Re-export TransactionClient for use by turn-engine modules
 export type { TransactionClient } from "@/lib/game/types";
 
+import type { TransportType } from "@/lib/map/types";
+import type {
+  CardIdentifier,
+  CardCategory,
+  TargetRequirement,
+} from "@/lib/turn-engine/cards/types";
+
 // --- Action Types ---
 
 export type ActionType = "MOVE" | "SKIP" | "CAPTURE_ATTEMPT" | "USE_CARD";
@@ -21,6 +28,7 @@ export interface CaptureAttemptPayload {
 export interface UseCardPayload {
   actionType: "USE_CARD";
   cardId: string;
+  targetPlayerId?: string;
 }
 
 export type ActionPayload =
@@ -36,8 +44,10 @@ export interface TurnState {
   roomId: string;
   currentPlayerId: string;
   currentRound: number;
-  currentSlot: 1 | 2;
+  actionsRemaining: number;
+  actionBudget: number;
   captureAttemptFlag: boolean;
+  isExtraTurn: boolean;
   version: number; // optimistic concurrency
 }
 
@@ -46,10 +56,9 @@ export interface TurnState {
 export interface TurnActionSuccess {
   success: true;
   actionType: ActionType;
-  slotNumber: 1 | 2;
-  remainingSlots: number;
+  actionsRemaining: number;
   updatedLocationId?: string; // present for MOVE
-  resolution?: EndOfTurnResolution; // present when slot 2 completes
+  resolution?: EndOfTurnResolution; // present when turn completes (actionsRemaining reaches 0)
 }
 
 export interface TurnActionError {
@@ -64,13 +73,17 @@ export type TurnActionErrorCode =
   | "NOT_IN_ROOM"
   | "GAME_NOT_ACTIVE"
   | "NOT_YOUR_TURN"
-  | "INVALID_SLOT_ORDER"
+  | "NO_ACTIONS_REMAINING"
   | "INVALID_MOVE"
   | "INVALID_TRANSPORT"
   | "SAME_LOCATION_MOVE"
+  | "ROADS_BLOCKED"
+  | "AIRWAYS_BLOCKED"
+  | "SEA_ROUTES_BLOCKED"
   | "DUPLICATE_CAPTURE_ATTEMPT"
   | "INVALID_CARD"
-  | "HAND_FULL"
+  | "UNKNOWN_CARD_TYPE"
+  | "INVALID_CARD_TARGET"
   | "CONCURRENCY_CONFLICT"
   | "UNKNOWN_ACTION_TYPE";
 
@@ -117,10 +130,12 @@ export interface GamePollState {
   viewerPlayerId: string;
   currentPlayerId: string;
   currentRound: number;
-  currentSlot: 1 | 2;
+  actionsRemaining: number;
+  actionBudget: number;
   players: PlayerPollData[];
   privateData: PlayerPrivateData;
   events: GameEventData[];
+  activeBlockades: ActiveBlockadeData[];
 }
 
 export interface PlayerPollData {
@@ -132,10 +147,13 @@ export interface PlayerPollData {
 }
 
 export interface PlayerPrivateData {
-  notebook: NotebookEntryData[];
-  actionCards: ActionCardData[];
+  notebook: DiscriminatedNotebookEntry[];
+  actionCards: ActionCardPollData[];
   pendingReward: PendingRewardData | null;
   skipNextTurn: boolean;
+  actionPenaltyFlag: boolean;
+  pendingExtraTurns: number;
+  pendingClues: PendingClueData[];
 }
 
 export interface ActionCardData {
@@ -162,7 +180,12 @@ export interface GameEventData {
     | "player-moved"
     | "card-used"
     | "player-skipped"
-    | "turn-skipped";
+    | "turn-skipped"
+    | "blockade-activated"
+    | "blockade-lifted"
+    | "action-penalty-applied"
+    | "player-relocated"
+    | "extra-turn-started";
   payload: Record<string, unknown>;
   createdAt: string;
 }
@@ -176,3 +199,94 @@ export interface DrawDetectionResult {
     mastermindLocationId: string;
   };
 }
+
+// --- Blockade State ---
+
+export interface BlockadeState {
+  blockedTransports: Set<TransportType>;
+}
+
+// --- Discriminated Notebook Entry Types ---
+
+export type NotebookEntryType =
+  | "spy-proximity"
+  | "mastermind_distance"
+  | "mastermind_direction"
+  | "phone_bug";
+
+export interface SpyProximityEntry {
+  entryType: "spy-proximity";
+  regionId: string;
+  roundNumber: number;
+  stepsAway: number;
+}
+
+export interface MastermindDistanceEntry {
+  entryType: "mastermind_distance";
+  locationId: string;
+  roundNumber: number;
+  stepsAway: number;
+}
+
+export interface MastermindDirectionEntry {
+  entryType: "mastermind_direction";
+  locationId: string;
+  roundNumber: number;
+}
+
+export interface PhoneBugEntry {
+  entryType: "phone_bug";
+  roundNumber: number;
+  targetPlayerId: string;
+  targetLocationId: string;
+  mastermindStepsAway: number;
+  spyRegionId: string | null;
+  spyCaptured: boolean;
+}
+
+export type DiscriminatedNotebookEntry =
+  | SpyProximityEntry
+  | MastermindDistanceEntry
+  | MastermindDirectionEntry
+  | PhoneBugEntry;
+
+// --- Active Blockade Polling Data ---
+
+export interface ActiveBlockadeData {
+  transportType: TransportType;
+  casterPlayerId: string;
+  creationRound: number;
+}
+
+// --- Pending Clue Data ---
+
+export interface PendingClueData {
+  cardIdentifier: string;
+  roundNumber: number;
+}
+
+// --- Action Card Polling Data ---
+
+export interface ActionCardPollData {
+  id: string;
+  cardIdentifier: CardIdentifier;
+  category: CardCategory;
+  targetRequirement: TargetRequirement;
+}
+
+// --- Game Event Type (standalone type alias) ---
+
+export type GameEventType =
+  | "game-won"
+  | "game-draw"
+  | "capture-failed"
+  | "spy-captured-reward-collected"
+  | "player-moved"
+  | "card-used"
+  | "player-skipped"
+  | "turn-skipped"
+  | "blockade-activated"
+  | "blockade-lifted"
+  | "action-penalty-applied"
+  | "player-relocated"
+  | "extra-turn-started";

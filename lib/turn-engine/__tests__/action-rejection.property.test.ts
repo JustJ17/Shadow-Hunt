@@ -145,7 +145,8 @@ describe("Action Rejection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_A,
                   currentRound: endRound,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
                 },
               });
@@ -205,7 +206,7 @@ describe("Action Rejection Property Tests", () => {
                 turnBefore!.currentPlayerId
               );
               expect(turnAfter!.currentRound).toBe(turnBefore!.currentRound);
-              expect(turnAfter!.currentSlot).toBe(turnBefore!.currentSlot);
+              expect(turnAfter!.actionsRemaining).toBe(turnBefore!.actionsRemaining);
 
               // ASSERT: Room status remains "finished"
               const roomAfter = await prisma.room.findUnique({
@@ -305,7 +306,8 @@ describe("Action Rejection Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_A,
                   currentRound: maxRoundLimit + 1,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
                 },
               });

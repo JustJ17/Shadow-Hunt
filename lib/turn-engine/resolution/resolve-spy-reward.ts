@@ -1,5 +1,6 @@
 import { TransactionClient, SpyResolutionOutcome } from "@/lib/turn-engine/types";
 import { computeSpyDistance } from "@/lib/turn-engine/spy-distance";
+import { CARD_POOL, CardIdentifier } from "@/lib/turn-engine/cards/types";
 
 /**
  * Resolves Spy and Reward logic (Step B of End-of-Turn Resolution).
@@ -16,7 +17,8 @@ export async function resolveSpyAndReward(
   playerId: string,
   playerLocationId: string,
   currentRound: number,
-  tx: TransactionClient
+  tx: TransactionClient,
+  rng: () => number = Math.random
 ): Promise<SpyResolutionOutcome> {
   // Get player's current position region
   const playerLocation = await tx.location.findUnique({
@@ -48,7 +50,7 @@ export async function resolveSpyAndReward(
   ) {
     const captureOrder = playerPos.pendingRewardCaptureOrder!;
     const rewardTier = computeRewardTier(captureOrder);
-    await grantRewardCards(playerId, roomId, rewardTier, tx);
+    await grantRewardCards(playerId, roomId, rewardTier, tx, rng);
 
     // Clear pending reward
     await tx.playerPosition.update({
@@ -162,33 +164,26 @@ export function computeRewardTier(captureOrder: number): number {
 }
 
 /**
- * Grants reward cards to a player. Guarantees at least 1 locator card.
- * Enforces max hand size of 5 (won't grant cards that would exceed the limit).
+ * Grants reward cards to a player. Guarantees exactly one `locate-the-mastermind` card.
+ * Draws remaining cards from CARD_POOL uniformly. No hand cap — all cards are granted
+ * regardless of how many cards the player already holds.
  */
 async function grantRewardCards(
   playerId: string,
   roomId: string,
   rewardTier: number,
-  tx: TransactionClient
+  tx: TransactionClient,
+  rng: () => number = Math.random
 ): Promise<void> {
-  // Check current hand size (unconsumed cards only)
-  const currentCards = await tx.actionCard.count({
-    where: { roomId, playerId, consumed: false },
-  });
+  const cards: CardIdentifier[] = [];
 
-  const maxToGrant = Math.min(rewardTier, 5 - currentCards);
+  // Guarantee exactly one locate-the-mastermind card (even for single-card rewards)
+  cards.push("locate-the-mastermind");
 
-  if (maxToGrant <= 0) return;
-
-  const cardTypes = ["locator", "extra-move", "reveal-region", "peek-clue"];
-  const cards: string[] = [];
-
-  // Guarantee at least 1 locator card
-  cards.push("locator");
-
-  // Fill remaining slots with random card types
-  for (let i = 1; i < maxToGrant; i++) {
-    cards.push(cardTypes[Math.floor(Math.random() * cardTypes.length)]);
+  // Draw remaining cards from CARD_POOL uniformly (duplicates allowed)
+  for (let i = 1; i < rewardTier; i++) {
+    const index = Math.floor(rng() * CARD_POOL.length);
+    cards.push(CARD_POOL[index]);
   }
 
   // Create card records in the database

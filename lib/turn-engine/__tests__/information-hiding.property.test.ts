@@ -114,7 +114,8 @@ async function createGameSetup(opts: {
       roomId: room.id,
       currentPlayerId: PLAYER_A_ID,
       currentRound: 1,
-      currentSlot: 1,
+      actionsRemaining: 2,
+      actionBudget: 2,
       captureAttemptFlag: false,
       version: 0,
     },
@@ -290,9 +291,10 @@ describe("Information Hiding Property Tests", () => {
 
               // Verify Player A can see their own notebook entries
               expect(stateA.privateData.notebook.length).toBe(1);
-              expect(stateA.privateData.notebook[0].regionId).toBe(notebookRegionId);
-              expect(stateA.privateData.notebook[0].roundNumber).toBe(notebookRound);
-              expect(stateA.privateData.notebook[0].stepsAway).toBe(notebookSteps);
+              const entry = stateA.privateData.notebook[0] as { entryType: string; regionId: string; roundNumber: number; stepsAway: number };
+              expect(entry.regionId).toBe(notebookRegionId);
+              expect(entry.roundNumber).toBe(notebookRound);
+              expect(entry.stepsAway).toBe(notebookSteps);
             } finally {
               await cleanupRoom(roomId);
             }

@@ -1,0 +1,1204 @@
+{
+  "pbtResults": {
+    "4.2 Write property test for blockade window (Property 2: Blockade Window Totality)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787506124775
+    },
+    "4.3 Write property test for caster immunity (Property 1: Caster Immunity Invariant)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787506197006
+    },
+    "6.8 Write property test for Drop Ship ignores blockades (Property 10: Drop Ship Ignores Blockades)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787507303936
+    },
+    "6.9 Write property test for Open All Roads idempotence (Property 3: Open All Roads Universal Wipe)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787507390945
+    },
+    "5.2 Write property test for rejected submissions inert (Property 25: Rejected Submissions Are Inert)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787507398129
+    },
+    "6.7 Write property test for Drop Ship destination (Property 9: Drop Ship Destination Validity)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787507574472
+    },
+    "8.2 Write property test for action budget bounds (Property 5: Action Budget Bounds)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510089833
+    },
+    "8.3 Write property test for penalty non-stacking (Property 6: Penalty Non-Stacking Cap)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510157440
+    },
+    "9.3 Write property test for extra turn count and order restoration (Property 8: Extra Turn Count and Order Restoration)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510500525
+    },
+    "9.2 Write property test for extra turn round invariance (Property 7: Extra Turn Round Invariance)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510515110
+    },
+    "12.2 Write property test for reward composition (Property 22: Reward Composition)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510545284
+    },
+    "12.3 Write property test for no hand cap (Property 23: No Hand Cap)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787510762692
+    },
+    "10.4 Write property test for direction monotonicity (Property 13: Direction Monotonicity)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511039758
+    },
+    "10.2 Write property test for mastermind distance correctness (Property 11: Mastermind Distance Correctness)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511077053
+    },
+    "10.3 Write property test for origin location stability (Property 12: Origin Location Stability)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511105849
+    },
+    "10.6 Write property test for bug-a-phone target validity (Property 15: Bug a Phone Target Validity)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511726780
+    },
+    "10.8 Write property test for bug-a-phone spy reporting (Property 17: Bug a Phone Spy Reporting)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511749305
+    },
+    "10.7 Write property test for bug-a-phone distance correctness (Property 16: Bug a Phone Distance Correctness)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787511788716
+    },
+    "13.4 Write property test for notebook privacy (Property 20: Notebook Privacy)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512248857
+    },
+    "13.3 Write property test for notebook write/read round trip (Property 19: Notebook Write/Read Round Trip)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512339438
+    },
+    "16.1 Write property test for map immutability (Property 4: Map Immutability)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512689236
+    },
+    "16.4 Write property test for target validation completeness (Property 27: Target Validation Completeness)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512713770
+    },
+    "16.2 Write property test for mastermind location never leaked (Property 24: Mastermind Location Never Leaked)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512745234
+    },
+    "16.5 Write property test for dual blockade mutual restriction (Property 28: Dual Blockade Mutual Restriction)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512745960
+    },
+    "16.3 Write property test for effect atomicity (Property 26: Effect Atomicity)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787512881734
+    },
+    "16.9 Write property test for round-end resolution executes once per round (Property 29: Round End Resolution Executes Once Per Round)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787513202975
+    },
+    "16.8 Write property test for pending clues discarded on game win (Property 30: Pending Clues Discarded on Game Win)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787513232235
+    },
+    "16.7 Write property test for event feed monotonic ordering (Property 31: Event Feed Monotonic Ordering)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787513240565
+    },
+    "16.6 Write property test for spy proximity preservation (Property 21: Spy Proximity Preservation)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787513363717
+    }
+  },
+  "executionHistory": {
+    "1.1 Create Prisma migration: add Blockade and PendingClue models, extend GameTurn and PlayerPosition": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945280
+      },
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498958335
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505349955
+      }
+    ],
+    "2.1 Create `lib/turn-engine/cards/types.ts` with card type definitions": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945344
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505355130
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505653589
+      }
+    ],
+    "2.2 Create `lib/turn-engine/cards/registry.ts` with the Card Registry map": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945458
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505659766
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505932941
+      }
+    ],
+    "2.3 Create `lib/turn-engine/cards/dispatcher.ts` with target validation and dispatch logic": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945514
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505660499
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505933796
+      }
+    ],
+    "2.4 Write unit tests for Card Registry and Dispatcher": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945576
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505944047
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506763909
+      }
+    ],
+    "3.1 Update `lib/turn-engine/types.ts` with new error codes, event types, and polling types": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945631
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505355902
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505654502
+      }
+    ],
+    "4.1 Create `lib/turn-engine/cards/effects/blockade-utils.ts` with blockade window logic": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945691
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505661320
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505934675
+      }
+    ],
+    "4.2 Write property test for blockade window (Property 2: Blockade Window Totality)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945745
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505944826
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506764699
+      }
+    ],
+    "4.3 Write property test for caster immunity (Property 1: Caster Immunity Invariant)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945808
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505945579
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506765521
+      }
+    ],
+    "5.1 Refactor `lib/turn-engine/validate-action.ts` to accept `BlockadeState` and `actionsRemaining` parameters": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945866
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505946409
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506766546
+      }
+    ],
+    "5.2 Write property test for rejected submissions inert (Property 25: Rejected Submissions Are Inert)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945928
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507099576
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507779054
+      }
+    ],
+    "6.1 Create `lib/turn-engine/cards/effects/blockade.ts` — blockade card handlers": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498945989
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505947241
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506767364
+      }
+    ],
+    "6.2 Create `lib/turn-engine/cards/effects/open-all-roads.ts` — lift all active blockades": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946096
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506773128
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507090183
+      }
+    ],
+    "6.3 Create `lib/turn-engine/cards/effects/lose-an-action.ts` — set action penalty flag": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946159
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506773650
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507090912
+      }
+    ],
+    "6.4 Create `lib/turn-engine/cards/effects/drop-ship.ts` — relocate player to distant location": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946231
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506774446
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507091776
+      }
+    ],
+    "6.5 Create `lib/turn-engine/cards/effects/extra-turn.ts` — increment pending extra turns": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946292
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506775472
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507092528
+      }
+    ],
+    "6.6 Create `lib/turn-engine/cards/effects/clue-cards.ts` — create PendingClue records": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946348
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506776129
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507093374
+      }
+    ],
+    "6.7 Write property test for Drop Ship destination (Property 9: Drop Ship Destination Validity)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946417
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507100317
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507779744
+      }
+    ],
+    "6.8 Write property test for Drop Ship ignores blockades (Property 10: Drop Ship Ignores Blockades)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946477
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507101082
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507780507
+      }
+    ],
+    "6.9 Write property test for Open All Roads idempotence (Property 3: Open All Roads Universal Wipe)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946531
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507101897
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507781311
+      }
+    ],
+    "7. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946593
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507793975
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787509863525
+      }
+    ],
+    "8.1 Refactor `lib/turn-engine/submit-action.ts` to use action budget instead of slots": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946660
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507102754
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507782337
+      }
+    ],
+    "8.2 Write property test for action budget bounds (Property 5: Action Budget Bounds)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946731
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507803535
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510224524
+      }
+    ],
+    "8.3 Write property test for penalty non-stacking (Property 6: Penalty Non-Stacking Cap)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946800
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507804293
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510225386
+      }
+    ],
+    "9.1 Refactor `lib/turn-engine/advance-turn.ts` to support extra turns and round-end resolution": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946878
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507805027
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510223741
+      }
+    ],
+    "9.2 Write property test for extra turn round invariance (Property 7: Extra Turn Round Invariance)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498946934
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510233410
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510780895
+      }
+    ],
+    "9.3 Write property test for extra turn count and order restoration (Property 8: Extra Turn Count and Order Restoration)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947049
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510234213
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510781669
+      }
+    ],
+    "10.1 Create `lib/turn-engine/resolution/resolve-round-end.ts`": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947108
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510234861
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510779961
+      }
+    ],
+    "10.2 Write property test for mastermind distance correctness (Property 11: Mastermind Distance Correctness)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947165
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510790803
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511129801
+      }
+    ],
+    "10.3 Write property test for origin location stability (Property 12: Origin Location Stability)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947251
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510791473
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511130567
+      }
+    ],
+    "10.4 Write property test for direction monotonicity (Property 13: Direction Monotonicity)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947334
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510792233
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511131339
+      }
+    ],
+    "10.5 Write property test for direction totality (Property 14: Direction Totality)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947428
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511147542
+      },
+      {
+        "executionId": "4aa35821-8ca3-42b4-afd7-823d5f28238a",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511525895
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511957855
+      }
+    ],
+    "10.6 Write property test for bug-a-phone target validity (Property 15: Bug a Phone Target Validity)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947498
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511148284
+      },
+      {
+        "executionId": "4aa35821-8ca3-42b4-afd7-823d5f28238a",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511526648
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511958639
+      }
+    ],
+    "10.7 Write property test for bug-a-phone distance correctness (Property 16: Bug a Phone Distance Correctness)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947560
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511150025
+      },
+      {
+        "executionId": "4aa35821-8ca3-42b4-afd7-823d5f28238a",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511527439
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511959395
+      }
+    ],
+    "10.8 Write property test for bug-a-phone spy reporting (Property 17: Bug a Phone Spy Reporting)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947629
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511150236
+      },
+      {
+        "executionId": "4aa35821-8ca3-42b4-afd7-823d5f28238a",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511528267
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511960146
+      }
+    ],
+    "10.9 Write property test for round-end confluence (Property 18: Round End Confluence)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947685
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511150602
+      },
+      {
+        "executionId": "4aa35821-8ca3-42b4-afd7-823d5f28238a",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511529078
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511960929
+      }
+    ],
+    "11. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947744
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513434011
+      }
+    ],
+    "12.1 Refactor `grantRewardCards` in `lib/turn-engine/resolution/resolve-spy-reward.ts`": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947801
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507805847
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510226292
+      }
+    ],
+    "12.2 Write property test for reward composition (Property 22: Reward Composition)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947861
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510235604
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510782449
+      }
+    ],
+    "12.3 Write property test for no hand cap (Property 23: No Hand Cap)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947918
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510236323
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510783189
+      }
+    ],
+    "13.1 Update `lib/turn-engine/query-turn-state.ts` with card system state": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498947992
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510792941
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511132332
+      }
+    ],
+    "13.2 Update `lib/turn-engine/notebook.ts` to support all four entry types": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948050
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510793844
+      },
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511133286
+      }
+    ],
+    "13.3 Write property test for notebook write/read round trip (Property 19: Notebook Write/Read Round Trip)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948177
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511967576
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512367246
+      }
+    ],
+    "13.4 Write property test for notebook privacy (Property 20: Notebook Privacy)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948232
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511968315
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512368021
+      }
+    ],
+    "14.1 Update Card Registry imports to point to real effect handler implementations": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948282
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511969009
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512364536
+      }
+    ],
+    "14.2 Remove old `executeUseCard` stub and update imports": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948334
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511969685
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512365431
+      }
+    ],
+    "14.3 Update `lib/turn-engine/index.ts` barrel exports for new card modules": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948390
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511970581
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512366299
+      }
+    ],
+    "15. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948447
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512392649
+      }
+    ],
+    "16.1 Write property test for map immutability (Property 4: Map Immutability)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948515
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512399353
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512915865
+      }
+    ],
+    "16.2 Write property test for mastermind location never leaked (Property 24: Mastermind Location Never Leaked)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948579
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512399985
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512916564
+      }
+    ],
+    "16.3 Write property test for effect atomicity (Property 26: Effect Atomicity)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948642
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512400642
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512917323
+      }
+    ],
+    "16.4 Write property test for target validation completeness (Property 27: Target Validation Completeness)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948701
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512401403
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512918081
+      }
+    ],
+    "16.5 Write property test for dual blockade mutual restriction (Property 28: Dual Blockade Mutual Restriction)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948776
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512402283
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512918823
+      }
+    ],
+    "16.6 Write property test for spy proximity preservation (Property 21: Spy Proximity Preservation)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948900
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512925044
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513402922
+      }
+    ],
+    "16.7 Write property test for event feed monotonic ordering (Property 31: Event Feed Monotonic Ordering)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498948968
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512925804
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513402770
+      }
+    ],
+    "16.8 Write property test for pending clues discarded on game win (Property 30: Pending Clues Discarded on Game Win)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498949027
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512926581
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513404170
+      }
+    ],
+    "16.9 Write property test for round-end resolution executes once per round (Property 29: Round End Resolution Executes Once Per Round)": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498949091
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512927468
+      },
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513405446
+      }
+    ],
+    "17. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "1b94a8ce-d46a-4cdc-b079-3c657e21be71",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787498949166
+      }
+    ],
+    "1. Schema migrations and data model changes": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505350066
+      }
+    ],
+    "3. Update turn engine types": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787505654579
+      }
+    ],
+    "2. Card system core types and registry": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506764017
+      }
+    ],
+    "4. Blockade evaluation utility": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787506765618
+      }
+    ],
+    "5. Update validateAction with blockade and budget checks": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507779127
+      }
+    ],
+    "6. Implement immediate card effect handlers": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787507781412
+      }
+    ],
+    "8. Update submitAction with action budget and card dispatch": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510225484
+      }
+    ],
+    "9. Update advanceTurn with extra turns and round-end hook": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510781778
+      }
+    ],
+    "12. Update reward granting with new Card Pool": [
+      {
+        "executionId": "234de96d-a9ad-41eb-bfbb-9e1d159cf54f",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787510783275
+      }
+    ],
+    "10. Implement Round End Resolver": [
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787511961069
+      }
+    ],
+    "14. Wire Card Registry handlers and integration": [
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512366391
+      }
+    ],
+    "13. Update polling and notebook support": [
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787512368110
+      }
+    ],
+    "16. Remaining property tests and integration tests": [
+      {
+        "executionId": "9f5d1c16-a1dc-493f-a0c6-8364adec5631",
+        "chatSessionId": "sess_60cf9e51-853d-459f-b198-422a4b61df7d",
+        "timestamp": 1787513405650
+      }
+    ]
+  }
+}

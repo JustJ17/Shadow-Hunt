@@ -10,7 +10,7 @@ import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { validateAction } from "@/lib/turn-engine/validate-action";
 import { executeMove } from "@/lib/turn-engine/actions/execute-move";
-import type { TurnState, ActionCardData } from "@/lib/turn-engine/types";
+import type { TurnState, ActionCardData, BlockadeState } from "@/lib/turn-engine/types";
 import type { AdjacentLocationWithTransport } from "@/lib/map/adjacency";
 
 interface LocationRecord {
@@ -46,14 +46,18 @@ function makeTurnState(playerId: string): TurnState {
     roomId: "test-room-id",
     currentPlayerId: playerId,
     currentRound: 1,
-    currentSlot: 1,
+    actionsRemaining: 2,
+    actionBudget: 2,
     captureAttemptFlag: false,
+    isExtraTurn: false,
     version: 0,
   };
 }
 
 const TEST_PLAYER_ID = "test-player-move-validation";
 const EMPTY_CARDS: ActionCardData[] = [];
+const NO_BLOCKADES: BlockadeState = { blockedTransports: new Set() };
+const DEFAULT_ACTIONS_REMAINING = 2;
 
 // Counter for generating unique room codes within rolled-back transactions
 let roomCounter = 0;
@@ -150,7 +154,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               pair.source.id,
               adjacentLocations,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             // Should be valid (null means no error)
@@ -188,7 +194,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               pair.source.id,
               adjacentLocations,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             // Should be rejected
@@ -214,7 +222,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               loc.id,
               adjacentLocations,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             expect(result).not.toBeNull();
@@ -262,7 +272,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               pair.source.id,
               adjacentLocations,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             // Car and boat edges should always be valid
@@ -306,7 +318,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               pair.source.id,
               adjacentLocations,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
 
             if (pair.target.isHub) {
@@ -448,14 +462,16 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               chain.source.id,
               adjacentFromSource,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              DEFAULT_ACTIONS_REMAINING
             );
             expect(slot1Result).toBeNull();
 
             // Simulate slot 2: validate MOVE from T1 (post-move position) to T2
             const turnStateSlot2: TurnState = {
               ...turnStateSlot1,
-              currentSlot: 2,
+              actionsRemaining: 1,
             };
             const adjacentFromT1 = adjacencyMap.get(chain.t1)!;
 
@@ -465,7 +481,9 @@ describe("Move Validation Property Tests", () => {
               TEST_PLAYER_ID,
               chain.t1, // Player's position is now T1 after slot 1 MOVE
               adjacentFromT1,
-              EMPTY_CARDS
+              EMPTY_CARDS,
+              NO_BLOCKADES,
+              turnStateSlot2.actionsRemaining
             );
 
             // Slot 2 validates from T1, so MOVE to T2 (adjacent to T1) should be valid
@@ -485,7 +503,9 @@ describe("Move Validation Property Tests", () => {
                 TEST_PLAYER_ID,
                 chain.source.id, // Wrong! Using pre-move position
                 adjacentFromSource,
-                EMPTY_CARDS
+                EMPTY_CARDS,
+                NO_BLOCKADES,
+                turnStateSlot2.actionsRemaining
               );
               // Should be rejected since T2 is not adjacent to source
               expect(wrongSlot2Result).not.toBeNull();

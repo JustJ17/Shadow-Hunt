@@ -4,10 +4,14 @@ import {
   PlayerPollData,
   PlayerPrivateData,
   GameEventData,
-  NotebookEntryData,
-  ActionCardData,
+  ActionCardPollData,
   PendingRewardData,
+  PendingClueData,
+  ActiveBlockadeData,
+  DiscriminatedNotebookEntry,
 } from "@/lib/turn-engine/types";
+import { CARD_REGISTRY } from "@/lib/turn-engine/cards/registry";
+import { CardIdentifier } from "@/lib/turn-engine/cards/types";
 import { getEventsFeed } from "@/lib/turn-engine/event-feed";
 
 /**
@@ -75,7 +79,7 @@ export async function getGamePollState(
   // Get requesting player's private data (Req 16.2)
   const playerPos = positions.find((p) => p.playerId === playerId);
 
-  // Notebook entries (spy-proximity clues)
+  // Notebook entries (all types)
   const notebookEntries = await prisma.notebookEntry.findMany({
     where: { roomId, playerId },
     orderBy: { createdAt: "asc" },
@@ -85,31 +89,66 @@ export async function getGamePollState(
       roundNumber: true,
       stepsAway: true,
       entryType: true,
+      payload: true,
     },
   });
-  const notebook: NotebookEntryData[] = notebookEntries
-    .filter(
-      (e) =>
-        e.entryType === "spy-proximity" &&
-        e.regionId !== null &&
-        e.stepsAway !== null
-    )
-    .map((e) => ({
-      regionId: e.regionId!,
-      roundNumber: e.roundNumber,
-      stepsAway: e.stepsAway!,
-    }));
+  const notebook: DiscriminatedNotebookEntry[] = notebookEntries
+    .map((e): DiscriminatedNotebookEntry | null => {
+      if (e.entryType === "spy-proximity" && e.regionId !== null && e.stepsAway !== null) {
+        return {
+          entryType: "spy-proximity",
+          regionId: e.regionId,
+          roundNumber: e.roundNumber,
+          stepsAway: e.stepsAway,
+        };
+      }
+      if (e.entryType === "mastermind_distance" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "mastermind_distance",
+          locationId: p.locationId as string,
+          roundNumber: e.roundNumber,
+          stepsAway: p.stepsAway as number,
+        };
+      }
+      if (e.entryType === "mastermind_direction" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "mastermind_direction",
+          locationId: p.locationId as string,
+          roundNumber: e.roundNumber,
+        };
+      }
+      if (e.entryType === "phone_bug" && e.payload) {
+        const p = e.payload as Record<string, unknown>;
+        return {
+          entryType: "phone_bug",
+          roundNumber: e.roundNumber,
+          targetPlayerId: p.targetPlayerId as string,
+          targetLocationId: p.targetLocationId as string,
+          mastermindStepsAway: p.mastermindStepsAway as number,
+          spyRegionId: (p.spyRegionId as string) || null,
+          spyCaptured: p.spyCaptured as boolean,
+        };
+      }
+      return null;
+    })
+    .filter((e): e is DiscriminatedNotebookEntry => e !== null);
 
-  // Action cards
+  // Action cards (unconsumed only, with registry metadata)
   const cards = await prisma.actionCard.findMany({
-    where: { roomId, playerId },
-    select: { id: true, type: true, consumed: true },
+    where: { roomId, playerId, consumed: false },
+    select: { id: true, type: true },
   });
-  const actionCards: ActionCardData[] = cards.map((c) => ({
-    id: c.id,
-    type: c.type,
-    consumed: c.consumed,
-  }));
+  const actionCards: ActionCardPollData[] = cards.map((c) => {
+    const def = CARD_REGISTRY.get(c.type as CardIdentifier);
+    return {
+      id: c.id,
+      cardIdentifier: (def?.identifier ?? c.type) as CardIdentifier,
+      category: def?.category ?? "sabotage",
+      targetRequirement: def?.targetRequirement ?? "none",
+    };
+  });
 
   // Pending reward
   let pendingReward: PendingRewardData | null = null;
@@ -124,11 +163,24 @@ export async function getGamePollState(
     };
   }
 
+  // Pending clues
+  const pendingClues = await prisma.pendingClue.findMany({
+    where: { roomId, playerId, resolved: false },
+    select: { cardIdentifier: true, roundNumber: true },
+  });
+  const pendingClueData: PendingClueData[] = pendingClues.map((c) => ({
+    cardIdentifier: c.cardIdentifier,
+    roundNumber: c.roundNumber,
+  }));
+
   const privateData: PlayerPrivateData = {
     notebook,
     actionCards,
     pendingReward,
     skipNextTurn: playerPos?.skipNextTurn ?? false,
+    actionPenaltyFlag: playerPos?.actionPenaltyFlag ?? false,
+    pendingExtraTurns: playerPos?.pendingExtraTurns ?? 0,
+    pendingClues: pendingClueData,
   };
 
   // Event feed after provided sequence, max 50 (Req 16.3)
@@ -142,16 +194,37 @@ export async function getGamePollState(
     createdAt: e.createdAt.toISOString(),
   }));
 
+  // Active blockades
+  const roomPlayers2 = await prisma.roomPlayer.findMany({
+    where: { roomId },
+    select: { playerId: true, turnPosition: true },
+  });
+  const currentTurnPosition = roomPlayers2.find(
+    (p) => p.playerId === gameTurn.currentPlayerId
+  )?.turnPosition ?? 1;
+
+  const blockades = await prisma.blockade.findMany({
+    where: { roomId, lifted: false },
+    select: { transportType: true, casterPlayerId: true, creationRound: true },
+  });
+  const activeBlockades: ActiveBlockadeData[] = blockades.map((b) => ({
+    transportType: b.transportType as "car" | "plane" | "boat",
+    casterPlayerId: b.casterPlayerId,
+    creationRound: b.creationRound,
+  }));
+
   return {
     roomId,
     status: room.status as "in-progress" | "finished",
     viewerPlayerId: playerId,
     currentPlayerId: gameTurn.currentPlayerId,
     currentRound: gameTurn.currentRound,
-    currentSlot: gameTurn.currentSlot as 1 | 2,
+    actionsRemaining: gameTurn.actionsRemaining,
+    actionBudget: gameTurn.actionBudget,
     players,
     privateData,
     events: gameEvents,
+    activeBlockades,
   };
 }
 

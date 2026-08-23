@@ -82,8 +82,10 @@ export async function initializeGame(
         roomId,
         currentPlayerId: playerIds[0],
         currentRound: 1,
-        currentSlot: 1,
+        actionsRemaining: 2,
+        actionBudget: 2,
         captureAttemptFlag: false,
+        isExtraTurn: false,
         version: 0,
       },
     });

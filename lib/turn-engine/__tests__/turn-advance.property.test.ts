@@ -9,7 +9,7 @@ import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { advanceTurn } from "@/lib/turn-engine/advance-turn";
 import { validateAction } from "@/lib/turn-engine/validate-action";
-import type { TurnState, ActionCardData } from "@/lib/turn-engine/types";
+import type { TurnState, ActionCardData, BlockadeState } from "@/lib/turn-engine/types";
 
 let prisma: PrismaClient;
 
@@ -104,7 +104,8 @@ describe("Turn Advancement Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: currentPlayerId,
                     currentRound: startingRound,
-                    currentSlot: 2,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                     version: 0,
                   },
@@ -115,8 +116,10 @@ describe("Turn Advancement Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: currentPlayerId,
                   currentRound: startingRound,
-                  currentSlot: 2,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -131,7 +134,7 @@ describe("Turn Advancement Property Tests", () => {
                   expectedNextPlayerId
                 );
                 expect(updatedTurn!.currentRound).toBe(expectedRound);
-                expect(updatedTurn!.currentSlot).toBe(1);
+                expect(updatedTurn!.actionsRemaining).toBe(2);
                 expect(updatedTurn!.captureAttemptFlag).toBe(false);
 
                 throw new Error("ROLLBACK");
@@ -208,7 +211,8 @@ describe("Turn Advancement Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: currentPlayerId,
                     currentRound: startingRound,
-                    currentSlot: 2,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                     version: 0,
                   },
@@ -219,8 +223,10 @@ describe("Turn Advancement Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: currentPlayerId,
                   currentRound: startingRound,
-                  currentSlot: 2,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -257,7 +263,7 @@ describe("Turn Advancement Property Tests", () => {
                   playerIds[expectedNextIdx]
                 );
                 expect(updatedTurn!.currentRound).toBe(expectedRound);
-                expect(updatedTurn!.currentSlot).toBe(1);
+                expect(updatedTurn!.actionsRemaining).toBe(2);
                 expect(updatedTurn!.captureAttemptFlag).toBe(false);
 
                 // Verify skip flags were cleared
@@ -346,7 +352,8 @@ describe("Turn Advancement Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: currentPlayerId,
                     currentRound: startingRound,
-                    currentSlot: 2,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                     version: 0,
                   },
@@ -357,8 +364,10 @@ describe("Turn Advancement Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: currentPlayerId,
                   currentRound: startingRound,
-                  currentSlot: 2,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -379,7 +388,7 @@ describe("Turn Advancement Property Tests", () => {
                 // Round increments exactly once when wrapping past idx 0.
                 expect(updatedTurn!.currentPlayerId).toBe(playerIds[1]);
                 expect(updatedTurn!.currentRound).toBe(startingRound + 1);
-                expect(updatedTurn!.currentSlot).toBe(1);
+                expect(updatedTurn!.actionsRemaining).toBe(2);
                 expect(updatedTurn!.captureAttemptFlag).toBe(false);
 
                 // All skip flags cleared
@@ -417,66 +426,75 @@ describe("Turn Advancement Property Tests", () => {
   describe("Property 20: Two-Slot Turn Structure", () => {
     // **Validates: Requirements 2.1, 2.3, 2.5, 2.7**
 
-    it("TurnState currentSlot is always 1 or 2", async () => {
+    it("TurnState actionsRemaining is always 1 or 2", async () => {
       await fc.assert(
         fc.asyncProperty(
           fc.constantFrom(1, 2) as fc.Arbitrary<1 | 2>,
-          async (slot: 1 | 2) => {
+          async (actionsRemaining: 1 | 2) => {
             const turnState: TurnState = {
               id: "test-id",
               roomId: "test-room",
               currentPlayerId: "test-player",
               currentRound: 1,
-              currentSlot: slot,
+              actionsRemaining,
+              actionBudget: 2,
               captureAttemptFlag: false,
+              isExtraTurn: false,
               version: 0,
             };
 
-            expect(turnState.currentSlot).toBeGreaterThanOrEqual(1);
-            expect(turnState.currentSlot).toBeLessThanOrEqual(2);
+            expect(turnState.actionsRemaining).toBeGreaterThanOrEqual(1);
+            expect(turnState.actionsRemaining).toBeLessThanOrEqual(2);
           }
         ),
         { numRuns: 10 }
       );
     }, 30000);
 
-    it("slot actions are accepted at both slot 1 and slot 2", async () => {
+    it("actions are accepted when actionsRemaining is 1 or 2", async () => {
       const playerId = "test-slot-player";
       const emptyCards: ActionCardData[] = [];
+      const noBlockades: BlockadeState = { blockedTransports: new Set() };
 
       await fc.assert(
         fc.asyncProperty(
           fc.constantFrom(1, 2) as fc.Arbitrary<1 | 2>,
-          async (slot: 1 | 2) => {
+          async (actionsRemaining: 1 | 2) => {
             const turnState: TurnState = {
               id: "test-id",
               roomId: "test-room",
               currentPlayerId: playerId,
               currentRound: 1,
-              currentSlot: slot,
+              actionsRemaining,
+              actionBudget: 2,
               captureAttemptFlag: false,
+              isExtraTurn: false,
               version: 0,
             };
 
-            // SKIP is always valid at any slot
+            // SKIP is always valid at any action count
             const result = validateAction(
               { actionType: "SKIP" },
               turnState,
               playerId,
               "some-location",
               [],
-              emptyCards
+              emptyCards,
+              noBlockades,
+              actionsRemaining
             );
             expect(result).toBeNull();
 
-            // CAPTURE_ATTEMPT valid when no prior flag (regardless of slot)
+            // CAPTURE_ATTEMPT valid when no prior flag (regardless of actions remaining)
             const captureResult = validateAction(
               { actionType: "CAPTURE_ATTEMPT" },
               turnState,
               playerId,
               "some-location",
               [],
-              emptyCards
+              emptyCards,
+              noBlockades,
+              actionsRemaining
             );
             expect(captureResult).toBeNull();
           }
@@ -488,19 +506,22 @@ describe("Turn Advancement Property Tests", () => {
     it("max 1 capture attempt per turn - captureAttemptFlag prevents second", async () => {
       const playerId = "test-capture-player";
       const emptyCards: ActionCardData[] = [];
+      const noBlockades: BlockadeState = { blockedTransports: new Set() };
 
       await fc.assert(
         fc.asyncProperty(
           fc.constantFrom(1, 2) as fc.Arbitrary<1 | 2>,
-          async (slot: 1 | 2) => {
+          async (actionsRemaining: 1 | 2) => {
             // TurnState with captureAttemptFlag already set
             const turnState: TurnState = {
               id: "test-id",
               roomId: "test-room",
               currentPlayerId: playerId,
               currentRound: 1,
-              currentSlot: slot,
+              actionsRemaining,
+              actionBudget: 2,
               captureAttemptFlag: true, // Already attempted
+              isExtraTurn: false,
               version: 0,
             };
 
@@ -510,7 +531,9 @@ describe("Turn Advancement Property Tests", () => {
               playerId,
               "some-location",
               [],
-              emptyCards
+              emptyCards,
+              noBlockades,
+              actionsRemaining
             );
 
             expect(result).not.toBeNull();
@@ -570,7 +593,8 @@ describe("Turn Advancement Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: playerIds[0],
                     currentRound: 1,
-                    currentSlot: 2,
+                    actionsRemaining: 1,
+                    actionBudget: 2,
                     captureAttemptFlag: captureFlag,
                     version: 0,
                   },
@@ -581,8 +605,10 @@ describe("Turn Advancement Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: playerIds[0],
                   currentRound: 1,
-                  currentSlot: 2,
+                  actionsRemaining: 1,
+                  actionBudget: 2,
                   captureAttemptFlag: captureFlag,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -593,8 +619,8 @@ describe("Turn Advancement Property Tests", () => {
                   where: { id: gameTurn.id },
                 });
 
-                // Slot resets to 1 for next player's turn
-                expect(updatedTurn!.currentSlot).toBe(1);
+                // actionsRemaining resets to actionBudget for next player's turn
+                expect(updatedTurn!.actionsRemaining).toBe(2);
                 // captureAttemptFlag always reset to false
                 expect(updatedTurn!.captureAttemptFlag).toBe(false);
                 // Next player is different from current

@@ -1,0 +1,168 @@
+
+ RUN  v4.1.11 D:/Projects/Shadow-Hunt
+
+stdout | lib/turn-engine/__tests__/turn-advance.property.test.ts
+◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+ ❯ lib/turn-engine/__tests__/turn-advance.property.test.ts (7 tests | 4 failed) 3108ms
+       × advances to the next turnPosition, wraps from N to 1 with round increment 1641ms
+       × skipped players have flags cleared, turn-skipped events emitted, advances to unflagged player 482ms
+       × all-flagged edge case: clears all flags, increments round appropriately 527ms
+       × end-of-turn: advanceTurn resets slot to 1 and captureAttemptFlag to false 442ms
+stdout | lib/turn-engine/__tests__/event-feed.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ lib/turn-engine/__tests__/event-feed.property.test.ts (6 tests | 4 failed) 3488ms
+       × sequence numbers are strictly increasing and round numbers are non-decreasing 2332ms
+       × getEventsFeed returns events after the provided sequence number, limited to 50 257ms
+       × events are correctly typed for each action kind 201ms
+       × reward always grants full tier regardless of existing hand size 651ms
+stdout | lib/turn-engine/__tests__/draw-detection.property.test.ts
+◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+
+ ❯ lib/turn-engine/__tests__/draw-detection.property.test.ts (4 tests | 4 failed) 4032ms
+       × draw triggers when last player's turn wraps round past maxRoundLimit 673ms
+       × draw does NOT trigger when round does not exceed maxRoundLimit 445ms
+       × advanceTurn on a finished room returns { drawDetected: false } without side effects 858ms
+       × advanceTurn on a finished room with existing GameResult does not create duplicate 726ms
+stdout | lib/turn-engine/__tests__/win-result.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ❯ lib/turn-engine/__tests__/win-result.property.test.ts (4 tests | 4 failed) 4383ms
+       × successful capture creates GameResult with all correct fields 1423ms
+       × GameResult winnerId and winLocationId always match the arguments passed to resolveCaptureAttempt 1536ms
+       × win event payload contains non-null mastermindLocationId matching GameThreat.locationId 509ms
+       × draw event payload contains non-null mastermindLocationId matching GameThreat.locationId 900ms
+stdout | lib/game/__tests__/spy-capture.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ lib/game/__tests__/spy-capture.property.test.ts (1 test | 1 failed) 4850ms
+       × after capture, only the targeted spy is updated with captured=true and the correct capturedByPlayerId 4830ms
+stdout | lib/turn-engine/__tests__/capture-resolution.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ❯ lib/turn-engine/__tests__/capture-resolution.property.test.ts (5 tests | 5 failed) 5724ms
+       × capture resolves against post-move position, not original position 1690ms
+       × capture would fail if resolved against original position instead of final 1117ms
+       × success: player at Mastermind location → room finished, winnerId set, mastermindLocationId revealed 449ms
+       × failure: player at different location → skipNextTurn set, no mastermindLocationId revealed 579ms
+       × correctness: result depends solely on location match (randomized scenarios) 573ms
+stdout | lib/turn-engine/__tests__/action-rejection.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts (2 tests | 2 failed) 5870ms
+       × any action payload submitted to a finished room returns GAME_NOT_ACTIVE 3674ms
+       × action rejection applies equally to rooms that ended via draw 956ms
+stdout | lib/turn-engine/resolution/__tests__/origin-location-stability.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ lib/turn-engine/resolution/__tests__/origin-location-stability.property.test.ts (3 tests | 3 failed) 6324ms
+     × locate-the-mastermind notebook entry uses originLocationId even after player moves 1285ms
+     × reveal-direction notebook entry is derived from originLocationId even after player moves 2315ms
+     × multiple clue cards played at same origin produce entries based on that origin after player moves 1756ms
+stdout | lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts (4 tests | 4 failed) 3182ms
+     × advanceTurn with pendingExtraTurns > 0 keeps the same round number 1464ms
+     × consuming k extra turns sequentially never changes the round number 625ms
+     × normal advancement wrapping from last player increments round (control case) 253ms
+     × last player extra turns complete before round increments 832ms
+stdout | lib/turn-engine/__tests__/spy-resolution.property.test.ts
+◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts (7 tests | 4 failed) 2665ms
+       × exactly one of 5 cases matches and executes per resolution for any game state 444ms
+       × outcome type is always one of the four valid types 600ms
+       × when reward cards are granted, at least 1 is of type locator 428ms
+       × reward cards respect max hand size of 5 488ms
+stdout | lib/turn-engine/__tests__/information-hiding.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts (2 tests | 2 failed) 6890ms
+       × poll response does not contain Mastermind locationId or uncaptured Spy locationIds 2649ms
+       × player B cannot see player A notebook entries in poll response 3017ms
+stdout | lib/turn-engine/__tests__/game-result.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ lib/turn-engine/__tests__/game-result.property.test.ts (3 tests | 3 failed) 2591ms
+       × win outcome response includes all required fields with correct types 1018ms
+       × draw outcome response includes all required fields with correct types 566ms
+       × in-progress game returns only outcome field with no result data 368ms
+stdout | lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts (3 tests | 3 failed) 2770ms
+       × after a win, exactly one GameResult exists and a second insert is rejected by unique constraint 1294ms
+       × after a draw, exactly one GameResult exists and a second insert is rejected by unique constraint 580ms
+       × for any finished game scenario (win or draw), count of GameResult records is always exactly 1 886ms
+stdout | lib/turn-engine/resolution/__tests__/round-end-confluence.property.test.ts
+◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+
+ ❯ lib/turn-engine/resolution/__tests__/round-end-confluence.property.test.ts (3 tests | 2 failed) 341ms
+     × multiset of notebook entries is identical regardless of clue processing order 123ms
+     × mixed card types produce order-independent results 127ms
+stdout | lib/game/__tests__/initialize-game.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ lib/game/__tests__/initialize-game.property.test.ts (2 tests | 2 failed) 2407ms
+       × initializeGame creates exactly 1 GameThreat with a valid locationId from the 40 locations 678ms
+       × initializeGame creates exactly 6 GameSpy records, one per region, each with a locationId belonging to that region 954ms
+stdout | lib/turn-engine/__tests__/target-validation-completeness.property.test.ts
+◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+
+ ❯ lib/turn-engine/__tests__/target-validation-completeness.property.test.ts (7 tests | 2 failed) 214ms
+       × accepted when no targetPlayerId is supplied 24ms
+       × every card type handles all target scenarios correctly 33ms
+stdout | lib/turn-engine/__tests__/move-validation.property.test.ts
+◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+ ❯ lib/turn-engine/__tests__/move-validation.property.test.ts (7 tests | 2 failed) 1307ms
+       × MOVE to same location is rejected with SAME_LOCATION_MOVE 17ms
+       × after executeMove, player position equals targetLocationId 433ms
+stdout | lib/turn-engine/__tests__/event-exclusivity.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+
+ ❯ lib/turn-engine/__tests__/event-exclusivity.property.test.ts (3 tests | 3 failed) 2630ms
+       × win path: exactly 1 game-won event and 0 game-draw events 625ms
+       × draw path: exactly 1 game-draw event and 0 game-won events 754ms
+       × win followed by advanceTurn does not produce a game-draw event (guard clause) 578ms
+stdout | lib/lobby/__tests__/start-game-init.test.ts
+◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+
+ ❯ lib/lobby/__tests__/start-game-init.test.ts (3 tests | 3 failed) 1734ms
+     × creates GameThreat and GameSpy records when all preconditions are met 735ms
+     × calling startGame twice returns GAME_ALREADY_STARTED on second call with no duplicate records 515ms
+     × transaction rollback: if game initialization fails, room stays 'waiting' and no partial state persists 469ms
+stdout | lib/turn-engine/__tests__/starting-positions.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ❯ lib/turn-engine/__tests__/starting-positions.property.test.ts (1 test | 1 failed) 1073ms
+       × each player starts at the Hub of a distinct Region, no two sharing a Region 1056ms
+stdout | lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts
+◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts (2 tests | 2 failed) 2450ms
+     × player with k pending extra turns takes exactly k extra turns, then normal order resumes 1737ms
+     × multiple extra-turn plays accumulate and are consumed one at a time 692ms
+stdout | lib/turn-engine/__tests__/state-preservation.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts (11 tests | 11 failed) 12894ms
+       × actions from non-current player are rejected with NOT_YOUR_TURN and no state changes 653ms
+       × MOVE action from non-current player is also rejected without state change 1005ms
+       × actions on 'finished' room are rejected with GAME_NOT_ACTIVE 1096ms
+       × actions on 'waiting' room are rejected with GAME_NOT_ACTIVE 936ms
+       × different action types all rejected on inactive room 1569ms
+       × invalid MOVE to non-adjacent location rejected, all state unchanged 994ms
+       × MOVE to same location rejected, state preserved 951ms
+       × duplicate CAPTURE_ATTEMPT rejected, state preserved 1157ms
+       × SKIP at slot 1 advances slot to 2 but changes nothing else 1146ms
+       × SKIP does not modify player position regardless of current location 993ms
+       × SKIP emits player-skipped event but no other side effects 967ms
+
+ Test Files  22 failed | 60 passed (82)
+      Tests  71 failed | 375 passed (446)
+   Start at  22:38:40
+   Duration  21.71s (transform 6.75s, setup 49.60s, import 21.41s, tests 119.38s, environment 2.48s)
+

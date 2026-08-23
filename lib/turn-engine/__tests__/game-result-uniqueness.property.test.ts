@@ -205,7 +205,8 @@ describe("GameResult Uniqueness Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: maxRoundLimit,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
                   },
                 });
@@ -215,8 +216,10 @@ describe("GameResult Uniqueness Property Tests", () => {
                   roomId: room.id,
                   currentPlayerId: TEST_PLAYER_B,
                   currentRound: maxRoundLimit,
-                  currentSlot: 1,
+                  actionsRemaining: 2,
+                  actionBudget: 2,
                   captureAttemptFlag: false,
+                  isExtraTurn: false,
                   version: 0,
                 };
 
@@ -345,7 +348,8 @@ describe("GameResult Uniqueness Property Tests", () => {
                       roomId: room.id,
                       currentPlayerId: TEST_PLAYER_B,
                       currentRound: roundParam, // equals maxRoundLimit
-                      currentSlot: 1,
+                      actionsRemaining: 2,
+                      actionBudget: 2,
                       captureAttemptFlag: false,
                     },
                   });
@@ -355,8 +359,10 @@ describe("GameResult Uniqueness Property Tests", () => {
                     roomId: room.id,
                     currentPlayerId: TEST_PLAYER_B,
                     currentRound: roundParam,
-                    currentSlot: 1,
+                    actionsRemaining: 2,
+                    actionBudget: 2,
                     captureAttemptFlag: false,
+                    isExtraTurn: false,
                     version: 0,
                   };
 

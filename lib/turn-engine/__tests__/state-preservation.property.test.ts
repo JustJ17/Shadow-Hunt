@@ -109,7 +109,8 @@ async function createGameSetup(opts: {
         roomId: room.id,
         currentPlayerId: playerIds[currentPlayerIdx],
         currentRound: 1,
-        currentSlot: 1,
+        actionsRemaining: 2,
+        actionBudget: 2,
         captureAttemptFlag: false,
         version: 0,
       },
@@ -230,7 +231,7 @@ describe("State Preservation Property Tests", () => {
               // Turn state unchanged
               expect(turnAfter!.currentPlayerId).toBe(turnBefore!.currentPlayerId);
               expect(turnAfter!.currentRound).toBe(turnBefore!.currentRound);
-              expect(turnAfter!.currentSlot).toBe(turnBefore!.currentSlot);
+              expect(turnAfter!.actionsRemaining).toBe(turnBefore!.actionsRemaining);
               expect(turnAfter!.captureAttemptFlag).toBe(turnBefore!.captureAttemptFlag);
 
               // No events emitted
@@ -497,7 +498,7 @@ describe("State Preservation Property Tests", () => {
               // Turn state unchanged
               expect(turnAfter!.currentPlayerId).toBe(turnBefore!.currentPlayerId);
               expect(turnAfter!.currentRound).toBe(turnBefore!.currentRound);
-              expect(turnAfter!.currentSlot).toBe(turnBefore!.currentSlot);
+              expect(turnAfter!.actionsRemaining).toBe(turnBefore!.actionsRemaining);
               expect(turnAfter!.captureAttemptFlag).toBe(turnBefore!.captureAttemptFlag);
               expect(turnAfter!.version).toBe(turnBefore!.version);
 
@@ -548,7 +549,7 @@ describe("State Preservation Property Tests", () => {
               const turnAfter = await prisma.gameTurn.findUnique({
                 where: { roomId: setup.roomId },
               });
-              expect(turnAfter!.currentSlot).toBe(turnBefore!.currentSlot);
+              expect(turnAfter!.actionsRemaining).toBe(turnBefore!.actionsRemaining);
               expect(turnAfter!.currentPlayerId).toBe(turnBefore!.currentPlayerId);
 
               // Position unchanged
@@ -609,7 +610,8 @@ describe("State Preservation Property Tests", () => {
                 roomId: room.id,
                 currentPlayerId: playerIds[0],
                 currentRound: 1,
-                currentSlot: 2,
+                actionsRemaining: 1,
+                actionBudget: 2,
                 captureAttemptFlag: true,
                 version: 0,
               },
@@ -634,7 +636,7 @@ describe("State Preservation Property Tests", () => {
               const turnAfter = await prisma.gameTurn.findUnique({
                 where: { roomId: room.id },
               });
-              expect(turnAfter!.currentSlot).toBe(turnBefore!.currentSlot);
+              expect(turnAfter!.actionsRemaining).toBe(turnBefore!.actionsRemaining);
               expect(turnAfter!.captureAttemptFlag).toBe(true);
               expect(turnAfter!.currentPlayerId).toBe(turnBefore!.currentPlayerId);
 
@@ -695,15 +697,14 @@ describe("State Preservation Property Tests", () => {
               expect(result.success).toBe(true);
               if (result.success) {
                 expect(result.actionType).toBe("SKIP");
-                expect(result.slotNumber).toBe(1);
-                expect(result.remainingSlots).toBe(1);
+                expect(result.actionsRemaining).toBe(1);
               }
 
-              // Verify slot advanced to 2
+              // Verify actionsRemaining decremented
               const turnAfter = await prisma.gameTurn.findUnique({
                 where: { roomId: setup.roomId },
               });
-              expect(turnAfter!.currentSlot).toBe(2);
+              expect(turnAfter!.actionsRemaining).toBe(1);
 
               // Verify nothing else changed
               expect(turnAfter!.currentPlayerId).toBe(turnBefore!.currentPlayerId);

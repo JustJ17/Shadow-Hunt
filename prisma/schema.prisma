@@ -31,6 +31,8 @@ model Room {
   notebookEntries NotebookEntry[]
   gameEvents      GameEvent[]
   actionCards     ActionCard[]
+  blockades       Blockade[]
+  pendingClues    PendingClue[]
 
   @@index([status, visibility, playerCount]) // For public room listing query
   @@index([code])
@@ -141,8 +143,10 @@ model GameTurn {
   roomId             String  @unique
   currentPlayerId    String
   currentRound       Int     @default(1)
-  currentSlot        Int     @default(1) // 1 or 2
+  actionsRemaining   Int     @default(2)
+  actionBudget       Int     @default(2)
   captureAttemptFlag Boolean @default(false)
+  isExtraTurn        Boolean @default(false)
   version            Int     @default(0) // optimistic locking
 
   room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
@@ -156,6 +160,8 @@ model PlayerPosition {
   playerId                  String
   locationId                String
   skipNextTurn              Boolean @default(false)
+  actionPenaltyFlag         Boolean @default(false)
+  pendingExtraTurns         Int     @default(0)
   pendingRewardRegionId     String? // Region where spy was captured
   pendingRewardCaptureOrder Int? // 1-6, determines reward tier
 
@@ -228,4 +234,35 @@ model GameResult {
   room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
 
   @@map("game_results")
+}
+
+model Blockade {
+  id                 String  @id @default(cuid())
+  roomId             String
+  transportType      String // "car" | "plane" | "boat"
+  casterPlayerId     String
+  creationRound      Int
+  casterTurnPosition Int
+  lifted             Boolean @default(false)
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, lifted])
+  @@map("blockades")
+}
+
+model PendingClue {
+  id               String   @id @default(cuid())
+  roomId           String
+  playerId         String
+  cardIdentifier   String // "locate-the-mastermind" | "bug-a-phone" | "reveal-direction"
+  roundNumber      Int
+  originLocationId String
+  resolved         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId, roundNumber, resolved])
+  @@map("pending_clues")
 }
