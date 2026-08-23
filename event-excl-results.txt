@@ -1,0 +1,38 @@
+
+ RUN  v4.1.11 d:/Projects/Shadow-Hunt
+
+stdout | lib/turn-engine/__tests__/event-exclusivity.property.test.ts
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > win path: exactly 1 game-won event and 0 game-draw events
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > draw path: exactly 1 game-draw event and 0 game-won events
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > win followed by advanceTurn does not produce a game-draw event (guard clause)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests
+PrismaClientKnownRequestError: 
+Invalid `prisma.location.findMany()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/event-exclusivity.property.test.ts:42:42
+
+  39 const adapter = new PrismaPg({ connectionString });
+  40 prisma = new PrismaClient({ adapter });
+  41 
+→ 42 allLocations = await prisma.location.findMany(
+Authentication failed against the database server, the provided database credentials for `user` are not valid
+ ❯ Jr.handleRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:237:12
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:183:11
+ ❯ Jr.request node_modules/@prisma/client/src/runtime/RequestHandler.ts:152:11
+ ❯ a node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1014:23
+ ❯ lib/turn-engine/__tests__/event-exclusivity.property.test.ts:42:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P1000', meta: { modelName: 'Location', driverAdapterError: { stack: 'DriverAdapterError: AuthenticationFailed\n    at PrismaPgAdapter.onError (file:///d:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///d:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///d:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)\n    at Object.singleLoader (d:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:65:6569)', message: 'AuthenticationFailed', name: 'DriverAdapterError', cause: { originalCode: '28P01', originalMessage: 'password authentication failed for user "user"', kind: 'AuthenticationFailed', user: 'user' }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 skipped (3)
+   Start at  12:15:21
+   Duration  658ms (transform 111ms, setup 35ms, import 209ms, tests 158ms, environment 0ms)
+

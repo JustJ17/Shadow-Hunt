@@ -101,6 +101,7 @@ describe("Capture Resolution Property Tests", () => {
                   room.id,
                   TEST_PLAYER_ID,
                   finalLoc.id, // Final position passed to resolution
+                  1, // roundNumber
                   tx
                 );
 
@@ -170,6 +171,7 @@ describe("Capture Resolution Property Tests", () => {
                   room.id,
                   TEST_PLAYER_ID,
                   original.id, // Original position (not the post-move)
+                  1, // roundNumber
                   tx
                 );
 
@@ -238,6 +240,7 @@ describe("Capture Resolution Property Tests", () => {
                   room.id,
                   TEST_PLAYER_ID,
                   location.id,
+                  1, // roundNumber
                   tx
                 );
 
@@ -309,6 +312,7 @@ describe("Capture Resolution Property Tests", () => {
                   room.id,
                   TEST_PLAYER_ID,
                   playerLoc.id,
+                  1, // roundNumber
                   tx
                 );
 
@@ -387,6 +391,7 @@ describe("Capture Resolution Property Tests", () => {
                   room.id,
                   TEST_PLAYER_ID,
                   playerLoc.id,
+                  1, // roundNumber
                   tx
                 );
 

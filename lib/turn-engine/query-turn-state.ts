@@ -145,6 +145,7 @@ export async function getGamePollState(
   return {
     roomId,
     status: room.status as "in-progress" | "finished",
+    viewerPlayerId: playerId,
     currentPlayerId: gameTurn.currentPlayerId,
     currentRound: gameTurn.currentRound,
     currentSlot: gameTurn.currentSlot as 1 | 2,

@@ -1,4 +1,8 @@
-import { TransactionClient, TurnState } from "@/lib/turn-engine/types";
+import {
+  TransactionClient,
+  TurnState,
+  DrawDetectionResult,
+} from "@/lib/turn-engine/types";
 import { emitEvent } from "@/lib/turn-engine/event-feed";
 import { getPlayerPositionRecord } from "@/lib/turn-engine/player-positions";
 
@@ -11,12 +15,19 @@ import { getPlayerPositionRecord } from "@/lib/turn-engine/player-positions";
  * - Skip flagged players: clears the flag, emits a "turn-skipped" event, advances past them
  * - All-flagged edge case: clears all flags and advances the round until an unflagged player is found
  * - Resets slot to 1 and captureAttemptFlag to false for the new turn
+ * - Draw detection: if the new round exceeds maxRoundLimit, ends the game as a draw
  */
 export async function advanceTurn(
   roomId: string,
   turnState: TurnState,
   tx: TransactionClient
-): Promise<void> {
+): Promise<DrawDetectionResult> {
+  // Guard: if room is already finished (e.g., from a capture attempt), skip draw detection
+  const room = await tx.room.findUniqueOrThrow({ where: { id: roomId } });
+  if (room.status === "finished") {
+    return { drawDetected: false };
+  }
+
   const players = await tx.roomPlayer.findMany({
     where: { roomId },
     orderBy: { turnPosition: "asc" },
@@ -72,7 +83,53 @@ export async function advanceTurn(
     }
   }
 
-  // Update the turn state for the new player's turn
+  // Draw detection: check if the new round exceeds the configured maxRoundLimit
+  if (newRound > room.maxRoundLimit) {
+    // Fetch the mastermind's location from GameThreat
+    const gameThreat = await tx.gameThreat.findUniqueOrThrow({
+      where: { roomId },
+    });
+
+    // Transition room status to "finished"
+    await tx.room.update({
+      where: { id: roomId },
+      data: { status: "finished" },
+    });
+
+    // Create GameResult record with outcome "draw"
+    await tx.gameResult.create({
+      data: {
+        roomId,
+        outcome: "draw",
+        mastermindLocationId: gameThreat.locationId,
+        roundNumber: newRound,
+        reason: "max-rounds-exceeded",
+      },
+    });
+
+    // Emit "game-draw" event to the Event Feed
+    await emitEvent(
+      roomId,
+      "game-draw",
+      {
+        roundNumber: newRound,
+        mastermindLocationId: gameThreat.locationId,
+        reason: "max-rounds-exceeded",
+      },
+      newRound,
+      tx
+    );
+
+    return {
+      drawDetected: true,
+      drawEvent: {
+        roundNumber: newRound,
+        mastermindLocationId: gameThreat.locationId,
+      },
+    };
+  }
+
+  // Normal turn advancement — update the turn state for the new player's turn
   await tx.gameTurn.update({
     where: { id: turnState.id },
     data: {
@@ -82,4 +139,6 @@ export async function advanceTurn(
       captureAttemptFlag: false,
     },
   });
+
+  return { drawDetected: false };
 }

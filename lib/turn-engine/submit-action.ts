@@ -186,7 +186,20 @@ export async function submitAction(
             !resolution.captureAttempt ||
             resolution.captureAttempt.result !== "success"
           ) {
-            await advanceTurn(roomId, turnState, tx);
+            const { drawDetected, drawEvent } = await advanceTurn(
+              roomId,
+              turnState,
+              tx
+            );
+
+            // If draw detected, include draw info in resolution — game is over
+            if (drawDetected && drawEvent) {
+              resolution.drawResult = {
+                roundNumber: drawEvent.roundNumber,
+                mastermindLocationId: drawEvent.mastermindLocationId,
+                reason: "max-rounds-exceeded",
+              };
+            }
           }
         } else {
           // Slot 1 → advance to slot 2

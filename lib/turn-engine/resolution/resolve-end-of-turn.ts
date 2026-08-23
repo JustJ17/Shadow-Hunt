@@ -29,6 +29,7 @@ export async function resolveEndOfTurn(
       roomId,
       playerId,
       finalLocationId,
+      turnState.currentRound,
       tx
     );
     resolution.captureAttempt = captureOutcome;

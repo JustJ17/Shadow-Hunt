@@ -79,6 +79,13 @@ export type TurnActionErrorCode =
 export interface EndOfTurnResolution {
   captureAttempt?: CaptureAttemptOutcome;
   spyResult?: SpyResolutionOutcome;
+  drawResult?: DrawOutcome;
+}
+
+export interface DrawOutcome {
+  roundNumber: number;
+  mastermindLocationId: string;
+  reason: "max-rounds-exceeded";
 }
 
 export interface CaptureAttemptOutcome {
@@ -107,6 +114,7 @@ export interface NotebookEntryData {
 export interface GamePollState {
   roomId: string;
   status: "in-progress" | "finished";
+  viewerPlayerId: string;
   currentPlayerId: string;
   currentRound: number;
   currentSlot: 1 | 2;
@@ -148,6 +156,7 @@ export interface GameEventData {
   roundNumber: number;
   type:
     | "game-won"
+    | "game-draw"
     | "capture-failed"
     | "spy-captured-reward-collected"
     | "player-moved"
@@ -156,4 +165,14 @@ export interface GameEventData {
     | "turn-skipped";
   payload: Record<string, unknown>;
   createdAt: string;
+}
+
+// --- Draw Detection ---
+
+export interface DrawDetectionResult {
+  drawDetected: boolean;
+  drawEvent?: {
+    roundNumber: number;
+    mastermindLocationId: string;
+  };
 }

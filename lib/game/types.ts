@@ -26,7 +26,7 @@ export interface InitializeGameResult {
 export interface GameInitError {
   success: false;
   error: string;
-  code: "INITIALIZATION_FAILED" | "NO_LOCATIONS_FOUND";
+  code: "INITIALIZATION_FAILED" | "NO_LOCATIONS_FOUND" | "INVALID_ROUND_LIMIT";
 }
 
 export type TransactionClient = Omit<

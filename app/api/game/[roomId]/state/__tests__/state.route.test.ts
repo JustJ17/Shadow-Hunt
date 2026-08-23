@@ -49,6 +49,7 @@ describe("GET /api/game/[roomId]/state", () => {
     const mockState: GamePollState = {
       roomId: "test-room-id",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 3,
       currentSlot: 1,
@@ -130,6 +131,7 @@ describe("GET /api/game/[roomId]/state", () => {
     mockGetGamePollState.mockResolvedValue({
       roomId: "test-room-id",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
       currentSlot: 1,
@@ -178,6 +180,7 @@ describe("GET /api/game/[roomId]/state", () => {
     const mockState: GamePollState = {
       roomId: "room-1",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
       currentSlot: 2,
@@ -230,6 +233,7 @@ describe("GET /api/game/[roomId]/state", () => {
     const mockState: GamePollState = {
       roomId: "room-1",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 4,
       currentSlot: 1,
@@ -293,6 +297,7 @@ describe("GET /api/game/[roomId]/state", () => {
     const mockState: GamePollState = {
       roomId: "room-1",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
       currentSlot: 1,
@@ -337,6 +342,7 @@ describe("GET /api/game/[roomId]/state", () => {
       "privateData",
       "roomId",
       "status",
+      "viewerPlayerId",
     ]);
   });
 
@@ -344,6 +350,7 @@ describe("GET /api/game/[roomId]/state", () => {
     mockGetGamePollState.mockResolvedValue({
       roomId: "room-1",
       status: "in-progress",
+      viewerPlayerId: "player-1",
       currentPlayerId: "player-1",
       currentRound: 1,
       currentSlot: 1,

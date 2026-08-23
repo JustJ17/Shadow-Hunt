@@ -15,6 +15,7 @@ export type {
   TurnActionErrorCode,
   TurnState,
   EndOfTurnResolution,
+  DrawOutcome,
   CaptureAttemptOutcome,
   SpyResolutionOutcome,
   NotebookEntryData,

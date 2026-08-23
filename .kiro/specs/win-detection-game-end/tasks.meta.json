@@ -1,0 +1,514 @@
+{
+  "pbtResults": {
+    "2.3 Write property test for Game Result API response shapes at `lib/turn-engine/__tests__/game-result.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787474682615
+    },
+    "4.3 Write property test for mastermind location reveal at `lib/turn-engine/__tests__/win-result.property.test.ts`": {
+      "status": "failed",
+      "failingExample": "PrismaClientKnownRequestError: Authentication failed against the database server, the provided database credentials for `user` are not valid. This is a database connectivity/environment issue, not a test logic failure. The test file compiles and runs correctly but cannot connect to the database.",
+      "lastRunTimestamp": 1787474728926
+    },
+    "3.3 Write property test for draw guard on finished games at `lib/turn-engine/__tests__/draw-detection.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787474733917
+    },
+    "4.2 Write property test for win GameResult creation at `lib/turn-engine/__tests__/win-result.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787474744738
+    },
+    "3.2 Write property test for draw detection at `lib/turn-engine/__tests__/draw-detection.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787474824679
+    },
+    "7.2 Write property test for maxRoundLimit validation at `lib/game/__tests__/max-round-limit.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787475155873
+    },
+    "5.2 Write property test for action rejection after game end at `lib/turn-engine/__tests__/action-rejection.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787475460770
+    },
+    "5.3 Write property test for event mutual exclusivity at `lib/turn-engine/__tests__/event-exclusivity.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787476418534
+    },
+    "10.1 Write property test for exactly one GameResult per game at `lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts`": {
+      "status": "passed",
+      "lastRunTimestamp": 1787476621553
+    }
+  },
+  "executionHistory": {
+    "1.1 Add GameResult model and maxRoundLimit field to schema": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672427
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473683750
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473801841
+      }
+    ],
+    "1.2 Generate Prisma migration and regenerate client": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672530
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473805925
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474044944
+      }
+    ],
+    "2.1 Extend types in `lib/turn-engine/types.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672629
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473806678
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474045685
+      }
+    ],
+    "2.2 Create game result module at `lib/turn-engine/game-result.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672710
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474050578
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474445360
+      }
+    ],
+    "2.3 Write property test for Game Result API response shapes at `lib/turn-engine/__tests__/game-result.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672790
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474451420
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474845887
+      }
+    ],
+    "3.1 Implement draw detection in `lib/turn-engine/advance-turn.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672863
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474051326
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474443442
+      }
+    ],
+    "3.2 Write property test for draw detection at `lib/turn-engine/__tests__/draw-detection.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473672938
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474452201
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474846825
+      }
+    ],
+    "3.3 Write property test for draw guard on finished games at `lib/turn-engine/__tests__/draw-detection.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673022
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474453058
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474847778
+      }
+    ],
+    "4.1 Extend `resolveCaptureAttempt` in `lib/turn-engine/resolution/resolve-capture.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673091
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474052186
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474444475
+      }
+    ],
+    "4.2 Write property test for win GameResult creation at `lib/turn-engine/__tests__/win-result.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673173
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474453919
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474848748
+      }
+    ],
+    "4.3 Write property test for mastermind location reveal at `lib/turn-engine/__tests__/win-result.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673285
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474454792
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474849668
+      }
+    ],
+    "5.1 Update `submitAction` in `lib/turn-engine/submit-action.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673390
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474854403
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475171238
+      }
+    ],
+    "5.2 Write property test for action rejection after game end at `lib/turn-engine/__tests__/action-rejection.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673462
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475179038
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476435968
+      }
+    ],
+    "5.3 Write property test for event mutual exclusivity at `lib/turn-engine/__tests__/event-exclusivity.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673538
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475180013
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476436798
+      }
+    ],
+    "6. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673610
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787478209684
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787482140155
+      }
+    ],
+    "7.1 Update `initializeGame` in `lib/game/initialize-game.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673690
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474052885
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474446142
+      }
+    ],
+    "7.2 Write property test for maxRoundLimit validation at `lib/game/__tests__/max-round-limit.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673764
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474855266
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475172160
+      }
+    ],
+    "8.1 Create API route at `app/api/game/[roomId]/result/route.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673828
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475180700
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476437781
+      }
+    ],
+    "8.2 Write unit tests for Game Result API route at `app/api/game/[roomId]/result/__tests__/route.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473673897
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476443993
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476822764
+      }
+    ],
+    "9.1 Create EndScreen component at `app/game/[roomId]/components/EndScreen.tsx`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473674002
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476444780
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476823716
+      }
+    ],
+    "9.2 Integrate EndScreen into game page at `app/game/[roomId]/page.tsx`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473674125
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476829704
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787478203647
+      }
+    ],
+    "9.3 Write component tests for EndScreen at `app/game/[roomId]/components/__tests__/EndScreen.test.tsx`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473674197
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476830556
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787478204483
+      }
+    ],
+    "10.1 Write property test for exactly one GameResult per game at `lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts`": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473674266
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476445664
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476824503
+      }
+    ],
+    "11. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787473674356
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787482144911
+      },
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787482427870
+      }
+    ],
+    "1. Prisma schema changes and migration": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474045031
+      }
+    ],
+    "2. Type updates and game-result module": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474845986
+      }
+    ],
+    "3. Modify advanceTurn for draw detection": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474847858
+      }
+    ],
+    "4. Modify resolveCaptureAttempt for GameResult creation on win": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787474849755
+      }
+    ],
+    "7. Modify initializeGame for maxRoundLimit": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787475172259
+      }
+    ],
+    "5. Modify submitAction to handle draw result": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476436872
+      }
+    ],
+    "8. Game Result API route": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476822843
+      }
+    ],
+    "10. Uniqueness constraint property test": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787476824573
+      }
+    ],
+    "9. EndScreen component and game page integration": [
+      {
+        "executionId": "e3550879-712c-483e-9f44-96d3f405407f",
+        "chatSessionId": "sess_15f73e64-da54-4407-9c9a-7d028985ae05",
+        "timestamp": 1787478204557
+      }
+    ]
+  }
+}

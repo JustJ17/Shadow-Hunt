@@ -1,0 +1,15 @@
+
+ RUN  v4.1.11 D:/Projects/Shadow-Hunt
+
+stdout | lib/turn-engine/__tests__/event-exclusivity.property.test.ts
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > win path: exactly 1 game-won event and 0 game-draw events
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > draw path: exactly 1 game-draw event and 0 game-won events
+ ↓ lib/turn-engine/__tests__/event-exclusivity.property.test.ts > Event Mutual Exclusivity Property Tests > Property 7: Event mutual exclusivity > win followed by advanceTurn does not produce a game-draw event (guard clause)
+
+ Test Files  1 failed (1)
+      Tests  3 skipped (3)
+   Start at  12:15:19
+   Duration  683ms (transform 116ms, setup 34ms, import 227ms, tests 161ms, environment 0ms)
+

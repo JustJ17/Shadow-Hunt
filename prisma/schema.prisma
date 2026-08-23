@@ -13,18 +13,20 @@ datasource db {
 }
 
 model Room {
-  id          String       @id @default(cuid())
-  code        String       @unique @db.VarChar(6)
-  status      String       @default("waiting") // "waiting" | "in-progress" | "abandoned"
-  visibility  String       @default("private") // "public" | "private"
-  playerCount Int          @default(0)
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  players     RoomPlayer[]
-  gameThreat  GameThreat?
-  gameSpies   GameSpy[]
+  id            String       @id @default(cuid())
+  code          String       @unique @db.VarChar(6)
+  status        String       @default("waiting") // "waiting" | "in-progress" | "finished" | "abandoned"
+  visibility    String       @default("private") // "public" | "private"
+  playerCount   Int          @default(0)
+  maxRoundLimit Int          @default(20) // Configurable, set at init, validated 1-100
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  players       RoomPlayer[]
+  gameThreat    GameThreat?
+  gameSpies     GameSpy[]
 
   gameTurn        GameTurn?
+  gameResult      GameResult?
   playerPositions PlayerPosition[]
   notebookEntries NotebookEntry[]
   gameEvents      GameEvent[]
@@ -134,7 +136,6 @@ model RoomPlayer {
   @@index([lastActivityAt])
 }
 
-
 model GameTurn {
   id                 String  @id @default(cuid())
   roomId             String  @unique
@@ -211,4 +212,20 @@ model ActionCard {
 
   @@index([roomId, playerId])
   @@map("action_cards")
+}
+
+model GameResult {
+  id                   String   @id @default(cuid())
+  roomId               String   @unique // Exactly one result per game
+  outcome              String // "win" | "draw"
+  winnerId             String? // Null for draw
+  winLocationId        String? // Where capture was made; null for draw
+  mastermindLocationId String // Always revealed on game end
+  roundNumber          Int // Round at which game ended
+  reason               String? // "max-rounds-exceeded" for draw; null for win
+  createdAt            DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@map("game_results")
 }
