@@ -36,7 +36,7 @@ let cachedData: MapData | null = null;
 function fetchMapData(): Promise<MapData> {
   if (cachedData) return Promise.resolve(cachedData);
   if (cachedPromise) return cachedPromise;
-  cachedPromise = fetch("/api/map")
+  cachedPromise = fetch("/api/map?v=2")
     .then((res) => {
       if (!res.ok) throw new Error("Map fetch failed");
       return res.json();
