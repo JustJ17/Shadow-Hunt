@@ -121,7 +121,7 @@ describe("RouteLayer", () => {
 
       const line = container.querySelector("line");
       expect(line).not.toBeNull();
-      expect(line!.getAttribute("class")).toContain("stroke-gray-500");
+      expect(line!.getAttribute("class")).toContain("stroke-gray-400");
       // Car has no strokeDasharray (solid)
       expect(line!.getAttribute("stroke-dasharray")).toBeNull();
     });
@@ -146,7 +146,7 @@ describe("RouteLayer", () => {
       const line = container.querySelector("line");
       expect(line).not.toBeNull();
       expect(line!.getAttribute("class")).toContain("stroke-blue-400");
-      expect(line!.getAttribute("stroke-dasharray")).toBe("6 4");
+      expect(line!.getAttribute("stroke-dasharray")).toBe("8 5");
     });
 
     it("renders plane edges as <path> elements with quadratic bezier and amber stroke", () => {
@@ -254,7 +254,7 @@ describe("RouteLayer", () => {
       expect(title!.textContent).toBe("blocked");
     });
 
-    it("does not add opacity-30 or <title> to non-blocked edges", () => {
+    it("does not add opacity-30 to non-blocked edges but still has transport title", () => {
       const adjacency: AdjacencyListEntry[] = [
         makeAdjacencyEntry("loc-a", [
           { targetLocationId: "loc-b", transport: "car" },
@@ -275,7 +275,8 @@ describe("RouteLayer", () => {
       expect(line!.getAttribute("class")).not.toContain("opacity-30");
 
       const title = container.querySelector("title");
-      expect(title).toBeNull();
+      expect(title).not.toBeNull();
+      expect(title!.textContent).toBe("car route");
     });
 
     it("applies opacity-30 to blocked plane <path> edges", () => {

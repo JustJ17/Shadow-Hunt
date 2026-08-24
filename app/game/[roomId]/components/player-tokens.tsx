@@ -31,10 +31,10 @@ const OFFSETS = [
 
 /** Distinct fill colors per player, indexed by turnPosition (1-based). */
 const PLAYER_COLORS = [
-  "fill-blue-500",
-  "fill-red-500",
-  "fill-green-500",
-  "fill-yellow-500",
+  "fill-cyan-400",
+  "fill-rose-400",
+  "fill-emerald-400",
+  "fill-amber-300",
 ];
 
 /**
@@ -114,15 +114,22 @@ export function PlayerTokens({
             }}
             aria-label={ariaLabel}
           >
+            <title>{player.displayName}</title>
             {/* Viewer highlight ring (outer) */}
             {isViewer && (
-              <circle r={9 / zoom} fill="none" stroke="white" strokeWidth={3 / zoom} />
+              <circle
+                r={11 / zoom}
+                fill="none"
+                stroke="white"
+                strokeWidth={3 / zoom}
+                className="pulse-highlight"
+              />
             )}
             {/* Player token circle */}
             <circle
-              r={6 / zoom}
+              r={7 / zoom}
               className={`${colorClass} stroke-gray-900`}
-              strokeWidth={1.5 / zoom}
+              strokeWidth={2 / zoom}
             />
           </g>
         );

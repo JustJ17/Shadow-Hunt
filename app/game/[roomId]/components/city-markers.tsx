@@ -16,16 +16,30 @@ interface CityMarkersProps {
 }
 
 /**
+ * Solid fill colors per region for city markers.
+ * Provides strong contrast against the dark map background.
+ */
+const SOLID_REGION_FILLS: Record<string, string> = {
+  Europe: "fill-blue-400",
+  Asia: "fill-amber-400",
+  Africa: "fill-green-400",
+  "North America": "fill-red-400",
+  "South America": "fill-purple-400",
+  Oceania: "fill-teal-400",
+};
+
+/**
  * City Markers component for the Shadow Hunt world map.
- * Renders hub locations as larger circles with a thick stroke ring,
- * and non-hub locations as smaller circles with thin stroke.
+ * Renders hub locations as larger circles with a thick stroke ring and glow,
+ * and non-hub locations as smaller circles with thin stroke and glow.
  * Marker radii and strokes scale by 1/zoom for constant visual size.
+ * Hub cities always display name labels; non-hub labels appear at zoom > 1.5.
  *
  * When move selection is active (isViewerTurn && !isSubmitting), legal
- * move destinations receive an emerald highlight ring and become
+ * move destinations receive an animated pulsing highlight ring and become
  * clickable/keyboard-activatable.
  *
- * Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.7, 6.1–6.6
+ * Requirements: 2.4, 2.7, 2.9, 2.10, 2.12, 2.13, 3.1, 3.2, 3.3, 3.4, 3.5, 3.7, 6.1–6.6
  */
 export function CityMarkers({
   locations,
@@ -50,15 +64,18 @@ export function CityMarkers({
       {locations.map((location) => {
         const { x, y } = projectToMap(location.latitude, location.longitude);
         const regionName = regionIdToName.get(location.regionId) ?? "";
-        const fillClass = regionColors[regionName] ?? "fill-gray-600";
+        const solidFill = SOLID_REGION_FILLS[regionName] ?? "fill-gray-400";
         const isHub = location.isHub;
         const isLegalMove = legalMoveIds.has(location.id);
         const isHighlighted = interactionEnabled && isLegalMove;
 
-        const radius = isHub ? 8 / zoom : 4 / zoom;
-        const strokeWidth = isHub ? 2 / zoom : 1 / zoom;
-        const highlightRingRadius = radius + 3 / zoom;
-        const highlightStrokeWidth = 2 / zoom;
+        const radius = isHub ? 9 / zoom : 5 / zoom;
+        const strokeWidth = isHub ? 2.5 / zoom : 1.5 / zoom;
+        const highlightRingRadius = radius + 4 / zoom;
+        const highlightStrokeWidth = 2.5 / zoom;
+
+        // Show labels: hubs always, non-hubs only at zoom > 1.5
+        const showLabel = isHub || zoom > 1.5;
 
         const handleActivate = () => {
           if (isHighlighted && onMoveSelect) {
@@ -75,24 +92,25 @@ export function CityMarkers({
 
         return (
           <g key={location.id}>
-            {/* Highlight ring for legal move destinations */}
+            {/* Highlight ring for legal move destinations — animated pulse */}
             {isHighlighted && (
               <circle
                 cx={x}
                 cy={y}
                 r={highlightRingRadius}
-                className="fill-none stroke-emerald-400"
+                className="fill-none stroke-emerald-400 pulse-highlight"
                 strokeWidth={highlightStrokeWidth}
                 aria-hidden="true"
               />
             )}
-            {/* Main marker */}
+            {/* Main marker with glow effect */}
             <circle
               cx={x}
               cy={y}
               r={radius}
-              className={`${fillClass} stroke-gray-300 ${isHighlighted ? "cursor-pointer" : "cursor-default"}`}
+              className={`${solidFill} stroke-gray-300 ${isHighlighted ? "cursor-pointer" : "cursor-default"}`}
               strokeWidth={strokeWidth}
+              filter="url(#city-glow)"
               role="button"
               aria-label={isHighlighted ? `Move to ${location.name}` : location.name}
               aria-disabled={!isHighlighted}
@@ -100,6 +118,21 @@ export function CityMarkers({
               onClick={isHighlighted ? handleActivate : undefined}
               onKeyDown={isHighlighted ? handleKeyDown : undefined}
             />
+            {/* City name label */}
+            {showLabel && (
+              <text
+                x={x}
+                y={y + radius + 10 / zoom}
+                fontSize={isHub ? 10 / zoom : 8 / zoom}
+                fill="white"
+                textAnchor="middle"
+                className="pointer-events-none select-none"
+                style={{ textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}
+                aria-hidden="true"
+              >
+                {location.name}
+              </text>
+            )}
           </g>
         );
       })}

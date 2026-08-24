@@ -1,0 +1,208 @@
+{
+  "pbtResults": {
+    "1. Write bug condition exploration test": {
+      "status": "passed",
+      "failingExample": "All 6 assertions failed as expected, confirming visual defects exist:\n1. Continent Path Complexity: Europe has 11 points (expected > 40)\n2. Continent Bounding Box: Europe width=90 (expected >= 120)\n3. City Labels: 0 <text> elements found (expected >= 1 for hub cities)\n4. Non-Hub Marker Radius: 2 markers have r=4 < 5 minimum\n5. Route Stroke Width: strokeWidth=1 (expected >= 1.5)\n6. Player Token Colors: Uses fill-blue-500 (expected fill-cyan-400 brighter palette)",
+      "lastRunTimestamp": 1787559380478
+    },
+    "2. Write preservation property tests (BEFORE implementing fix)": {
+      "status": "passed",
+      "lastRunTimestamp": 1787559582480
+    },
+    "3.6 Verify bug condition exploration test now passes": {
+      "status": "passed",
+      "lastRunTimestamp": 1787561032029
+    }
+  },
+  "executionHistory": {
+    "1. Write bug condition exploration test": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558996901
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787559016496
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787559749627
+      }
+    ],
+    "2. Write preservation property tests (BEFORE implementing fix)": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558996991
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787559017215
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787559750623
+      }
+    ],
+    "3.1 Replace `CONTINENT_PATHS` with detailed recognizable continent silhouettes in `world-map.tsx`": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997065
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787559774498
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560059957
+      }
+    ],
+    "3.2 Add SVG `<defs>` section with shared visual effects to `world-map.tsx`": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997158
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560064749
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560165098
+      }
+    ],
+    "3.3 Update `city-markers.tsx` — increase marker sizes, add glow, render labels, enhance highlights": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997223
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560174440
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560471697
+      }
+    ],
+    "3.4 Update `route-layer.tsx` — increase stroke widths, improve contrast, refine dash patterns": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997315
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560476242
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560691958
+      }
+    ],
+    "3.5 Update `player-tokens.tsx` — increase token size, brighter colors, add tooltips, enhance viewer highlight": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997381
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560696828
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560950413
+      }
+    ],
+    "3.6 Verify bug condition exploration test now passes": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997462
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787560955203
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561044194
+      }
+    ],
+    "3.7 Verify preservation tests still pass": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997571
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561050147
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561120759
+      }
+    ],
+    "4. Update documentation": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997645
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561126642
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561269725
+      }
+    ],
+    "5. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787558997710
+      },
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561274701
+      }
+    ],
+    "3. Fix for map visual redesign — replace placeholder visuals with production-quality rendering": [
+      {
+        "executionId": "54f7ae9a-6a0e-48c0-894a-cb5923c30e0b",
+        "chatSessionId": "sess_0f63429d-c17d-40cc-91d4-ef916336cd0b",
+        "timestamp": 1787561120837
+      }
+    ]
+  }
+}

@@ -255,15 +255,15 @@ describe("PlayerTokens", () => {
 
       const tokens = container.querySelectorAll("g.player-token");
 
-      // Player 1 (turnPosition 1) → fill-blue-500
+      // Player 1 (turnPosition 1) → fill-cyan-400
       const innerCircle1 = tokens[0].querySelectorAll("circle");
       const mainCircle1 = innerCircle1[innerCircle1.length - 1];
-      expect(mainCircle1.getAttribute("class")).toContain("fill-blue-500");
+      expect(mainCircle1.getAttribute("class")).toContain("fill-cyan-400");
 
-      // Player 2 (turnPosition 2) → fill-red-500
+      // Player 2 (turnPosition 2) → fill-rose-400
       const innerCircle2 = tokens[1].querySelectorAll("circle");
       const mainCircle2 = innerCircle2[innerCircle2.length - 1];
-      expect(mainCircle2.getAttribute("class")).toContain("fill-red-500");
+      expect(mainCircle2.getAttribute("class")).toContain("fill-rose-400");
     });
   });
 
@@ -361,9 +361,9 @@ describe("PlayerTokens", () => {
 
       const token = container.querySelector("g.player-token");
       const circles = token!.querySelectorAll("circle");
-      // Inner token circle (last one): r = 6/2 = 3
+      // Inner token circle (last one): r = 7/2 = 3.5
       const mainCircle = circles[circles.length - 1];
-      expect(mainCircle.getAttribute("r")).toBe("3");
+      expect(mainCircle.getAttribute("r")).toBe("3.5");
     });
 
     it("scales viewer ring by 1/zoom", () => {
@@ -382,8 +382,8 @@ describe("PlayerTokens", () => {
 
       const token = container.querySelector("g.player-token");
       const circles = token!.querySelectorAll("circle");
-      // Outer ring: r = 9/2 = 4.5, stroke-width = 3/2 = 1.5
-      expect(circles[0].getAttribute("r")).toBe("4.5");
+      // Outer ring: r = 11/2 = 5.5, stroke-width = 3/2 = 1.5
+      expect(circles[0].getAttribute("r")).toBe("5.5");
       expect(circles[0].getAttribute("stroke-width")).toBe("1.5");
     });
   });

@@ -76,7 +76,7 @@ describe("CityMarkers", () => {
   });
 
   describe("hub vs non-hub sizing", () => {
-    it("renders hub locations with radius 8 at default zoom", () => {
+    it("renders hub locations with radius 9 at default zoom", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -88,10 +88,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("r")).toBe("8");
+      expect(circle!.getAttribute("r")).toBe("9");
     });
 
-    it("renders non-hub locations with radius 4 at default zoom", () => {
+    it("renders non-hub locations with radius 5 at default zoom", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -103,10 +103,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("r")).toBe("4");
+      expect(circle!.getAttribute("r")).toBe("5");
     });
 
-    it("renders hub locations with stroke-width 2 at default zoom", () => {
+    it("renders hub locations with stroke-width 2.5 at default zoom", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -118,10 +118,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("stroke-width")).toBe("2");
+      expect(circle!.getAttribute("stroke-width")).toBe("2.5");
     });
 
-    it("renders non-hub locations with stroke-width 1 at default zoom", () => {
+    it("renders non-hub locations with stroke-width 1.5 at default zoom", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -133,12 +133,12 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("stroke-width")).toBe("1");
+      expect(circle!.getAttribute("stroke-width")).toBe("1.5");
     });
   });
 
   describe("zoom scaling", () => {
-    it("scales hub radius by 1/zoom (zoom=2 → r=4)", () => {
+    it("scales hub radius by 1/zoom (zoom=2 → r=4.5)", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -151,10 +151,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("r")).toBe("4");
+      expect(circle!.getAttribute("r")).toBe("4.5");
     });
 
-    it("scales non-hub radius by 1/zoom (zoom=2 → r=2)", () => {
+    it("scales non-hub radius by 1/zoom (zoom=2 → r=2.5)", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -167,10 +167,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("r")).toBe("2");
+      expect(circle!.getAttribute("r")).toBe("2.5");
     });
 
-    it("scales hub stroke-width by 1/zoom (zoom=4 → stroke-width=0.5)", () => {
+    it("scales hub stroke-width by 1/zoom (zoom=4 → stroke-width=0.625)", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -183,10 +183,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("stroke-width")).toBe("0.5");
+      expect(circle!.getAttribute("stroke-width")).toBe("0.625");
     });
 
-    it("scales non-hub stroke-width by 1/zoom (zoom=4 → stroke-width=0.25)", () => {
+    it("scales non-hub stroke-width by 1/zoom (zoom=4 → stroke-width=0.375)", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -199,7 +199,7 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("stroke-width")).toBe("0.25");
+      expect(circle!.getAttribute("stroke-width")).toBe("0.375");
     });
   });
 
@@ -223,7 +223,7 @@ describe("CityMarkers", () => {
   });
 
   describe("region colors", () => {
-    it("applies the correct region fill class for Europe", () => {
+    it("applies the correct solid fill class for Europe", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -235,10 +235,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("class")).toContain("fill-blue-800/30");
+      expect(circle!.getAttribute("class")).toContain("fill-blue-400");
     });
 
-    it("applies the correct region fill class for Asia", () => {
+    it("applies the correct solid fill class for Asia", () => {
       const { container } = render(
         <svg>
           <CityMarkers
@@ -250,10 +250,10 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("class")).toContain("fill-amber-800/30");
+      expect(circle!.getAttribute("class")).toContain("fill-amber-400");
     });
 
-    it("falls back to fill-gray-600 for unknown regions", () => {
+    it("falls back to fill-gray-400 for unknown regions", () => {
       const unknownLocation = makeLocation(
         "loc-x",
         "Unknown City",
@@ -274,7 +274,7 @@ describe("CityMarkers", () => {
       );
 
       const circle = container.querySelector("[role='button']");
-      expect(circle!.getAttribute("class")).toContain("fill-gray-600");
+      expect(circle!.getAttribute("class")).toContain("fill-gray-400");
     });
   });
 

@@ -1,6 +1,6 @@
 # Shadow Circuit — Architecture
 
-_Last updated: 2026-08-22 — added GameScreenShell layout component entry_
+_Last updated: 2026-08-24 — map visual redesign: replaced placeholder continent silhouettes, added SVG filter defs and CSS animations to world-map.tsx_
 
 ## Overview
 Shadow Circuit (working title) is a turn-based, hidden-information deduction game for 2–4 players. Browser-based, installable to a phone home screen via PWA. Built for the Ready, Spec, Ship Hackathon using Kiro.
@@ -50,7 +50,7 @@ _Fill in as each spec is implemented — one line per module, "owns X / doesn't 
 - `app/api/` — TBD
 - `lib/map/projection.ts` — Owns equirectangular projection from lat/lng to SVG viewBox coordinates. Doesn't own rendering.
 - `lib/hooks/use-map-data.ts` — Owns client-side map data fetching, caching, and id→name/coordinate/region/adjacency lookups. Doesn't own server-side data access.
-- `app/game/[roomId]/components/world-map.tsx` — Owns SVG map rendering, continent paths, region tinting, and composition of route/marker/token layers. Doesn't own game logic or action submission.
+- `app/game/[roomId]/components/world-map.tsx` — Owns SVG map rendering, detailed continent silhouette paths, SVG filter definitions (city-glow, token-shadow), CSS pulse animations, region tinting, and composition of route/marker/token layers. Doesn't own game logic, action submission, or projection math.
 - `lib/game-ui/card-metadata.ts` — Owns static card display metadata (displayName, description, category) for all CardIdentifier values. Doesn't own card game logic or rendering.
 - `lib/hooks/use-submit-action.ts` — Owns client-side action submission (POST to action API), in-flight guard, error mapping, and refetch-on-success. Doesn't own game state polling or UI rendering.
 - `app/game/[roomId]/components/game-screen-shell.tsx` — Owns responsive layout shell (desktop grid + compact tab bar), name/player lookups, and panel composition via error boundaries. Doesn't own panel internals, map rendering, or action submission.

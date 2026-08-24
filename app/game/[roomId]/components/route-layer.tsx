@@ -90,10 +90,10 @@ export function RouteLayer({
             y1={pointA.y}
             x2={pointB.x}
             y2={pointB.y}
-            className={`stroke-gray-500 ${blockedClass}`}
-            strokeWidth={1}
+            className={`stroke-gray-400 ${blockedClass}`}
+            strokeWidth={1.5}
           >
-            {isBlocked && <title>blocked</title>}
+            {isBlocked ? <title>blocked</title> : <title>car route</title>}
           </line>
         );
       } else if (edge.transport === "boat") {
@@ -105,10 +105,11 @@ export function RouteLayer({
             x2={pointB.x}
             y2={pointB.y}
             className={`stroke-blue-400 ${blockedClass}`}
-            strokeWidth={1}
-            strokeDasharray="6 4"
+            strokeWidth={1.5}
+            strokeDasharray="8 5"
+            strokeLinecap="round"
           >
-            {isBlocked && <title>blocked</title>}
+            {isBlocked ? <title>blocked</title> : <title>boat route</title>}
           </line>
         );
       } else if (edge.transport === "plane") {
@@ -125,10 +126,11 @@ export function RouteLayer({
             key={key}
             d={d}
             className={`stroke-amber-400 ${blockedClass}`}
-            strokeWidth={1}
+            strokeWidth={1.5}
+            strokeLinecap="round"
             fill="none"
           >
-            {isBlocked && <title>blocked</title>}
+            {isBlocked ? <title>blocked</title> : <title>plane route</title>}
           </path>
         );
       }
