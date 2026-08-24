@@ -118,19 +118,31 @@ export function PlayerTokens({
             {/* Viewer highlight ring (outer) */}
             {isViewer && (
               <circle
-                r={11 / zoom}
+                r={14 / zoom}
                 fill="none"
                 stroke="white"
-                strokeWidth={3 / zoom}
+                strokeWidth={3.5 / zoom}
                 className="pulse-highlight"
               />
             )}
             {/* Player token circle */}
             <circle
-              r={7 / zoom}
+              r={9 / zoom}
               className={`${colorClass} stroke-gray-900`}
               strokeWidth={2 / zoom}
+              filter="url(#token-shadow)"
             />
+            {/* Player name label */}
+            <text
+              y={16 / zoom}
+              textAnchor="middle"
+              fontSize={8 / zoom}
+              fill="white"
+              className="pointer-events-none select-none"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}
+            >
+              {player.displayName}
+            </text>
           </g>
         );
       })}

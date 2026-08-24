@@ -2,9 +2,9 @@
   - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
 Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
 
- RUN  v4.1.11 d:/Projects/Shadow-Hunt
+ RUN  v4.1.11 D:/Projects/Shadow-Hunt
 
-(node:36456) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:37068) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -13,7 +13,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:32656) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:19316) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -22,7 +22,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:36892) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:23548) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -31,7 +31,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:37408) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:27612) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -40,7 +40,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:29424) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:4604) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -49,7 +49,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:36932) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:34668) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -58,7 +58,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:328) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:32216) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -67,7 +67,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:32516) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:1040) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -76,7 +76,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:19396) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:37060) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -85,7 +85,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:29488) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:23600) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -94,7 +94,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:28248) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:24772) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -104,114 +104,76 @@ To prepare for this change:
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
 stdout | lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
 
- ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts (2 tests | 2 failed) 2486ms
-     × player with k pending extra turns takes exactly k extra turns, then normal order resumes 2049ms
-     × multiple extra-turn plays accumulate and are consumed one at a time 425ms
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts (2 tests | 2 failed) 4155ms
+     × player with k pending extra turns takes exactly k extra turns, then normal order resumes 3706ms
+     × multiple extra-turn plays accumulate and are consumed one at a time 437ms
 stdout | app/api/map/__tests__/map.route.test.ts > GET /api/map > response includes Cache-Control header
 [/api/map] First location: {"id":"cmt1xaz1v0006jcn6wacv16f3","name":"London","regionId":"cmt1xay7k0000jcn6vvst1gz5","isHub":true,"latitude":51.5074,"longitude":-0.1278}
 
 stdout | app/api/map/__tests__/map.route.test.ts
-◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
-
- ❯ app/api/map/__tests__/map.route.test.ts (10 tests | 1 failed) 2576ms
-     × response includes Cache-Control header 136ms
-stdout | lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts
-◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
-
- ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts (4 tests | 4 failed) 3994ms
-     × advanceTurn with pendingExtraTurns > 0 keeps the same round number 1772ms
-     × consuming k extra turns sequentially never changes the round number 911ms
-     × normal advancement wrapping from last player increments round (control case) 635ms
-     × last player extra turns complete before round increments 662ms
-stdout | app/game/[roomId]/components/__tests__/action-bar.test.tsx
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ app/game/[roomId]/components/__tests__/action-bar.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/card-hand.test.tsx
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
-
- ❯ app/game/[roomId]/components/__tests__/card-hand.test.tsx (0 test)
-stdout | lib/game/__tests__/initialize-game.property.test.ts
 ◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
 
- ❯ lib/game/__tests__/initialize-game.property.test.ts (2 tests | 2 failed) 5195ms
-       × initializeGame creates exactly 1 GameThreat with a valid locationId from the 40 locations 2210ms
-       × initializeGame creates exactly 6 GameSpy records, one per region, each with a locationId belonging to that region 1861ms
-stdout | app/game/[roomId]/components/__tests__/card-icon.test.tsx
+ ❯ app/api/map/__tests__/map.route.test.ts (10 tests | 1 failed) 4069ms
+     × response includes Cache-Control header 133ms
+stdout | lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts
 ◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
 
- ❯ app/game/[roomId]/components/__tests__/card-icon.test.tsx (0 test)
-stdout | lib/turn-engine/__tests__/action-rejection.property.test.ts
-◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
-
- ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts (2 tests | 2 failed) 6116ms
-       × any action payload submitted to a finished room returns GAME_NOT_ACTIVE 2415ms
-       × action rejection applies equally to rooms that ended via draw 2788ms
-stdout | app/game/[roomId]/components/__tests__/card-tile.test.tsx
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
-
- ❯ app/game/[roomId]/components/__tests__/card-tile.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/city-markers.test.tsx
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts (4 tests | 4 failed) 5644ms
+     × advanceTurn with pendingExtraTurns > 0 keeps the same round number 3691ms
+     × consuming k extra turns sequentially never changes the round number 618ms
+     × normal advancement wrapping from last player increments round (control case) 445ms
+     × last player extra turns complete before round increments 873ms
+stdout | lib/game/__tests__/initialize-game.property.test.ts
 ◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
 
- ❯ app/game/[roomId]/components/__tests__/city-markers.test.tsx (0 test)
+ ❯ lib/game/__tests__/initialize-game.property.test.ts (2 tests | 2 failed) 6663ms
+       × initializeGame creates exactly 1 GameThreat with a valid locationId from the 40 locations 1836ms
+       × initializeGame creates exactly 6 GameSpy records, one per region, each with a locationId belonging to that region 1782ms
+stdout | lib/hooks/__tests__/use-map-data.test.ts
+◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+
+ ❯ lib/hooks/__tests__/use-map-data.test.ts (14 tests | 1 failed) 1066ms
+       × fetches map data on mount and sets data 100ms
 stdout | lib/turn-engine/__tests__/information-hiding.property.test.ts
+◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts (2 tests | 2 failed) 7857ms
+       × poll response does not contain Mastermind locationId or uncaptured Spy locationIds 2801ms
+       × player B cannot see player A notebook entries in poll response 2245ms
+stdout | lib/turn-engine/__tests__/action-rejection.property.test.ts
 ◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
 
- ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts (2 tests | 2 failed) 7393ms
-       × poll response does not contain Mastermind locationId or uncaptured Spy locationIds 3140ms
-       × player B cannot see player A notebook entries in poll response 3194ms
-stdout | app/game/[roomId]/components/__tests__/EndScreen.test.tsx
-◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
-
- ❯ app/game/[roomId]/components/__tests__/EndScreen.test.tsx (0 test)
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts (2 tests | 2 failed) 9131ms
+       × any action payload submitted to a finished room returns GAME_NOT_ACTIVE 4227ms
+       × action rejection applies equally to rooms that ended via draw 2109ms
 stdout | lib/game/__tests__/spy-capture.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ lib/game/__tests__/spy-capture.property.test.ts (1 test | 1 failed) 8698ms
-       × after capture, only the targeted spy is updated with captured=true and the correct capturedByPlayerId 8685ms
-stdout | app/game/[roomId]/components/__tests__/event-feed-panel.test.tsx
 ◇ injected env (1) from .env // tip: ⌘ override existing { override: true }
 
- ❯ app/game/[roomId]/components/__tests__/event-feed-panel.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/event-icon.test.tsx
-◇ injected env (1) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
-
- ❯ app/game/[roomId]/components/__tests__/event-icon.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/game-screen-shell.test.tsx
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ app/game/[roomId]/components/__tests__/game-screen-shell.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/map-visual-preservation.test.tsx
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ app/game/[roomId]/components/__tests__/map-visual-preservation.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
-
- ❯ app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/notebook-panel.test.tsx
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ app/game/[roomId]/components/__tests__/notebook-panel.test.tsx (0 test)
+ ❯ lib/game/__tests__/spy-capture.property.test.ts (1 test | 1 failed) 10110ms
+       × after capture, only the targeted spy is updated with captured=true and the correct capturedByPlayerId 10095ms
 stdout | lib/turn-engine/__tests__/state-preservation.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
 
- ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts (11 tests | 11 failed) 11266ms
-       × actions from non-current player are rejected with NOT_YOUR_TURN and no state changes 820ms
-       × MOVE action from non-current player is also rejected without state change 924ms
-       × actions on 'finished' room are rejected with GAME_NOT_ACTIVE 942ms
-       × actions on 'waiting' room are rejected with GAME_NOT_ACTIVE 907ms
-       × different action types all rejected on inactive room 466ms
-       × invalid MOVE to non-adjacent location rejected, all state unchanged 919ms
-       × MOVE to same location rejected, state preserved 920ms
-       × duplicate CAPTURE_ATTEMPT rejected, state preserved 913ms
-       × SKIP at slot 1 advances slot to 2 but changes nothing else 1382ms
-       × SKIP does not modify player position regardless of current location 974ms
-       × SKIP emits player-skipped event but no other side effects 922ms
-(node:36628) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts (11 tests | 11 failed) 11619ms
+       × actions from non-current player are rejected with NOT_YOUR_TURN and no state changes 971ms
+       × MOVE action from non-current player is also rejected without state change 451ms
+       × actions on 'finished' room are rejected with GAME_NOT_ACTIVE 909ms
+       × actions on 'waiting' room are rejected with GAME_NOT_ACTIVE 450ms
+       × different action types all rejected on inactive room 1377ms
+       × invalid MOVE to non-adjacent location rejected, all state unchanged 461ms
+       × MOVE to same location rejected, state preserved 461ms
+       × duplicate CAPTURE_ATTEMPT rejected, state preserved 930ms
+       × SKIP at slot 1 advances slot to 2 but changes nothing else 918ms
+       × SKIP does not modify player position regardless of current location 906ms
+       × SKIP emits player-skipped event but no other side effects 924ms
+stdout | app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx
+◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+
+ ❯ app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx (14 tests | 1 failed) 691ms
+       × has block sm:hidden class on the container 18ms
+(node:7876) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -220,11 +182,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | app/game/[roomId]/components/__tests__/panel-error-boundary.test.tsx
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
-
- ❯ app/game/[roomId]/components/__tests__/panel-error-boundary.test.tsx (0 test)
-(node:32048) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:29764) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -233,15 +191,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | app/game/[roomId]/components/__tests__/player-tokens.test.tsx
-◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
-
- ❯ app/game/[roomId]/components/__tests__/player-tokens.test.tsx (0 test)
-stdout | app/game/[roomId]/components/__tests__/route-layer.test.tsx
-◇ injected env (1) from .env // tip: ⌘ override existing { override: true }
-
- ❯ app/game/[roomId]/components/__tests__/route-layer.test.tsx (0 test)
-(node:31608) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:37788) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -250,11 +200,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | app/game/[roomId]/components/__tests__/target-picker.test.tsx
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ app/game/[roomId]/components/__tests__/target-picker.test.tsx (0 test)
-(node:34084) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:37404) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -263,38 +209,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | app/game/[roomId]/components/__tests__/turn-hud.test.tsx
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ app/game/[roomId]/components/__tests__/turn-hud.test.tsx (0 test)
-(node:34092) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:27756) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:27568) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:32008) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:35996) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -304,11 +219,16 @@ To prepare for this change:
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
 stdout | lib/turn-engine/__tests__/move-validation.property.test.ts
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (1) from .env // tip: ⌘ override existing { override: true }
 
- ❯ lib/turn-engine/__tests__/move-validation.property.test.ts (7 tests | 1 failed) 20902ms
-       × MOVE to same location is rejected with SAME_LOCATION_MOVE 13ms
-(node:32652) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+ ❯ lib/turn-engine/__tests__/move-validation.property.test.ts (7 tests | 1 failed) 22872ms
+       × MOVE to same location is rejected with SAME_LOCATION_MOVE 10ms
+stdout | app/game/[roomId]/components/__tests__/notebook-panel.test.tsx
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+
+ ❯ app/game/[roomId]/components/__tests__/notebook-panel.test.tsx (24 tests | 1 failed) 5223ms
+       × renders 'Unrecognised clue' for any unknown entryType 706ms
+(node:29388) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -317,34 +237,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:32700) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:10940) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:12876) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
-In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
-
-To prepare for this change:
-- If you want the current behavior, explicitly use 'sslmode=verify-full'
-- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
-
-See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:36824) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:19372) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -362,11 +255,7 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | lib/hooks/__tests__/use-map-data.test.ts
-◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
-
- ❯ lib/hooks/__tests__/use-map-data.test.ts (0 test)
-(node:30092) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+(node:31864) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -375,91 +264,1131 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-stdout | lib/hooks/__tests__/use-game-poll-refetch.test.ts
-◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+(node:37884) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
- ❯ lib/hooks/__tests__/use-game-poll-refetch.test.ts (0 test)
-stdout | app/game/[roomId]/__tests__/game-page-wiring.property.test.tsx
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
- ❯ app/game/[roomId]/__tests__/game-page-wiring.property.test.tsx (0 test)
-stdout | lib/turn-engine/__tests__/map-immutability.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36312) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
- ❯ lib/turn-engine/__tests__/map-immutability.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/event-feed-monotonic.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
 
- ❯ lib/turn-engine/__tests__/event-feed-monotonic.property.test.ts (0 test)
-stdout | app/lobby/[code]/__tests__/page.test.tsx
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32752) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33200) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30568) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18420) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx
 ◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
 
- ❯ app/lobby/[code]/__tests__/page.test.tsx (0 test)
+ ❯ app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx (6 tests | 2 failed) 60ms
+       × each continent path should have > 40 points for recognizable shapes 5ms
+       × each continent should span at least its expected proportional area of the viewBox 1ms
 stdout | lib/turn-engine/__tests__/spy-resolution.property.test.ts
 ◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
 
- ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts (7 tests | 2 failed) 70566ms
-       × when reward cards are granted, at least 1 is of type locator 1029ms
-       × reward cards respect max hand size of 5 2943ms
-stdout | lib/turn-engine/__tests__/spy-proximity-preservation.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
-
- ❯ lib/turn-engine/__tests__/spy-proximity-preservation.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/effect-atomicity.property.test.ts
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
-
- ❯ lib/turn-engine/__tests__/effect-atomicity.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/target-validation-completeness.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ lib/turn-engine/__tests__/target-validation-completeness.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/rejected-submissions-inert.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
-
- ❯ lib/turn-engine/__tests__/rejected-submissions-inert.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/reward-composition.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
-
- ❯ lib/turn-engine/__tests__/reward-composition.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/action-budget-bounds.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
-
- ❯ lib/turn-engine/__tests__/action-budget-bounds.property.test.ts (0 test)
-stdout | lib/turn-engine/resolution/__tests__/bug-a-phone-distance.property.test.ts
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
-
- ❯ lib/turn-engine/resolution/__tests__/bug-a-phone-distance.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/notebook-privacy.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ lib/turn-engine/__tests__/notebook-privacy.property.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/no-hand-cap.property.test.ts
-◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-
- ❯ lib/turn-engine/__tests__/no-hand-cap.property.test.ts (0 test)
-stdout | lib/hooks/__tests__/use-submit-action.test.ts
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
-
- ❯ lib/hooks/__tests__/use-submit-action.test.ts (0 test)
-stdout | lib/game-ui/__tests__/legal-moves.test.ts
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts (7 tests | 2 failed) 71959ms
+       × when reward cards are granted, at least 1 is of type locator 2027ms
+       × reward cards respect max hand size of 5 4948ms
+stdout | lib/turn-engine/__tests__/turn-advance.property.test.ts
 ◇ injected env (1) from .env // tip: ⌘ enable debugging { debug: true }
 
- ❯ lib/game-ui/__tests__/legal-moves.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/card-registry-dispatcher.test.ts
-◇ injected env (1) from .env // tip: ⌘ suppress logs { quiet: true }
-
- ❯ lib/turn-engine/__tests__/card-registry-dispatcher.test.ts (0 test)
-stdout | lib/map/__tests__/projection.test.ts
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ lib/map/__tests__/projection.test.ts (0 test)
-stdout | lib/turn-engine/__tests__/validate-action.test.ts
-◇ injected env (1) from .env // tip: ⌁ auth for agents [www.vestauth.com]
-
- ❯ lib/turn-engine/__tests__/validate-action.test.ts (0 test)
+ ❯ lib/turn-engine/__tests__/turn-advance.property.test.ts (7 tests | 1 failed) 77150ms
+       × all-flagged edge case: clears all flags, increments round appropriately 32475ms
 stdout | lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts
-◇ injected env (1) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (1) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
 
- ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts (3 tests | 2 failed) 115724ms
-       × after a win, exactly one GameResult exists and a second insert is rejected by unique constraint 3978ms
-       × after a draw, exactly one GameResult exists and a second insert is rejected by unique constraint 4190ms
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts (3 tests | 2 failed) 130408ms
+       × after a win, exactly one GameResult exists and a second insert is rejected by unique constraint 5375ms
+       × after a draw, exactly one GameResult exists and a second insert is rejected by unique constraint 4116ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 36 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  lib/game/__tests__/initialize-game.property.test.ts > Game Initialization Property Tests > Property 13: Exactly one threat > initializeGame creates exactly 1 GameThreat with a valid locationId from the 40 locations
+Error: Property failed after 1 tests
+{ seed: -53108952, path: "0:0", endOnFailure: true }
+Counterexample: [1]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ lib/game/__tests__/initialize-game.property.test.ts:87:38
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/game/__tests__/initialize-game.property.test.ts:65:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/36]⎯
+
+ FAIL  lib/game/__tests__/initialize-game.property.test.ts > Game Initialization Property Tests > Property 14: One spy per region > initializeGame creates exactly 6 GameSpy records, one per region, each with a locationId belonging to that region
+Error: Property failed after 1 tests
+{ seed: 630764664, path: "0:0", endOnFailure: true }
+Counterexample: [101]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ lib/game/__tests__/initialize-game.property.test.ts:142:38
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/game/__tests__/initialize-game.property.test.ts:120:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/36]⎯
+
+ FAIL  lib/game/__tests__/spy-capture.property.test.ts > Spy Capture Property Tests > Property 15: Spy capture records the captor > after capture, only the targeted spy is updated with captured=true and the correct capturedByPlayerId
+Error: Property failed after 1 tests
+{ seed: -845184123, path: "0:0:0:0:0:0:0:0", endOnFailure: true }
+Counterexample: [0,"     "]
+Shrunk 7 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ lib/game/__tests__/spy-capture.property.test.ts:52:38
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/game/__tests__/spy-capture.property.test.ts:30:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/36]⎯
+
+ FAIL  lib/hooks/__tests__/use-map-data.test.ts > useMapData > fetching and caching > fetches map data on mount and sets data
+AssertionError: expected "vi.fn()" to be called with arguments: [ '/api/map' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "/api/map",
++   "/api/map?v=2",
+  ]
+
+
+Number of calls: 1
+
+ ❯ lib/hooks/__tests__/use-map-data.test.ts:77:28
+     75|       expect(result.current.error).toBeNull();
+     76|       expect(global.fetch).toHaveBeenCalledTimes(1);
+     77|       expect(global.fetch).toHaveBeenCalledWith("/api/map");
+       |                            ^
+     78|     });
+     79|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/action-rejection.property.test.ts > Action Rejection Property Tests > Property 6: Action rejection after game end > any action payload submitted to a finished room returns GAME_NOT_ACTIVE
+Error: Property failed after 1 tests
+{ seed: -986353462, path: "0:0:0:0:0:0", endOnFailure: true }
+Counterexample: [{"actionType":"USE_CARD","cardId":"00000000-0000-1000-8000-000000000000"},0,1]
+Shrunk 5 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.roomPlayer.createMany()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/action-rejection.property.test.ts:107:39
+
+  104 
+  105 try {
+  106   // Create players
+→ 107   await prisma.roomPlayer.createMany(
+Unique constraint failed on the fields: (`"playerId"`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts:107:15
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts:83:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'RoomPlayer', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.executeRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:607:13)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44663)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46371)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "RoomPlayer_playerId_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ '"playerId"' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/action-rejection.property.test.ts > Action Rejection Property Tests > Property 6: Action rejection after game end > action rejection applies equally to rooms that ended via draw
+Error: Property failed after 1 tests
+{ seed: 1520718851, path: "0:0:0", endOnFailure: true }
+Counterexample: [{"actionType":"CAPTURE_ATTEMPT"},0,1]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.roomPlayer.createMany()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/action-rejection.property.test.ts:270:39
+
+  267 });
+  268 
+  269 try {
+→ 270   await prisma.roomPlayer.createMany(
+Unique constraint failed on the fields: (`"playerId"`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts:270:15
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/action-rejection.property.test.ts:248:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'RoomPlayer', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.executeRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:607:13)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44663)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46371)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "RoomPlayer_playerId_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ '"playerId"' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts > Property 8: Extra Turn Count and Order Restoration > player with k pending extra turns takes exactly k extra turns, then normal order resumes
+Error: Property failed after 1 tests
+{ seed: -1592261145, path: "0:0:0:0", endOnFailure: true }
+Counterexample: [2,1,0,1]
+Shrunk 3 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:73:42
+
+  70 
+  71 await prisma
+  72   .$transaction(async (tx) => {
+→ 73     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:73:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:71:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts > Property 8: Extra Turn Count and Order Restoration > multiple extra-turn plays accumulate and are consumed one at a time
+Error: Property failed after 1 tests
+{ seed: 109050971, path: "0:0", endOnFailure: true }
+Counterexample: [3,2]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:247:42
+
+  244 
+  245 await prisma
+  246   .$transaction(async (tx) => {
+→ 247     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:247:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-count-order.property.test.ts:245:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts > Extra Turn Round Invariance — Property 7 > advanceTurn with pendingExtraTurns > 0 keeps the same round number
+Error: Property failed after 1 tests
+{ seed: -1523474092, path: "0:0:0:0", endOnFailure: true }
+Counterexample: [2,1,1,0]
+Shrunk 3 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:82:42
+
+  79 
+  80 await prisma
+  81   .$transaction(async (tx) => {
+→ 82     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:82:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:80:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts > Extra Turn Round Invariance — Property 7 > consuming k extra turns sequentially never changes the round number
+Error: Property failed after 1 tests
+{ seed: 1618325704, path: "0:0:0", endOnFailure: true }
+Counterexample: [2,1,1]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:189:42
+
+  186 
+  187 await prisma
+  188   .$transaction(async (tx) => {
+→ 189     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:189:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:187:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts > Extra Turn Round Invariance — Property 7 > normal advancement wrapping from last player increments round (control case)
+Error: Property failed after 1 tests
+{ seed: 652030189, path: "0:0", endOnFailure: true }
+Counterexample: [2,1]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:310:42
+
+  307 
+  308 await prisma
+  309   .$transaction(async (tx) => {
+→ 310     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:310:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:308:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts > Extra Turn Round Invariance — Property 7 > last player extra turns complete before round increments
+Error: Property failed after 1 tests
+{ seed: 1712658795, path: "0:0:0:0", endOnFailure: true }
+Counterexample: [2,1,1]
+Shrunk 3 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:416:42
+
+  413 
+  414 await prisma
+  415   .$transaction(async (tx) => {
+→ 416     const room = await tx.room.create(
+The provided value for the column is too long for the column's type. Column: (not available)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:416:28
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/extra-turn-round-invariance.property.test.ts:414:11
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2000', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: LengthMismatch\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'LengthMismatch', name: 'DriverAdapterError', cause: { originalCode: '22001', originalMessage: 'value too long for type character varying(6)', kind: 'LengthMismatch', column: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts > GameResult Uniqueness Property Tests > Property 5: Exactly one GameResult per finished game > after a win, exactly one GameResult exists and a second insert is rejected by unique constraint
+Error: Property failed after 1 tests
+{ seed: 1295329856, path: "0:0:0", endOnFailure: true }
+Counterexample: [0,1]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.gameResult.findMany()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:118:58
+
+  115 ).rejects.toThrow();
+  116 
+  117 // Verify still exactly one GameResult
+→ 118 const resultsAfter = await tx.gameResult.findMany(
+Database error. Code: `25P02`. Message: `current transaction is aborted, commands ignored until end of transaction block`
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:118:38
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:58:13
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2039', meta: { modelName: 'GameResult', driverAdapterError: { stack: 'DriverAdapterError: current transaction is aborted, commands ignored until end of transaction block\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)\n    at Object.singleLoader (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:65:6569)', message: 'current transaction is aborted, commands ignored until end of transaction block', name: 'DriverAdapterError', cause: { originalCode: '25P02', originalMessage: 'current transaction is aborted, commands ignored until end of transaction block', kind: 'postgres', code: '25P02', severity: 'ERROR', message: 'current transaction is aborted, commands ignored until end of transaction block', detail: undefined, column: undefined, hint: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts > GameResult Uniqueness Property Tests > Property 5: Exactly one GameResult per finished game > after a draw, exactly one GameResult exists and a second insert is rejected by unique constraint
+Error: Property failed after 1 tests
+{ seed: 979531886, path: "0:0:0", endOnFailure: true }
+Counterexample: [1,0]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.gameResult.findMany()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:253:58
+
+  250 ).rejects.toThrow();
+  251 
+  252 // Verify still exactly one GameResult
+→ 253 const resultsAfter = await tx.gameResult.findMany(
+Database error. Code: `25P02`. Message: `current transaction is aborted, commands ignored until end of transaction block`
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:253:38
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/game-result-uniqueness.property.test.ts:146:13
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2039', meta: { modelName: 'GameResult', driverAdapterError: { stack: 'DriverAdapterError: current transaction is aborted, commands ignored until end of transaction block\n    at PgTransaction.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PgTransaction.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PgTransaction.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)\n    at Object.singleLoader (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:65:6569)', message: 'current transaction is aborted, commands ignored until end of transaction block', name: 'DriverAdapterError', cause: { originalCode: '25P02', originalMessage: 'current transaction is aborted, commands ignored until end of transaction block', kind: 'postgres', code: '25P02', severity: 'ERROR', message: 'current transaction is aborted, commands ignored until end of transaction block', detail: undefined, column: undefined, hint: undefined }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/information-hiding.property.test.ts > Information Hiding Property Tests > Property 17: Information Hiding in Responses > poll response does not contain Mastermind locationId or uncaptured Spy locationIds
+Error: Property failed after 1 tests
+{ seed: -1768737968, path: "0:0:0:0:0:0:0", endOnFailure: true }
+Counterexample: [0,2,0,0,1,1]
+Shrunk 6 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/information-hiding.property.test.ts:48:34
+
+  45   notebookEntries,
+  46 } = opts;
+  47 
+→ 48 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/information-hiding.property.test.ts:48:16
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts:245:32
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts:199:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/information-hiding.property.test.ts > Information Hiding Property Tests > Property 17: Information Hiding in Responses > player B cannot see player A notebook entries in poll response
+Error: Property failed after 1 tests
+{ seed: 627633649, path: "0:0:0:0:0", endOnFailure: true }
+Counterexample: [0,0,0,1,1,1]
+Shrunk 4 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/information-hiding.property.test.ts:48:34
+
+  45   notebookEntries,
+  46 } = opts;
+  47 
+→ 48 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/information-hiding.property.test.ts:48:16
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts:363:32
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/information-hiding.property.test.ts:319:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/move-validation.property.test.ts > Move Validation Property Tests > Property 5: Move Adjacency Validation > MOVE to same location is rejected with SAME_LOCATION_MOVE
+Error: Property failed after 1 tests
+{ seed: 1506715618, path: "0:0", endOnFailure: true }
+Counterexample: [{"id":"cmt1xazj7000gjcn6gcse1tqd","name":"Seoul","regionId":"cmt1xaydq0001jcn64jdwmstz","isHub":false,"latitude":37.5665,"longitude":126.978}]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected 'INVALID_MOVE' to be 'SAME_LOCATION_MOVE' // Object.is equality
+
+Expected: "SAME_LOCATION_MOVE"
+Received: "INVALID_MOVE"
+
+ ❯ lib/turn-engine/__tests__/move-validation.property.test.ts:231:34
+ ❯ AsyncProperty.predicate node_modules/fast-check/lib/fast-check.js:1281:104
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:30
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:30
+ ❯ lib/turn-engine/__tests__/move-validation.property.test.ts:212:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/spy-resolution.property.test.ts > Spy Resolution Property Tests > Property 15: Reward Tier Mapping > when reward cards are granted, at least 1 is of type locator
+Error: Property failed after 1 tests
+{ seed: 1178633365, path: "0:0", endOnFailure: true }
+Counterexample: [1]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected 0 to be greater than or equal to 1
+ ❯ prisma.$transaction.timeout lib/turn-engine/__tests__/spy-resolution.property.test.ts:635:45
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts:532:13
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts:528:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/spy-resolution.property.test.ts > Spy Resolution Property Tests > Property 15: Reward Tier Mapping > reward cards respect max hand size of 5
+Error: Property failed after 1 tests
+{ seed: 714187354, path: "0:0:0", endOnFailure: true }
+Counterexample: [0,1]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: AssertionError: expected 0 to be greater than or equal to 1
+ ❯ prisma.$transaction.timeout lib/turn-engine/__tests__/spy-resolution.property.test.ts:752:36
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts:656:13
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/spy-resolution.property.test.ts:651:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 3: Non-Current-Player Rejection > actions from non-current player are rejected with NOT_YOUR_TURN and no state changes
+Error: Property failed after 1 tests
+{ seed: 1071305465, path: "0:0:0", endOnFailure: true }
+Counterexample: [2,0]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:183:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:176:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 3: Non-Current-Player Rejection > MOVE action from non-current player is also rejected without state change
+Error: Property failed after 1 tests
+{ seed: -17862756, path: "0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 0 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:259:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:249:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 4: Inactive Game Rejection > actions on 'finished' room are rejected with GAME_NOT_ACTIVE
+Error: Property failed after 1 tests
+{ seed: -1153052350, path: "0:0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:311:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:305:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 4: Inactive Game Rejection > actions on 'waiting' room are rejected with GAME_NOT_ACTIVE
+Error: Property failed after 1 tests
+{ seed: 383127508, path: "0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 0 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:358:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:352:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 4: Inactive Game Rejection > different action types all rejected on inactive room
+Error: Property failed after 1 tests
+{ seed: 2062938643, path: "0:0:0", endOnFailure: true }
+Counterexample: ["finished","SKIP",0]
+Shrunk 2 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:399:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:391:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 9: Failed Action State Preservation > invalid MOVE to non-adjacent location rejected, all state unchanged
+Error: Property failed after 1 tests
+{ seed: 119666154, path: "0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 0 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:445:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:433:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 9: Failed Action State Preservation > MOVE to same location rejected, state preserved
+Error: Property failed after 1 tests
+{ seed: 756516233, path: "0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 0 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:526:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:520:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 9: Failed Action State Preservation > duplicate CAPTURE_ATTEMPT rejected, state preserved
+Error: Property failed after 1 tests
+{ seed: -620813067, path: "0:0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:581:44
+
+  578   uniquePlayerId("sp-dup", i)
+  579 );
+  580 
+→ 581 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:581:26
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:570:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 10: SKIP Is a No-Op > SKIP at slot 1 advances slot to 2 but changes nothing else
+Error: Property failed after 1 tests
+{ seed: -2110519197, path: "0:0", endOnFailure: true }
+Counterexample: [0,2]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:670:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:663:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 10: SKIP Is a No-Op > SKIP does not modify player position regardless of current location
+Error: Property failed after 1 tests
+{ seed: -802492417, path: "0:0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:750:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:744:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/state-preservation.property.test.ts > State Preservation Property Tests > Property 10: SKIP Is a No-Op > SKIP emits player-skipped event but no other side effects
+Error: Property failed after 1 tests
+{ seed: -518312879, path: "0:0", endOnFailure: true }
+Counterexample: [0]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `prisma.room.create()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/state-preservation.property.test.ts:75:34
+
+  72   uniquePlayerId("sp", i)
+  73 );
+  74 
+→ 75 const room = await prisma.room.create(
+Unique constraint failed on the fields: (`code`)
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ createGameSetup lib/turn-engine/__tests__/state-preservation.property.test.ts:75:16
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:790:27
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+ ❯ lib/turn-engine/__tests__/state-preservation.property.test.ts:784:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2002', meta: { modelName: 'Room', driverAdapterError: { stack: 'DriverAdapterError: UniqueConstraintViolation\n    at PrismaPgAdapter.onError (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:639:11)\n    at PrismaPgAdapter.performIO (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:634:12)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at PrismaPgAdapter.queryRaw (file:///D:/Projects/Shadow-Hunt/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:44895)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:45339)\n    at e.interpretNode (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:46559)\n    at e.run (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:11:43609)\n    at execute (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:57:815)\n    at Ut.request (D:\Projects\Shadow-Hunt\node_modules\@prisma\client\runtime\client.js:58:2421)', message: 'UniqueConstraintViolation', name: 'DriverAdapterError', cause: { originalCode: '23505', originalMessage: 'duplicate key value violates unique constraint "Room_code_key"', kind: 'UniqueConstraintViolation', constraint: { fields: [ 'code' ] } }, constructor: 'Function<DriverAdapterError>', toString: 'Function<toString>' } }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/36]⎯
+
+ FAIL  lib/turn-engine/__tests__/turn-advance.property.test.ts > Turn Advancement Property Tests > Property 2: Skip Flag Bypass and Clear > all-flagged edge case: clears all flags, increments round appropriately
+Error: Property failed after 8 tests
+{ seed: 1790158503, path: "7", endOnFailure: true }
+Counterexample: [4,3]
+Shrunk 0 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2474:8
+
+Caused by: PrismaClientKnownRequestError: 
+Invalid `tx.playerPosition.findUnique()` invocation in
+D:/Projects/Shadow-Hunt/lib/turn-engine/__tests__/turn-advance.property.test.ts:396:55
+
+  393 
+  394 // All skip flags cleared
+  395 for (let i = 0; i < playerCount; i++) {
+→ 396   const pos = await tx.playerPosition.findUnique(
+Transaction API error: A query cannot be executed on an expired transaction. The timeout for this transaction was 5000 ms, however 5157 ms passed since the start of the transaction. Consider increasing the interactive transaction timeout or doing less work in the transaction.
+ ❯ Jr.handleRequestError node_modules/@prisma/client/runtime/client.js:65:8286
+ ❯ Jr.handleAndLogRequestError node_modules/@prisma/client/runtime/client.js:65:7581
+ ❯ Jr.request node_modules/@prisma/client/runtime/client.js:65:7288
+ ❯ a node_modules/@prisma/client/runtime/client.js:99:6862
+ ❯ lib/turn-engine/__tests__/turn-advance.property.test.ts:396:31
+ ❯ Proxy._transactionWithCallback node_modules/@prisma/client/runtime/client.js:99:4800
+ ❯ lib/turn-engine/__tests__/turn-advance.property.test.ts:318:13
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2516:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'P2028', meta: { modelName: 'PlayerPosition', operation: 'query', timeout: 5000, timeTaken: 5157 }, clientVersion: '7.9.1', batchRequestIdx: undefined }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/36]⎯
+
+ FAIL  app/api/map/__tests__/map.route.test.ts > GET /api/map > response includes Cache-Control header
+AssertionError: expected 'public, max-age=0, must-revalidate' to be 'public, max-age=86400, immutable' // Object.is equality
+
+Expected: "public, max-age=86400, immutable"
+Received: "public, max-age=0, must-revalidate"
+
+ ❯ app/api/map/__tests__/map.route.test.ts:145:26
+    143|
+    144|     const cacheControl = response.headers.get("Cache-Control");
+    145|     expect(cacheControl).toBe("public, max-age=86400, immutable");
+       |                          ^
+    146|   });
+    147| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/36]⎯
+
+ FAIL  app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx > Bug Condition Exploration: Map Visual Elements Are Deficient > Property 1.1: Continent Path Complexity > each continent path should have > 40 points for recognizable shapes
+AssertionError: expected 34 to be greater than 40
+ ❯ app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx:171:28
+    169|       for (const continent of CONTINENT_PATHS) {
+    170|         const pointCount = countPathPoints(continent.d);
+    171|         expect(pointCount).toBeGreaterThan(40);
+       |                            ^
+    172|       }
+    173|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/36]⎯
+
+ FAIL  app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx > Bug Condition Exploration: Map Visual Elements Are Deficient > Property 1.2: Continent Path Bounding Box Spans Geographic Extent > each continent should span at least its expected proportional area of the viewBox
+AssertionError: expected 98 to be greater than or equal to 100
+ ❯ app/game/[roomId]/components/__tests__/map-visual-bug-condition.test.tsx:193:29
+    191|
+    192|         expect(bbox.width).toBeGreaterThanOrEqual(expected.width);
+    193|         expect(bbox.height).toBeGreaterThanOrEqual(expected.height);
+       |                             ^
+    194|       }
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/36]⎯
+
+ FAIL  app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx > MoveFallbackList > rendering > has block sm:hidden class on the container
+AssertionError: expected 'px-4 py-3' to contain 'block'
+
+Expected: "block"
+Received: "px-4 py-3"
+
+ ❯ app/game/[roomId]/components/__tests__/move-fallback-list.test.tsx:82:34
+     80|
+     81|       const wrapper = container.firstElementChild;
+     82|       expect(wrapper?.className).toContain("block");
+       |                                  ^
+     83|       expect(wrapper?.className).toContain("sm:hidden");
+     84|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/36]⎯
+
+ FAIL  app/game/[roomId]/components/__tests__/notebook-panel.test.tsx > NotebookPanel — Property Tests > Property 17: Unknown notebook entry type fallback > renders 'Unrecognised clue' for any unknown entryType
+Error: Property failed after 33 tests
+{ seed: 981812567, path: "32:73", endOnFailure: true }
+Counterexample: ["__proto__",1]
+Shrunk 1 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2462:16
+ ❯ throwIfFailed node_modules/fast-check/lib/fast-check.js:2469:8
+ ❯ reportRunDetails node_modules/fast-check/lib/fast-check.js:2485:14
+ ❯ Module.assert node_modules/fast-check/lib/fast-check.js:2542:7
+ ❯ app/game/[roomId]/components/__tests__/notebook-panel.test.tsx:600:10
+    598|         );
+    599|
+    600|       fc.assert(
+       |          ^
+    601|         fc.property(
+    602|           arbUnknownType,
+
+Caused by: AssertionError: expected 'AllR1 — ' to contain 'Unrecognised clue'
+
+Expected: "Unrecognised clue"
+Received: "AllR1 — "
+
+ ❯ app/game/[roomId]/components/__tests__/notebook-panel.test.tsx:617:43
+ ❯ Property.predicate node_modules/fast-check/lib/fast-check.js:1353:99
+ ❯ Property.run node_modules/fast-check/lib/fast-check.js:1322:24
+ ❯ runIt node_modules/fast-check/lib/fast-check.js:2505:24
+ ❯ check node_modules/fast-check/lib/fast-check.js:2537:204
+ ❯ Module.assert node_modules/fast-check/lib/fast-check.js:2540:14
+ ❯ app/game/[roomId]/components/__tests__/notebook-panel.test.tsx:600:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/36]⎯
+
+
+ Test Files  16 failed | 94 passed (110)
+      Tests  36 failed | 844 passed (880)
+   Start at  13:30:27
+   Duration  465.90s (transform 4.40s, setup 41.98s, import 17.01s, tests 2020.65s, environment 49.14s)
+
