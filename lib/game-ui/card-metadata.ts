@@ -71,9 +71,8 @@ const CARD_METADATA: Record<CardIdentifier, CardMeta> = {
  * return the raw identifier as displayName with a fallback description.
  */
 export function getCardMeta(identifier: string): CardMeta {
-  const known = CARD_METADATA[identifier as CardIdentifier];
-  if (known) {
-    return known;
+  if (Object.hasOwn(CARD_METADATA, identifier)) {
+    return CARD_METADATA[identifier as CardIdentifier];
   }
   return {
     displayName: identifier,

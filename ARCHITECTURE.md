@@ -1,6 +1,6 @@
 # Shadow Circuit — Architecture
 
-_Last updated: 2026-08-22 — added lib/hooks/use-submit-action module entry_
+_Last updated: 2026-08-22 — added GameScreenShell layout component entry_
 
 ## Overview
 Shadow Circuit (working title) is a turn-based, hidden-information deduction game for 2–4 players. Browser-based, installable to a phone home screen via PWA. Built for the Ready, Spec, Ship Hackathon using Kiro.
@@ -53,6 +53,7 @@ _Fill in as each spec is implemented — one line per module, "owns X / doesn't 
 - `app/game/[roomId]/components/world-map.tsx` — Owns SVG map rendering, continent paths, region tinting, and composition of route/marker/token layers. Doesn't own game logic or action submission.
 - `lib/game-ui/card-metadata.ts` — Owns static card display metadata (displayName, description, category) for all CardIdentifier values. Doesn't own card game logic or rendering.
 - `lib/hooks/use-submit-action.ts` — Owns client-side action submission (POST to action API), in-flight guard, error mapping, and refetch-on-success. Doesn't own game state polling or UI rendering.
+- `app/game/[roomId]/components/game-screen-shell.tsx` — Owns responsive layout shell (desktop grid + compact tab bar), name/player lookups, and panel composition via error boundaries. Doesn't own panel internals, map rendering, or action submission.
 
 ## How .kiro/ fits in
 Each game system (lobby, movement, clue engine, win condition) gets its own spec under `.kiro/specs/`. Steering rules in `.kiro/steering/` encode the stack and documentation conventions below so every Kiro session stays consistent.

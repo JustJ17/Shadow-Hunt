@@ -139,10 +139,10 @@ export function formatEventMessage(
   nameLookup: NameLookupFn,
   playerLookup: PlayerLookupFn,
 ): string {
-  const builder = templateMap[event.type];
-  if (!builder) {
+  if (!Object.hasOwn(templateMap, event.type)) {
     return "Unrecognised event";
   }
+  const builder = templateMap[event.type];
   return builder(event.payload, nameLookup, playerLookup);
 }
 

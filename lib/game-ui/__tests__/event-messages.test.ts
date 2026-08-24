@@ -317,36 +317,36 @@ describe("Property tests", () => {
    * "Xs" (delta < 60s), "Xm" (delta < 60min), or "Xh" (delta >= 60min).
    */
   it("Property 11: formatRelativeTimestamp always returns valid format", () => {
+    const validDate = fc
+      .date({ min: new Date("2000-01-01"), max: new Date("2030-01-01") })
+      .filter((d) => !isNaN(d.getTime()));
+
     fc.assert(
-      fc.property(
-        fc.date({ min: new Date("2000-01-01"), max: new Date("2030-01-01") }),
-        fc.date({ min: new Date("2000-01-01"), max: new Date("2030-01-01") }),
-        (created, now) => {
-          // Ensure now >= created for meaningful output
-          const effectiveNow =
-            now.getTime() >= created.getTime() ? now : created;
-          const result = formatRelativeTimestamp(
-            created.toISOString(),
-            effectiveNow,
-          );
-          expect(result).toMatch(/^\d+[smh]$/);
+      fc.property(validDate, validDate, (created, now) => {
+        // Ensure now >= created for meaningful output
+        const effectiveNow =
+          now.getTime() >= created.getTime() ? now : created;
+        const result = formatRelativeTimestamp(
+          created.toISOString(),
+          effectiveNow,
+        );
+        expect(result).toMatch(/^\d+[smh]$/);
 
-          const value = parseInt(result.slice(0, -1), 10);
-          const unit = result.slice(-1);
-          expect(value).toBeGreaterThanOrEqual(0);
+        const value = parseInt(result.slice(0, -1), 10);
+        const unit = result.slice(-1);
+        expect(value).toBeGreaterThanOrEqual(0);
 
-          const deltaSec = Math.floor(
-            (effectiveNow.getTime() - created.getTime()) / 1000,
-          );
-          if (deltaSec < 60) {
-            expect(unit).toBe("s");
-          } else if (deltaSec < 3600) {
-            expect(unit).toBe("m");
-          } else {
-            expect(unit).toBe("h");
-          }
-        },
-      ),
+        const deltaSec = Math.floor(
+          (effectiveNow.getTime() - created.getTime()) / 1000,
+        );
+        if (deltaSec < 60) {
+          expect(unit).toBe("s");
+        } else if (deltaSec < 3600) {
+          expect(unit).toBe("m");
+        } else {
+          expect(unit).toBe("h");
+        }
+      }),
       { numRuns: 200 },
     );
   });

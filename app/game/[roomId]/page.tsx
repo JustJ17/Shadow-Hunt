@@ -9,6 +9,8 @@ import { computeLegalMoves } from "@/lib/game-ui/legal-moves";
 import { EndScreen } from "./components/EndScreen";
 import { ActionBar } from "./components/action-bar";
 import { MoveFallbackList } from "./components/move-fallback-list";
+import { GameScreenShell } from "./components/game-screen-shell";
+import type { CardSelection } from "./components/card-hand";
 import type { ActionCardPollData, UseCardPayload } from "@/lib/turn-engine/types";
 import type { TransportType } from "@/lib/map/types";
 
@@ -28,7 +30,7 @@ export default function GamePage() {
   const { data: mapData, idToName } = useMapData();
 
   /**
-   * Handles card selection from CardHand component.
+   * Handles card selection from CardHand component (legacy interface).
    * Constructs UseCardPayload — includes targetPlayerId only when the card
    * requires a player target (targetRequirement !== "none").
    * Requirements: 5.1, 5.5
@@ -40,6 +42,24 @@ export default function GamePage() {
         cardId: card.id,
         ...(card.targetRequirement !== "none" && targetPlayerId
           ? { targetPlayerId }
+          : {}),
+      };
+      submit(payload);
+    },
+    [submit]
+  );
+
+  /**
+   * Handles card selection via the CardSelection interface used by GameScreenShell.
+   * Requirements: 1.1, 1.7
+   */
+  const handleCardSelectNew = useCallback(
+    (selection: CardSelection) => {
+      const payload: UseCardPayload = {
+        actionType: "USE_CARD",
+        cardId: selection.cardId,
+        ...(selection.targetRequirement === "player" && selection.targetPlayerId
+          ? { targetPlayerId: selection.targetPlayerId }
           : {}),
       };
       submit(payload);
@@ -165,34 +185,16 @@ export default function GamePage() {
       (e.payload as Record<string, unknown>).playerId === state.viewerPlayerId
   );
 
-  // Active game view
+  // Active game view — composed via GameScreenShell (Requirements: 1.1, 1.7)
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold">Shadow Hunt</h1>
-          <div className="flex items-center gap-3">
-            {isSubmitting && (
-              <span className="text-xs text-yellow-400 animate-pulse">
-                Submitting...
-              </span>
-            )}
-            <div className="bg-gray-800 px-3 py-1 rounded text-sm text-gray-400">
-              Round {state.currentRound}
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gray-800 rounded-lg p-6 text-center">
-          <p className="text-sm text-gray-500">
-            {isViewerTurn
-              ? "It\u2019s your turn!"
-              : `Waiting for ${state.players.find(p => p.playerId === state.currentPlayerId)?.displayName ?? "Unknown"}...`}
-          </p>
-        </div>
-
-        {/* ActionBar: skip and capture buttons + error display. Requirements 4.1–4.10 */}
-        <div className="mt-4">
+    <GameScreenShell
+      state={state}
+      mapData={mapData ?? null}
+      isSubmitting={isSubmitting}
+      onCardSelect={handleCardSelectNew}
+      mapSlot={
+        <div className="flex flex-col h-full bg-gray-800 rounded-lg p-4 overflow-y-auto">
+          <p className="text-gray-500 text-sm text-center mb-4">Map view coming soon</p>
           <ActionBar
             isViewerTurn={isViewerTurn}
             isSubmitting={isSubmitting}
@@ -202,24 +204,14 @@ export default function GamePage() {
             onSkip={handleSkip}
             onCaptureAttempt={handleCaptureAttempt}
           />
+          <MoveFallbackList
+            legalMoves={legalMovesWithNames}
+            isViewerTurn={isViewerTurn}
+            isSubmitting={isSubmitting}
+            onMoveSelect={handleMoveSelect}
+          />
         </div>
-
-        {/* MoveFallbackList: compact-viewport move selection. Requirement 3.8 */}
-        <MoveFallbackList
-          legalMoves={legalMovesWithNames}
-          isViewerTurn={isViewerTurn}
-          isSubmitting={isSubmitting}
-          onMoveSelect={handleMoveSelect}
-        />
-
-        {/* CityMarkers integration — rendered inside the map component (game-map spec).
-            Props ready: legalMoveIds, isViewerTurn, isSubmitting, onMoveSelect={handleMoveSelect} */}
-
-        {/* CardHand integration (game-panels spec):
-          <CardHand cards={state.privateData.actionCards} isSubmitting={isSubmitting}
-            isViewerTurn={isViewerTurn} onCardSelect={handleCardSelect} />
-        */}
-      </div>
-    </div>
+      }
+    />
   );
 }

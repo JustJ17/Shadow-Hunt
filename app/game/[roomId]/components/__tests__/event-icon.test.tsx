@@ -124,3 +124,75 @@ describe("EventIcon", () => {
     });
   });
 });
+
+
+/**
+ * Property 7: Event icon totality
+ *
+ * For any of the 13 GameEventType values, EventIcon renders an inline SVG
+ * glyph that is distinct from the neutral fallback glyph.
+ *
+ * **Validates: Requirements 8.3, 13.1**
+ */
+import * as fc from "fast-check";
+
+describe("Property 7: Event icon totality", () => {
+  it("every known GameEventType renders a non-fallback glyph", () => {
+    // Get fallback glyph HTML for comparison
+    const { container: fallbackContainer } = render(
+      <EventIcon type="__fallback_probe__" />
+    );
+    const fallbackHtml =
+      fallbackContainer.querySelector("svg")?.innerHTML ?? "";
+
+    fc.assert(
+      fc.property(
+        fc.constantFrom(...KNOWN_TYPES),
+        (type) => {
+          const { container, unmount } = render(<EventIcon type={type} />);
+          const svg = container.querySelector("svg");
+          expect(svg).not.toBeNull();
+          expect(svg?.getAttribute("width")).toBe("16");
+          expect(svg?.getAttribute("height")).toBe("16");
+          expect(svg?.getAttribute("aria-hidden")).toBe("true");
+
+          const html = svg?.innerHTML ?? "";
+          expect(html).not.toBe(fallbackHtml);
+
+          unmount();
+        }
+      ),
+      { numRuns: 50 }
+    );
+  });
+
+  it("unknown event types render the fallback glyph", () => {
+    const knownSet = new Set<string>(KNOWN_TYPES);
+
+    // Get fallback glyph HTML for comparison
+    const { container: fallbackContainer } = render(
+      <EventIcon type="__fallback_probe__" />
+    );
+    const fallbackHtml =
+      fallbackContainer.querySelector("svg")?.innerHTML ?? "";
+
+    fc.assert(
+      fc.property(
+        fc.string({ minLength: 1, maxLength: 30 }).filter(
+          (s) => !knownSet.has(s)
+        ),
+        (unknownType) => {
+          const { container, unmount } = render(
+            <EventIcon type={unknownType} />
+          );
+          const svg = container.querySelector("svg");
+          const html = svg?.innerHTML ?? "";
+          expect(html).toBe(fallbackHtml);
+
+          unmount();
+        }
+      ),
+      { numRuns: 50 }
+    );
+  });
+});
