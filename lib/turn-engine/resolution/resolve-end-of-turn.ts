@@ -5,12 +5,14 @@ import {
 } from "@/lib/turn-engine/types";
 import { resolveCaptureAttempt } from "@/lib/turn-engine/resolution/resolve-capture";
 import { resolveSpyAndReward } from "@/lib/turn-engine/resolution/resolve-spy-reward";
+import { resolvePlayerPendingClues } from "@/lib/turn-engine/resolution/resolve-player-clues";
 import { getPlayerPosition } from "@/lib/turn-engine/player-positions";
 
 /**
  * Orchestrates end-of-turn resolution:
  * Step A: Capture Attempt resolution (if capture flag set)
  * Step B: Spy/reward resolution (skipped if capture succeeded)
+ * Step C: Resolve pending clues for this player (immediate per-turn delivery)
  */
 export async function resolveEndOfTurn(
   roomId: string,
@@ -49,6 +51,9 @@ export async function resolveEndOfTurn(
     tx
   );
   resolution.spyResult = spyResult;
+
+  // Step C: Resolve pending clues for this player's turn (immediate delivery)
+  await resolvePlayerPendingClues(roomId, playerId, turnState.currentRound, tx);
 
   return resolution;
 }
