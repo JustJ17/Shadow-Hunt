@@ -71,6 +71,19 @@ export async function resolveCaptureAttempt(
       data: { skipNextTurn: true },
     });
 
+    // Emit "capture-failed" event to the public Event Feed
+    await emitEvent(
+      roomId,
+      "capture-failed",
+      {
+        playerId,
+        locationId: playerLocationId,
+        // Do NOT include the Mastermind location
+      },
+      roundNumber,
+      tx
+    );
+
     return {
       result: "failed",
       locationId: playerLocationId,
