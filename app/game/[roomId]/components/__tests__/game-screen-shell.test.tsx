@@ -511,6 +511,6 @@ describe("GameScreenShell — Property Tests", () => {
 
 // --- Test helper component ---
 
-function ThrowingPanel() {
+function ThrowingPanel(): JSX.Element {
   throw new Error("Panel crash!");
 }
