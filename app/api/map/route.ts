@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { getFullMapData } from "@/lib/map/get-map-data";
 
+// Force Vercel to never serve this from edge cache
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const data = await getFullMapData();
@@ -8,7 +11,6 @@ export async function GET() {
     // Debug: log first location's coordinates to Vercel function logs
     const firstLoc = data.regions[0]?.locations[0];
     console.log("[/api/map] First location:", JSON.stringify(firstLoc));
-    console.log("[/api/map] DATABASE_URL host:", process.env.DATABASE_URL?.split("@")[1]?.split("/")[0] ?? "NOT SET");
 
     return NextResponse.json(data, {
       headers: {
