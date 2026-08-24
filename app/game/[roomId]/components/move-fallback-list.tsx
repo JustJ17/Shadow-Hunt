@@ -31,7 +31,7 @@ export function MoveFallbackList({
   }
 
   return (
-    <div className="block sm:hidden px-4 py-3">
+    <div className="px-4 py-3">
       <h2 className="text-sm font-medium text-gray-400 mb-2">Move to:</h2>
       <ul className="flex flex-col gap-2" role="list">
         {legalMoves.map((move) => (

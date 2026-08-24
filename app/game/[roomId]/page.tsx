@@ -10,6 +10,7 @@ import { EndScreen } from "./components/EndScreen";
 import { ActionBar } from "./components/action-bar";
 import { MoveFallbackList } from "./components/move-fallback-list";
 import { GameScreenShell } from "./components/game-screen-shell";
+import { WorldMap } from "./components/world-map";
 import type { CardSelection } from "./components/card-hand";
 import type { ActionCardPollData, UseCardPayload } from "@/lib/turn-engine/types";
 import type { TransportType } from "@/lib/map/types";
@@ -193,23 +194,53 @@ export default function GamePage() {
       isSubmitting={isSubmitting}
       onCardSelect={handleCardSelectNew}
       mapSlot={
-        <div className="flex flex-col h-full bg-gray-800 rounded-lg p-4 overflow-y-auto">
-          <p className="text-gray-500 text-sm text-center mb-4">Map view coming soon</p>
-          <ActionBar
-            isViewerTurn={isViewerTurn}
-            isSubmitting={isSubmitting}
-            actionsRemaining={state.actionsRemaining}
-            captureAttemptFlag={captureAttemptFlag}
-            error={submitError}
-            onSkip={handleSkip}
-            onCaptureAttempt={handleCaptureAttempt}
-          />
-          <MoveFallbackList
-            legalMoves={legalMovesWithNames}
-            isViewerTurn={isViewerTurn}
-            isSubmitting={isSubmitting}
-            onMoveSelect={handleMoveSelect}
-          />
+        <div className="flex flex-col h-full overflow-hidden">
+          {/* SVG Map — takes up most of the space */}
+          {mapData ? (
+            <div className="flex-1 min-h-0">
+              <WorldMap
+                mapData={mapData}
+                players={state.players.map(p => ({
+                  id: p.playerId,
+                  displayName: p.displayName,
+                  locationId: p.locationId,
+                  turnPosition: p.turnPosition,
+                }))}
+                viewerPlayerId={state.viewerPlayerId}
+                activeBlockades={state.activeBlockades.map((b, i) => ({
+                  id: `blockade-${i}`,
+                  transport: b.transportType,
+                  casterPlayerId: b.casterPlayerId,
+                }))}
+                legalMoveIds={legalMoveIds}
+                isViewerTurn={isViewerTurn}
+                isSubmitting={isSubmitting}
+                onMoveSelect={handleMoveSelect}
+              />
+            </div>
+          ) : (
+            <div className="flex-1 flex items-center justify-center">
+              <p className="text-gray-500 text-sm">Loading map...</p>
+            </div>
+          )}
+          {/* Action bar + Move list below the map */}
+          <div className="shrink-0 p-2 space-y-2">
+            <ActionBar
+              isViewerTurn={isViewerTurn}
+              isSubmitting={isSubmitting}
+              actionsRemaining={state.actionsRemaining}
+              captureAttemptFlag={captureAttemptFlag}
+              error={submitError}
+              onSkip={handleSkip}
+              onCaptureAttempt={handleCaptureAttempt}
+            />
+            <MoveFallbackList
+              legalMoves={legalMovesWithNames}
+              isViewerTurn={isViewerTurn}
+              isSubmitting={isSubmitting}
+              onMoveSelect={handleMoveSelect}
+            />
+          </div>
         </div>
       }
     />

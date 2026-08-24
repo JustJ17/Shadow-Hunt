@@ -25,6 +25,11 @@ interface WorldMapProps {
   players: PlayerOnMap[];
   viewerPlayerId: string;
   activeBlockades: ActiveBlockade[];
+  // Forward to CityMarkers for move interaction
+  legalMoveIds?: Set<string>;
+  isViewerTurn?: boolean;
+  isSubmitting?: boolean;
+  onMoveSelect?: (targetLocationId: string) => void;
 }
 
 /**
@@ -90,6 +95,10 @@ export function WorldMap({
   players,
   viewerPlayerId,
   activeBlockades,
+  legalMoveIds,
+  isViewerTurn,
+  isSubmitting,
+  onMoveSelect,
 }: WorldMapProps) {
   const viewportRef = useRef<MapViewportHandle>(null);
 
@@ -135,6 +144,10 @@ export function WorldMap({
             locations={allLocations}
             regions={mapData.regions}
             regionColors={REGION_COLORS}
+            legalMoveIds={legalMoveIds}
+            isViewerTurn={isViewerTurn}
+            isSubmitting={isSubmitting}
+            onMoveSelect={onMoveSelect}
           />
 
           {/* Animated player tokens */}

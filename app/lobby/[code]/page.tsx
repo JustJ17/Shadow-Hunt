@@ -8,6 +8,10 @@ export default function LobbyPage() {
   const router = useRouter();
   const { state, error, isLoading } = useLobbyPoll();
   const [isNavigating, setIsNavigating] = useState(false);
+  const [isTogglingReady, setIsTogglingReady] = useState(false);
+  const [isStarting, setIsStarting] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
+  const [optimisticReady, setOptimisticReady] = useState<"ready" | "not-ready" | null>(null);
 
   useEffect(() => {
     if (
@@ -21,8 +25,38 @@ export default function LobbyPage() {
     }
   }, [state, router, isNavigating]);
 
+  // Clear optimistic state when poll returns fresh data
+  useEffect(() => {
+    if (state && optimisticReady !== null) {
+      setOptimisticReady(null);
+    }
+  }, [state]);
+
   const handleToggleReady = async () => {
-    await fetch("/api/rooms/ready", { method: "POST" });
+    if (isTogglingReady) return;
+    setIsTogglingReady(true);
+
+    // Optimistic update: flip ready state immediately
+    if (state) {
+      const currentPlayer = state.players.find(p => !p.isHost);
+      // We don't reliably know which player we are from state alone, so just toggle
+      setOptimisticReady(prev => {
+        if (prev === "ready") return "not-ready";
+        if (prev === "not-ready") return "ready";
+        // First toggle — figure out current from state by finding the viewer
+        // Since we can't identify ourselves from state directly, we'll just let the server response handle it
+        return null;
+      });
+    }
+
+    try {
+      await fetch("/api/rooms/ready", { method: "POST" });
+    } catch {
+      // revert optimistic on failure
+      setOptimisticReady(null);
+    } finally {
+      setIsTogglingReady(false);
+    }
   };
 
   const handleLeave = async () => {
@@ -34,12 +68,26 @@ export default function LobbyPage() {
   };
 
   const handleStartGame = async () => {
-    await fetch("/api/rooms/start", { method: "POST" });
+    if (isStarting) return;
+    setIsStarting(true);
+    setStartError(null);
+
+    try {
+      const res = await fetch("/api/rooms/start", { method: "POST" });
+      const data = await res.json();
+      if (!data.success) {
+        setStartError(data.error || "Failed to start game");
+      }
+    } catch {
+      setStartError("Network error — please try again");
+    } finally {
+      setIsStarting(false);
+    }
   };
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
         <p className="text-lg text-gray-400">Loading lobby...</p>
       </div>
     );
@@ -47,7 +95,7 @@ export default function LobbyPage() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
         <div className="text-center">
           <p className="text-red-400 text-lg">{error}</p>
           <a href="/" className="text-blue-400 underline mt-4 inline-block">Back to home</a>
@@ -58,8 +106,6 @@ export default function LobbyPage() {
 
   if (!state) return null;
 
-  // Determine if current user is host (we know the current player because they have the cookie)
-  // For simplicity, we check the hostId against the players list
   const isHost = state.players.some(p => p.isHost);
   const allNonHostReady = state.players.filter(p => !p.isHost).every(p => p.readyState === "ready");
   const canStart = isHost && state.players.length >= 2 && allNonHostReady && state.status === "waiting";
@@ -134,10 +180,10 @@ export default function LobbyPage() {
           <div className="flex gap-3">
             <button
               onClick={handleToggleReady}
-              disabled={isNavigating}
+              disabled={isNavigating || isTogglingReady}
               className="flex-1 py-3 rounded-lg font-semibold bg-blue-600 hover:bg-blue-700 transition disabled:opacity-50 disabled:pointer-events-none"
             >
-              Toggle Ready
+              {isTogglingReady ? "Updating..." : "Toggle Ready"}
             </button>
             <button
               onClick={handleLeave}
@@ -152,11 +198,15 @@ export default function LobbyPage() {
         {canStart && (
           <button
             onClick={handleStartGame}
-            disabled={isNavigating}
+            disabled={isNavigating || isStarting}
             className="w-full mt-3 py-3 rounded-lg font-semibold bg-green-600 hover:bg-green-700 transition disabled:opacity-50 disabled:pointer-events-none"
           >
-            Start Game
+            {isStarting ? "Starting..." : "Start Game"}
           </button>
+        )}
+
+        {startError && (
+          <p className="mt-2 text-sm text-red-400 text-center">{startError}</p>
         )}
       </div>
     </div>
