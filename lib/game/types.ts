@@ -13,8 +13,6 @@ export interface SpyPlacement {
   id: string;
   regionId: string;
   locationId: string;
-  captured: boolean;
-  capturedByPlayerId: string | null;
 }
 
 export interface InitializeGameResult {

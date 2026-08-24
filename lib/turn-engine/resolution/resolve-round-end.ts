@@ -172,7 +172,9 @@ async function resolveBugAPhone(
   });
 
   const spyRegionId = spy ? targetLocation.regionId : null;
-  const spyCaptured = spy ? spy.captured : false;
+  const spyCaptured = spy
+    ? (await tx.spyCapture.count({ where: { spyId: spy.id } })) > 0
+    : false;
 
   await tx.notebookEntry.create({
     data: {

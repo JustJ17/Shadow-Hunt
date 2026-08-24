@@ -85,7 +85,6 @@ async function createGameSetup(opts: {
         roomId: room.id,
         regionId: spy.regionId,
         locationId: spy.locationId,
-        captured: false,
       },
     });
   }

@@ -32,25 +32,30 @@ export async function getGameState(
       id: spy.id,
       regionId: spy.regionId,
       locationId: spy.locationId,
-      captured: spy.captured,
-      capturedByPlayerId: spy.capturedByPlayerId,
     })),
   };
 }
 
 /**
- * Marks a Spy NPC as captured by a specific player.
- * Updates the spy record with captured=true and records the capturing player.
+ * Records a player's capture of a spy NPC.
+ * Creates a SpyCapture row; captureOrder is automatically computed
+ * from the number of existing captures for this spy.
+ *
+ * Returns the captureOrder assigned to this player (1 = first, 2 = second, etc.)
  */
-export async function markSpyCaptured(
+export async function recordSpyCapture(
   spyId: string,
-  capturedByPlayerId: string
-): Promise<void> {
-  await prisma.gameSpy.update({
-    where: { id: spyId },
-    data: {
-      captured: true,
-      capturedByPlayerId,
-    },
+  roomId: string,
+  playerId: string
+): Promise<number> {
+  const existingCount = await prisma.spyCapture.count({
+    where: { spyId },
   });
+  const captureOrder = existingCount + 1;
+
+  await prisma.spyCapture.create({
+    data: { roomId, spyId, playerId, captureOrder },
+  });
+
+  return captureOrder;
 }

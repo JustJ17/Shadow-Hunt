@@ -28,8 +28,6 @@ export async function placeSpyNpcs(
       id: record.id,
       regionId,
       locationId,
-      captured: false,
-      capturedByPlayerId: null,
     });
   }
 

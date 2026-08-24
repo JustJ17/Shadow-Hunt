@@ -8,9 +8,12 @@ import { CARD_POOL, CardIdentifier } from "@/lib/turn-engine/cards/types";
  *
  * Case 1: Player holds a Pending Reward AND has left the capture region → grant reward cards
  * Case 2: Player holds a Pending Reward AND is still in the capture region → no action
- * Case 3: Region's Spy already captured and Player holds no Pending Reward → no action
- * Case 4: Player is at an uncaptured Spy's exact location → capture the Spy
+ * Case 3: Player has already captured this region's spy → no action
+ * Case 4: Player is at an uncaptured (for them) Spy's exact location → capture the Spy
  * Case 5: Player is in a region with an uncaptured Spy but not at its location → deliver clue
+ *
+ * Multi-capture rule: ALL players can capture the same spy independently.
+ * The captureOrder (1st, 2nd, 3rd, 4th) is per-spy, yielding 4/3/2/1 reward cards.
  */
 export async function resolveSpyAndReward(
   roomId: string,
@@ -91,23 +94,30 @@ export async function resolveSpyAndReward(
     where: { roomId, regionId: playerRegionId },
   });
 
-  // Case 3: spy already captured (or no spy in region), no pending reward
-  if (!spy || spy.captured) {
+  // Case 3: no spy in this region
+  if (!spy) {
     return { type: "none" };
   }
 
-  // Case 4: at the uncaptured spy's location
-  if (spy.locationId === playerLocationId) {
-    // Count existing captures to determine capture order
-    const capturedCount = await tx.gameSpy.count({
-      where: { roomId, captured: true },
-    });
-    const captureOrder = capturedCount + 1;
+  // Case 3 (continued): this player has already captured this spy
+  const existingCapture = await tx.spyCapture.findUnique({
+    where: { spyId_playerId: { spyId: spy.id, playerId } },
+  });
+  if (existingCapture) {
+    return { type: "none" };
+  }
 
-    // Mark spy as captured
-    await tx.gameSpy.update({
-      where: { id: spy.id },
-      data: { captured: true, capturedByPlayerId: playerId },
+  // Case 4: at the spy's location — capture it
+  if (spy.locationId === playerLocationId) {
+    // Count how many players have already captured this spy to determine order
+    const priorCaptureCount = await tx.spyCapture.count({
+      where: { spyId: spy.id },
+    });
+    const captureOrder = priorCaptureCount + 1;
+
+    // Record this player's capture
+    await tx.spyCapture.create({
+      data: { roomId, spyId: spy.id, playerId, captureOrder },
     });
 
     // Set pending reward on player position
@@ -127,7 +137,7 @@ export async function resolveSpyAndReward(
     };
   }
 
-  // Case 5: in region with uncaptured spy, not at spy's location
+  // Case 5: in region with spy, not at spy's location → deliver proximity clue
   const stepsAway = await computeSpyDistance(playerLocationId, spy.locationId);
 
   // Append notebook entry
@@ -153,14 +163,14 @@ export async function resolveSpyAndReward(
 }
 
 /**
- * Computes the reward tier (number of cards) based on game-wide capture order.
- * 1st capture → 4 cards, 2nd → 3, 3rd → 2, 4th–6th → 1 card
+ * Computes the reward tier (number of cards) based on per-spy capture order.
+ * 1st capture → 4 cards, 2nd → 3, 3rd → 2, 4th → 1 card
  */
 export function computeRewardTier(captureOrder: number): number {
   if (captureOrder === 1) return 4;
   if (captureOrder === 2) return 3;
   if (captureOrder === 3) return 2;
-  return 1; // 4th, 5th, 6th
+  return 1; // 4th+
 }
 
 /**

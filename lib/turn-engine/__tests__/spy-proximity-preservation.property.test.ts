@@ -76,10 +76,12 @@ function createCase5MockTx(options: {
         roomId: "room-1",
         regionId: options.playerRegionId,
         locationId: options.spyLocationId,
-        captured: false,
-        capturedByPlayerId: null,
       }),
       count: vi.fn().mockResolvedValue(0),
+    },
+    spyCapture: {
+      // No existing capture for this player → proceed to Case 5
+      findUnique: vi.fn().mockResolvedValue(null),
     },
     notebookEntry: {
       create: vi.fn().mockImplementation(async ({ data }) => {

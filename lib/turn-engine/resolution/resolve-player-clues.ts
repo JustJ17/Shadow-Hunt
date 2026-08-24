@@ -148,7 +148,9 @@ async function resolveBugAPhone(
         targetLocationId: targetPos.locationId,
         mastermindStepsAway,
         spyRegionId: spy ? targetLocation.regionId : null,
-        spyCaptured: spy ? spy.captured : false,
+        spyCaptured: spy
+          ? (await tx.spyCapture.count({ where: { spyId: spy.id } })) > 0
+          : false,
       },
     },
   });

@@ -402,14 +402,20 @@ describe("Event Feed Property Tests", () => {
                 // The player's location must be in otherRegion (to trigger Case 1: left capture region)
                 const playerLocation = otherRegion.locations[0];
 
-                // Create a game spy (already captured by this player)
-                await tx.gameSpy.create({
+                // Create a game spy (captured by this player — recorded via SpyCapture)
+                const gameSpy = await tx.gameSpy.create({
                   data: {
                     roomId: room.id,
                     regionId: spyRegion.id,
                     locationId: spyLocation.id,
-                    captured: true,
-                    capturedByPlayerId: TEST_PLAYER_ID,
+                  },
+                });
+                await tx.spyCapture.create({
+                  data: {
+                    roomId: room.id,
+                    spyId: gameSpy.id,
+                    playerId: TEST_PLAYER_ID,
+                    captureOrder: 1,
                   },
                 });
 

@@ -78,21 +78,23 @@ function createMockTx(options: {
     { playerId: options.targetPlayerId, status: "connected" },
   ];
 
-  // Spy record based on spy state
-  let spyRecord: { roomId: string; regionId: string; captured: boolean } | null =
-    null;
+  // Spy record based on spy state — note: no "captured" field, that's in SpyCapture table
+  let spyRecord: { id: string; roomId: string; regionId: string } | null = null;
+  let spyCaptureCount = 0;
   if (options.spyState.kind === "exists-uncaptured") {
     spyRecord = {
+      id: "spy-1",
       roomId: options.roomId,
       regionId: options.targetRegionId,
-      captured: false,
     };
+    spyCaptureCount = 0;
   } else if (options.spyState.kind === "exists-captured") {
     spyRecord = {
+      id: "spy-1",
       roomId: options.roomId,
       regionId: options.targetRegionId,
-      captured: true,
     };
+    spyCaptureCount = 1; // at least one capture means spyCaptured = true
   }
 
   const tx = {
@@ -128,6 +130,9 @@ function createMockTx(options: {
     },
     gameSpy: {
       findFirst: vi.fn().mockResolvedValue(spyRecord),
+    },
+    spyCapture: {
+      count: vi.fn().mockResolvedValue(spyCaptureCount),
     },
     notebookEntry: {
       create: vi.fn().mockImplementation(({ data }: { data: NotebookEntryData }) => {

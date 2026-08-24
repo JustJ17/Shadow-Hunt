@@ -24,6 +24,7 @@ model Room {
   players       RoomPlayer[]
   gameThreat    GameThreat?
   gameSpies     GameSpy[]
+  spyCaptures   SpyCapture[]
 
   gameTurn        GameTurn?
   gameResult      GameResult?
@@ -104,20 +105,37 @@ model GameThreat {
 }
 
 model GameSpy {
-  id                 String   @id @default(cuid())
-  roomId             String
-  regionId           String
-  locationId         String
-  captured           Boolean  @default(false)
-  capturedByPlayerId String?
-  createdAt          DateTime @default(now())
+  id        String   @id @default(cuid())
+  roomId    String
+  regionId  String
+  locationId String
+  createdAt DateTime @default(now())
 
-  room     Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  location Location @relation(fields: [locationId], references: [id])
+  room     Room         @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  location Location     @relation(fields: [locationId], references: [id])
+  captures SpyCapture[]
 
   @@unique([roomId, regionId]) // One spy per region per game
   @@index([roomId])
   @@map("game_spies")
+}
+
+/// Tracks each player's capture of a region's spy.
+/// Multiple players can capture the same spy; captureOrder is per-region.
+model SpyCapture {
+  id           String   @id @default(cuid())
+  roomId       String
+  spyId        String
+  playerId     String
+  captureOrder Int      // 1 = first to capture this spy, 2 = second, etc.
+  createdAt    DateTime @default(now())
+
+  room Room    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  spy  GameSpy @relation(fields: [spyId], references: [id], onDelete: Cascade)
+
+  @@unique([spyId, playerId]) // Each player can capture each spy once
+  @@index([roomId])
+  @@map("spy_captures")
 }
 
 model RoomPlayer {

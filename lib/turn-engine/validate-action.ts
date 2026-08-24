@@ -102,14 +102,7 @@ function validateMove(
     };
   }
 
-  // 4. Plane hub rule
-  if (edge.transport === "plane" && !edge.isHub) {
-    return {
-      success: false,
-      error: "Plane transport requires both endpoints to be hub locations",
-      code: "INVALID_TRANSPORT",
-    };
-  }
+  // 4. Plane hub rule — REMOVED: any plane edge in adjacency is valid
 
   return null;
 }

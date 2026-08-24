@@ -117,7 +117,6 @@ describe("Spy Resolution Property Tests", () => {
                 let playerLocationId: string;
                 let pendingRewardRegionId: string | null = null;
                 let pendingRewardCaptureOrder: number | null = null;
-                let spyCaptured = false;
 
                 switch (scenario) {
                   case "pending-reward-left-region":
@@ -125,23 +124,20 @@ describe("Spy Resolution Property Tests", () => {
                     playerLocationId = locationsInB[0].id;
                     pendingRewardRegionId = regionA;
                     pendingRewardCaptureOrder = captureOrder;
-                    // Create an uncaptured spy in regionB (player's current region)
+                    // Create spy in regionB (player's current region)
                     await tx.gameSpy.create({
                       data: {
                         roomId: room.id,
                         regionId: regionB,
                         locationId: locationsInB[locationsInB.length - 1].id,
-                        captured: false,
                       },
                     });
-                    // Also create spy in regionA (the pending reward region)
+                    // Create spy in regionA (the pending reward region)
                     await tx.gameSpy.create({
                       data: {
                         roomId: room.id,
                         regionId: regionA,
                         locationId: spyLocation.id,
-                        captured: true,
-                        capturedByPlayerId: playerId,
                       },
                     });
                     break;
@@ -151,30 +147,47 @@ describe("Spy Resolution Property Tests", () => {
                     playerLocationId = playerLocationInRegion.id;
                     pendingRewardRegionId = regionA;
                     pendingRewardCaptureOrder = captureOrder;
-                    // Create a captured spy in regionA
-                    await tx.gameSpy.create({
-                      data: {
-                        roomId: room.id,
-                        regionId: regionA,
-                        locationId: spyLocation.id,
-                        captured: true,
-                        capturedByPlayerId: playerId,
-                      },
-                    });
+                    // Create spy in regionA (already captured by player — add SpyCapture)
+                    {
+                      const spy = await tx.gameSpy.create({
+                        data: {
+                          roomId: room.id,
+                          regionId: regionA,
+                          locationId: spyLocation.id,
+                        },
+                      });
+                      await tx.spyCapture.create({
+                        data: {
+                          roomId: room.id,
+                          spyId: spy.id,
+                          playerId,
+                          captureOrder: 1,
+                        },
+                      });
+                    }
                     break;
 
                   case "spy-captured-no-pending":
-                    // Region's spy is already captured, player has no pending reward
+                    // Region's spy is already captured by this player, no pending reward
                     playerLocationId = playerLocationInRegion.id;
-                    await tx.gameSpy.create({
-                      data: {
-                        roomId: room.id,
-                        regionId: regionA,
-                        locationId: spyLocation.id,
-                        captured: true,
-                        capturedByPlayerId: "some-other-player",
-                      },
-                    });
+                    {
+                      const spy = await tx.gameSpy.create({
+                        data: {
+                          roomId: room.id,
+                          regionId: regionA,
+                          locationId: spyLocation.id,
+                        },
+                      });
+                      // Captured by THIS player — so Case 3 fires (already captured for this player)
+                      await tx.spyCapture.create({
+                        data: {
+                          roomId: room.id,
+                          spyId: spy.id,
+                          playerId,
+                          captureOrder: 1,
+                        },
+                      });
+                    }
                     break;
 
                   case "at-uncaptured-spy":
@@ -185,7 +198,6 @@ describe("Spy Resolution Property Tests", () => {
                         roomId: room.id,
                         regionId: regionA,
                         locationId: spyLocation.id,
-                        captured: false,
                       },
                     });
                     break;
@@ -214,7 +226,6 @@ describe("Spy Resolution Property Tests", () => {
                           roomId: room.id,
                           regionId: regionA,
                           locationId: otherLoc.id,
-                          captured: false,
                         },
                       });
                     } else {
@@ -223,7 +234,6 @@ describe("Spy Resolution Property Tests", () => {
                           roomId: room.id,
                           regionId: regionA,
                           locationId: spyLoc.id,
-                          captured: false,
                         },
                       });
                     }
@@ -314,13 +324,13 @@ describe("Spy Resolution Property Tests", () => {
         fc.asyncProperty(
           fc.boolean(), // hasPendingReward
           fc.boolean(), // isInDifferentRegion (only relevant if hasPendingReward)
-          fc.boolean(), // isSpyCaptured
+          fc.boolean(), // isSpyCapturedByThisPlayer
           fc.boolean(), // isAtSpyLocation
           fc.integer({ min: 1, max: 6 }), // captureOrder
           async (
             hasPendingReward: boolean,
             isInDifferentRegion: boolean,
-            isSpyCaptured: boolean,
+            isSpyCapturedByThisPlayer: boolean,
             isAtSpyLocation: boolean,
             captureOrder: number
           ) => {
@@ -365,27 +375,31 @@ describe("Spy Resolution Property Tests", () => {
                     ? locationsInA[0]
                     : locationsInB[0];
 
-                // Decide if the spy is captured
-                const spyShouldBeCaptured =
-                  hasPendingReward || isSpyCaptured;
-
                 // For Case 4: set spy at player's exact location if applicable
                 const spyLocId =
                   !hasPendingReward && isAtSpyLocation
                     ? playerLocationId
                     : spyLocationInRegion.id;
 
-                await tx.gameSpy.create({
+                const spy = await tx.gameSpy.create({
                   data: {
                     roomId: room.id,
                     regionId: playerRegionId,
                     locationId: spyLocId,
-                    captured: spyShouldBeCaptured,
-                    capturedByPlayerId: spyShouldBeCaptured
-                      ? "some-player"
-                      : undefined,
                   },
                 });
+
+                // If the spy should be "captured by this player", add a SpyCapture row
+                if (hasPendingReward || isSpyCapturedByThisPlayer) {
+                  await tx.spyCapture.create({
+                    data: {
+                      roomId: room.id,
+                      spyId: spy.id,
+                      playerId,
+                      captureOrder: 1,
+                    },
+                  });
+                }
 
                 // If pending reward is in a different region, also create spy there
                 if (hasPendingReward && isInDifferentRegion) {
@@ -395,13 +409,19 @@ describe("Spy Resolution Property Tests", () => {
                   if (pendingRegion !== playerRegionId) {
                     const pendingRegionLocs =
                       locationsByRegion.get(pendingRegion)!;
-                    await tx.gameSpy.create({
+                    const pendingSpy = await tx.gameSpy.create({
                       data: {
                         roomId: room.id,
                         regionId: pendingRegion,
                         locationId: pendingRegionLocs[0].id,
-                        captured: true,
-                        capturedByPlayerId: playerId,
+                      },
+                    });
+                    await tx.spyCapture.create({
+                      data: {
+                        roomId: room.id,
+                        spyId: pendingSpy.id,
+                        playerId,
+                        captureOrder: 1,
                       },
                     });
                   }
@@ -547,14 +567,20 @@ describe("Spy Resolution Property Tests", () => {
                 // This triggers Case 1 which grants reward cards
                 const playerLocationId = locationsInB[0].id;
 
-                // Create captured spy in regionA
-                await tx.gameSpy.create({
+                // Create spy in regionA (captured by this player)
+                const spyA = await tx.gameSpy.create({
                   data: {
                     roomId: room.id,
                     regionId: regionA,
                     locationId: locationsInA[0].id,
-                    captured: true,
-                    capturedByPlayerId: playerId,
+                  },
+                });
+                await tx.spyCapture.create({
+                  data: {
+                    roomId: room.id,
+                    spyId: spyA.id,
+                    playerId,
+                    captureOrder: 1,
                   },
                 });
 
@@ -564,33 +590,13 @@ describe("Spy Resolution Property Tests", () => {
                     roomId: room.id,
                     regionId: regionB,
                     locationId: locationsInB[locationsInB.length - 1].id,
-                    captured: false,
                   },
                 });
 
                 // Set up previously captured spies to establish the captureOrder
                 // We need (captureOrder - 1) already-captured spies to get the desired order
-                const otherRegionIds = regionIds.filter(
-                  (r) => r !== regionA && r !== regionB
-                );
-                for (
-                  let i = 0;
-                  i < captureOrder - 1 && i < otherRegionIds.length;
-                  i++
-                ) {
-                  const otherRegionLocs = locationsByRegion.get(
-                    otherRegionIds[i]
-                  )!;
-                  await tx.gameSpy.create({
-                    data: {
-                      roomId: room.id,
-                      regionId: otherRegionIds[i],
-                      locationId: otherRegionLocs[0].id,
-                      captured: true,
-                      capturedByPlayerId: "other-player",
-                    },
-                  });
-                }
+                // NOTE: captureOrder is stored on pendingRewardCaptureOrder; we don't need
+                // to pre-create extra SpyCapture rows just to influence Case 1.
 
                 // Create player position with pending reward
                 await tx.playerPosition.create({
@@ -668,14 +674,20 @@ describe("Spy Resolution Property Tests", () => {
 
                 const playerLocationId = locationsInB[0].id;
 
-                // Create captured spy in regionA
-                await tx.gameSpy.create({
+                // Create spy in regionA (captured by this player)
+                const spyA = await tx.gameSpy.create({
                   data: {
                     roomId: room.id,
                     regionId: regionA,
                     locationId: locationsInA[0].id,
-                    captured: true,
-                    capturedByPlayerId: playerId,
+                  },
+                });
+                await tx.spyCapture.create({
+                  data: {
+                    roomId: room.id,
+                    spyId: spyA.id,
+                    playerId,
+                    captureOrder: 1,
                   },
                 });
 
@@ -685,7 +697,6 @@ describe("Spy Resolution Property Tests", () => {
                     roomId: room.id,
                     regionId: regionB,
                     locationId: locationsInB[locationsInB.length - 1].id,
-                    captured: false,
                   },
                 });
 

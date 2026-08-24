@@ -53,14 +53,28 @@ export async function getActiveBlockades(
     where: { roomId, lifted: false },
   });
 
-  return blockades.filter((b) =>
-    isWithinBlockadeWindow(
-      b.creationRound,
-      b.casterTurnPosition,
-      currentRound,
-      currentTurnPosition
-    )
-  );
+  const active: Array<{ id: string; transportType: string; casterPlayerId: string }> = [];
+  const expiredIds: string[] = [];
+
+  for (const b of blockades) {
+    if (isWithinBlockadeWindow(b.creationRound, b.casterTurnPosition, currentRound, currentTurnPosition)) {
+      active.push(b);
+    } else if (currentRound > b.creationRound + 1 ||
+      (currentRound === b.creationRound + 1 && currentTurnPosition >= b.casterTurnPosition)) {
+      // Blockade is past its expiry window — mark as lifted for cleanup
+      expiredIds.push(b.id);
+    }
+  }
+
+  // Clean up expired blockades (fire-and-forget within transaction)
+  if (expiredIds.length > 0) {
+    await tx.blockade.updateMany({
+      where: { id: { in: expiredIds } },
+      data: { lifted: true },
+    });
+  }
+
+  return active;
 }
 
 /**
