@@ -7,7 +7,7 @@ export async function GET() {
 
     return NextResponse.json(data, {
       headers: {
-        "Cache-Control": "public, max-age=86400, immutable",
+        "Cache-Control": "public, max-age=0, must-revalidate",
       },
     });
   } catch {
