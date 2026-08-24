@@ -162,22 +162,19 @@ const mockPlayers = [
 
 // --- Tests ---
 
+
 describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
   describe("Property 1.1: Continent Path Complexity", () => {
     it("each continent path should have > 40 points for recognizable shapes", () => {
       for (const continent of CONTINENT_PATHS) {
         const pointCount = countPathPoints(continent.d);
-        expect(pointCount).toBeGreaterThan(
-          40,
-          `${continent.name} has only ${pointCount} points (need > 40 for recognizable shape)`
-        );
+        expect(pointCount).toBeGreaterThan(40);
       }
     });
   });
 
   describe("Property 1.2: Continent Path Bounding Box Spans Geographic Extent", () => {
-    // Minimum expected dimensions per continent in the 1000×500 viewBox
-    const expectedMinDimensions: Record<string, { width: number; height: number }> = {
+    const expectedMinDimensions = {
       Europe: { width: 120, height: 100 },
       Asia: { width: 200, height: 120 },
       Africa: { width: 100, height: 150 },
@@ -192,14 +189,8 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         const expected = expectedMinDimensions[continent.name];
         if (!expected) continue;
 
-        expect(bbox.width).toBeGreaterThanOrEqual(
-          expected.width,
-          `${continent.name} width ${bbox.width} < expected minimum ${expected.width}`
-        );
-        expect(bbox.height).toBeGreaterThanOrEqual(
-          expected.height,
-          `${continent.name} height ${bbox.height} < expected minimum ${expected.height}`
-        );
+        expect(bbox.width).toBeGreaterThanOrEqual(expected.width);
+        expect(bbox.height).toBeGreaterThanOrEqual(expected.height);
       }
     });
   });
@@ -220,11 +211,7 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
       const textElements = container.querySelectorAll("text");
       const hubCities = mockLocations.filter((l) => l.isHub);
 
-      // There should be at least one <text> per hub city
-      expect(textElements.length).toBeGreaterThanOrEqual(
-        hubCities.length,
-        `Expected at least ${hubCities.length} <text> label(s) for hub cities, found ${textElements.length}`
-      );
+      expect(textElements.length).toBeGreaterThanOrEqual(hubCities.length);
     });
   });
 
@@ -242,19 +229,14 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         </svg>
       );
 
-      // Get all circle elements (each city has a main marker circle)
       const circles = container.querySelectorAll("circle");
-      const nonHubLocations = mockLocations.filter((l) => !l.isHub);
       const minRadius = 5 / zoom;
 
-      // Find circles with r matching non-hub sizing (< hub radius)
-      // Hub radius is 8/zoom or 9/zoom; non-hub is 4/zoom or 5/zoom
       let nonHubCircleCount = 0;
       let failingCount = 0;
 
       for (const circle of circles) {
         const r = parseFloat(circle.getAttribute("r") ?? "0");
-        // Non-hub markers have smaller radius than hubs
         if (r > 0 && r < 7 / zoom) {
           nonHubCircleCount++;
           if (r < minRadius) {
@@ -263,11 +245,8 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         }
       }
 
-      expect(nonHubCircleCount).toBeGreaterThan(0, "Should find non-hub marker circles");
-      expect(failingCount).toBe(
-        0,
-        `${failingCount} non-hub markers have r < ${minRadius} (minimum for visibility)`
-      );
+      expect(nonHubCircleCount).toBeGreaterThan(0);
+      expect(failingCount).toBe(0);
     });
   });
 
@@ -287,16 +266,13 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
       const paths = container.querySelectorAll("path");
       const allRouteElements = [...lines, ...paths];
 
-      expect(allRouteElements.length).toBeGreaterThan(0, "Should render route elements");
+      expect(allRouteElements.length).toBeGreaterThan(0);
 
       for (const el of allRouteElements) {
         const strokeWidth = parseFloat(
           el.getAttribute("stroke-width") ?? "0"
         );
-        expect(strokeWidth).toBeGreaterThanOrEqual(
-          1.5,
-          `Route element has strokeWidth=${strokeWidth}, expected >= 1.5`
-        );
+        expect(strokeWidth).toBeGreaterThanOrEqual(1.5);
       }
     });
   });
@@ -314,7 +290,6 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         </svg>
       );
 
-      // Expected brighter palette classes after fix
       const brighterColors = [
         "fill-cyan-400",
         "fill-rose-400",
@@ -322,7 +297,6 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         "fill-amber-300",
       ];
 
-      // Get all circles that are player token main circles (not highlight rings)
       const tokenCircles = container.querySelectorAll("circle[class*='fill-']");
       let hasBrighterColor = false;
 
@@ -334,10 +308,7 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
         }
       }
 
-      expect(hasBrighterColor).toBe(
-        true,
-        "Player tokens should use brighter color palette (fill-cyan-400, fill-rose-400, etc.) instead of muted colors"
-      );
+      expect(hasBrighterColor).toBe(true);
     });
   });
 });

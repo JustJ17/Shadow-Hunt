@@ -141,7 +141,7 @@ Implementation plan for the map visual redesign bugfix. Replaces placeholder/def
   - Ensure no documentation states facts that conflict with the new visual implementation
   - _Requirements: Documentation steering rules_
 
-- [-] 5. Checkpoint — Ensure all tests pass
+- [x] 5. Checkpoint — Ensure all tests pass
   - Run full test suite (`vitest --run`)
   - Ensure exploration tests (task 1) pass on fixed code
   - Ensure preservation tests (task 2) pass on fixed code
