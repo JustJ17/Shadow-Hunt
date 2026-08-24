@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { CreateRoomForm } from "./components/create-room-form";
 import { JoinRoomForm } from "./components/join-room-form";
 import { PublicRoomBrowser } from "./components/public-room-browser";
@@ -86,7 +87,12 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-8">Shadow Hunt</h1>
+        <h1 className="text-3xl font-bold text-center mb-4">Shadow Hunt</h1>
+        <div className="text-center mb-8">
+          <Link href="/rules" className="text-sm text-blue-400 hover:text-blue-300 underline">
+            How to Play
+          </Link>
+        </div>
 
         {existingRoom && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-6">

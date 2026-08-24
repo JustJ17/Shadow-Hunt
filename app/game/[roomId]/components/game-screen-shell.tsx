@@ -10,6 +10,7 @@ import { TurnHud } from "./turn-hud";
 import { NotebookPanel } from "./notebook-panel";
 import { EventFeedPanel } from "./event-feed-panel";
 import { PanelErrorBoundary } from "./panel-error-boundary";
+import { RulesModal } from "@/app/components/rules-modal";
 
 // --- Types ---
 
@@ -50,6 +51,7 @@ export function GameScreenShell({
   mapSlot,
 }: GameScreenShellProps) {
   const [selectedTab, setSelectedTab] = useState<TabId>("hud");
+  const [rulesOpen, setRulesOpen] = useState(false);
   const scrollPositions = useRef<Record<TabId, number>>({
     hud: 0,
     notebook: 0,
@@ -277,6 +279,19 @@ export function GameScreenShell({
           {renderPanel(selectedTab)}
         </div>
       </div>
+
+      {/* Rules button (floating) */}
+      <button
+        onClick={() => setRulesOpen(true)}
+        className="fixed bottom-4 left-4 z-40 w-10 h-10 rounded-full bg-gray-700/80 hover:bg-gray-600 text-white text-lg font-bold flex items-center justify-center shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        aria-label="Open game rules"
+        title="Game Rules"
+      >
+        ?
+      </button>
+
+      {/* Rules modal */}
+      <RulesModal isOpen={rulesOpen} onClose={() => setRulesOpen(false)} />
     </div>
   );
 }
