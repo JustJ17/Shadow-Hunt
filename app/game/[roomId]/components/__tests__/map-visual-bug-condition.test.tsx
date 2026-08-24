@@ -174,7 +174,7 @@ describe("Bug Condition Exploration: Map Visual Elements Are Deficient", () => {
   });
 
   describe("Property 1.2: Continent Path Bounding Box Spans Geographic Extent", () => {
-    const expectedMinDimensions = {
+    const expectedMinDimensions: Record<string, { width: number; height: number }> = {
       Europe: { width: 120, height: 100 },
       Asia: { width: 200, height: 120 },
       Africa: { width: 100, height: 150 },
